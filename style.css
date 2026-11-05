@@ -2655,3 +2655,66 @@ body {
     white-space: nowrap;
     border-width: 0;
 }
+
+/* Contact Info Strip */
+.contact-info-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.contact-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 22px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    color: #e5e7eb;
+    font-size: 0.92rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+}
+
+.contact-pill i {
+    color: var(--accent-purple);
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.contact-pill:hover {
+    background: rgba(168, 85, 247, 0.12);
+    border-color: var(--accent-purple);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.2);
+}
+
+.contact-pill:hover i {
+    transform: scale(1.15);
+}
+
+/* Project Tech Tag Pills */
+.project-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0;
+}
+
+.tech-tag {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: rgba(168, 85, 247, 0.1);
+    border: 1px solid rgba(168, 85, 247, 0.25);
+    color: #d8b4fe;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}

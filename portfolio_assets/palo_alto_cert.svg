@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#140727"/>
+      <stop offset="50%" stop-color="#090514"/>
+      <stop offset="100%" stop-color="#030008"/>
+    </linearGradient>
+    <linearGradient id="orange-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fa582d"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="purple-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#fa582d" stop-opacity="0.1"/>
+    </linearGradient>
+    <filter id="glow2">
+      <feGaussianBlur stdDeviation="10" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg2)"/>
+  <rect width="800" height="450" fill="url(#purple-glow)"/>
+  
+  <!-- Cyber Hexagonal Matrix or Grid -->
+  <g stroke="rgba(250,88,45,0.06)" stroke-width="1.2" fill="none">
+    <polygon points="400,60 450,90 450,150 400,180 350,150 350,90"/>
+    <polygon points="400,30 480,75 480,165 400,210 320,165 320,75"/>
+    <polygon points="400,0 510,60 510,180 400,240 290,180 290,60"/>
+  </g>
+
+  <!-- Palo Alto Shield Icon -->
+  <g transform="translate(400, 120)" text-anchor="middle" filter="url(#glow2)">
+    <path d="M 0,-50 L 35,-35 L 35,5 C 35,30 0,55 0,55 C 0,55 -35,30 -35,5 L -35,-35 Z" fill="none" stroke="url(#orange-grad)" stroke-width="4"/>
+    <path d="M 0,-35 L 22,-24 L 22,5 C 22,22 0,40 0,40 C 0,40 -22,22 -22,5 L -22,-24 Z" fill="url(#orange-grad)" opacity="0.3"/>
+    <!-- Lock/Check Mark -->
+    <path d="M -10,0 L -2,8 L 12,-6" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Titles -->
+  <text x="400" y="260" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="800" font-size="32" fill="#ffffff" letter-spacing="2">
+    PALO ALTO NETWORKS ACADEMY
+  </text>
+  <text x="400" y="305" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="19" fill="#fa582d" letter-spacing="3">
+    CYBERSECURITY &amp; CLOUD OPERATIONS
+  </text>
+  <text x="400" y="348" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="400" font-size="15" fill="#94a3b8" letter-spacing="1">
+    Network &amp; Cloud Security • SecOps • Cloud Security Automation
+  </text>
+</svg>

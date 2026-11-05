@@ -1,7 +1,7 @@
 {
-  "name": "devhq-portfolio",
+  "name": "aishwary-portfolio",
   "version": "1.0.0",
-  "description": "DevHQ Personal Portfolio Website by Aakarsh Bibhaw",
+  "description": "Personal Portfolio Website by Aishwary Saxena - AI & Backend Systems Engineer",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
