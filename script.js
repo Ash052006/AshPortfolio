@@ -20,13 +20,19 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollElements.forEach(el => observer.observe(el));
 
     const typingText = document.getElementById('typing-text');
-    const words = ["AI SYSTEMS ENGINEER", "BACKEND ARCHITECT", "AGENTIC AI DEVELOPER", "FULL STACK ENGINEER", "PROBLEM SOLVER"];
+    const words = [
+        "AI SYSTEMS ENGINEER",
+        "AUTONOMOUS AGENT ARCHITECT",
+        "BACKEND SYSTEMS ENGINEER",
+        "RAG PIPELINE SPECIALIST",
+        "CYBER DEFENCE DEVELOPER"
+    ];
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    const typeSpeed = 100;
-    const deleteSpeed = 60;
-    const wordPause = 1500;
+    const typeSpeed = 80;
+    const deleteSpeed = 45;
+    const wordPause = 1800;
 
     function type() {
         const currentWord = words[wordIndex];
@@ -561,3 +567,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial check
     checkNavVisibility();
 })();
+
+// ══════════════════════════════════════════
+//  DEVELOPER DEVTOOLS EASTER EGG
+// ══════════════════════════════════════════
+console.log(
+    "%c[ AISHWARY SAXENA // AI & BACKEND SYSTEMS ENGINEER ]\n" +
+    "%c> Stack: Python | FastAPI | LangGraph | Kafka | Docker | React\n" +
+    "%c> LeetCode: 300+ Solved | GitHub: @Ash052006\n" +
+    "%c> Direct Contact: aishwarysaxena2006@gmail.com",
+    "color: #a855f7; font-size: 14px; font-weight: bold; font-family: monospace; padding: 4px 0;",
+    "color: #06b6d4; font-size: 12px; font-family: monospace; padding: 2px 0;",
+    "color: #10b981; font-size: 12px; font-family: monospace; padding: 2px 0;",
+    "color: #e2e8f0; font-size: 12px; font-family: monospace; padding: 2px 0;"
+);
