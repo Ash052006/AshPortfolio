@@ -98,40 +98,156 @@ body {
     font-size: 1.4rem;
     font-weight: 700;
     margin-bottom: 16px;
-
     letter-spacing: 0.5px;
+}
+
+/* Terminal Engineer Aesthetic */
+.sub-title.terminal-header {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #e2e8f0;
+    background: rgba(15, 23, 42, 0.55);
+    border: 1px solid rgba(168, 85, 247, 0.35);
+    padding: 8px 22px;
+    border-radius: 50px;
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.18), inset 0 0 15px rgba(168, 85, 247, 0.08);
+    backdrop-filter: blur(12px);
+    margin-bottom: 25px;
+    transition: all 0.35s ease;
+}
+
+.sub-title.terminal-header:hover {
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 35px rgba(168, 85, 247, 0.35);
+    transform: translateY(-2px);
+}
+
+.terminal-dot {
+    width: 8px;
+    height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #10b981;
+    animation: terminalPulse 2s infinite ease-in-out;
+    display: inline-block;
+}
+
+@keyframes terminalPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.terminal-prefix {
+    color: #06b6d4;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.terminal-divider {
+    color: var(--accent-purple);
+    font-weight: 800;
+}
+
+.terminal-msg {
+    color: #cbd5e1;
+    font-weight: 500;
+    letter-spacing: 2px;
 }
 
 .main-title {
     font-size: 4.5rem;
     font-weight: 900;
     margin: 15px 0;
-
     line-height: 1.2;
     display: flex;
     justify-content: center;
-
     align-items: center;
     gap: 5px;
     min-height: 1.2em;
-
     text-align: center;
-
 }
 
 .purple-text {
     color: var(--accent-purple);
     font-family: 'VALORANT', sans-serif;
     font-weight: 400;
+    position: relative;
+    text-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
+}
 
+/* Blinking terminal cursor on typed roles */
+.purple-text::after {
+    content: '_';
+    display: inline-block;
+    color: var(--accent-purple);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+    margin-left: 6px;
+    animation: blinkTerminalCursor 0.9s infinite;
+}
+
+@keyframes blinkTerminalCursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 .year {
     font-size: 1.8rem;
     font-weight: 300;
     margin-top: 15px;
-
     margin-bottom: 30px;
+}
+
+.year.terminal-identity {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.25rem;
+    font-weight: 400;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+    margin-bottom: 32px;
+    padding: 10px 24px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.terminal-prompt-sym {
+    color: #10b981;
+    font-weight: 800;
+    text-shadow: 0 0 12px rgba(16, 185, 129, 0.6);
+}
+
+.hero-name {
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+}
+
+.terminal-sep {
+    color: var(--accent-purple);
+    font-weight: 800;
+    text-shadow: 0 0 12px rgba(168, 85, 247, 0.6);
+}
+
+.hero-role {
+    color: #94a3b8;
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .btn-resume {
@@ -337,20 +453,19 @@ body {
         line-height: 1.1;
     }
 
-    .sub-title {
-        font-size: 1.1rem;
-        padding: 0 10px;
+    .sub-title.terminal-header {
+        font-size: 0.8rem;
+        padding: 6px 16px;
+        letter-spacing: 1px;
         margin-bottom: 20px;
-
-
     }
 
-    .year {
-        font-size: 1.2rem;
-
-        margin-top: 20px;
-
-        margin-bottom: 30px;
+    .year.terminal-identity {
+        font-size: 0.95rem;
+        padding: 8px 16px;
+        gap: 8px;
+        margin-top: 15px;
+        margin-bottom: 25px;
     }
 
 
