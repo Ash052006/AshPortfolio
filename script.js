@@ -1,4 +1,18 @@
 
+// ══════════════════════════════════════════
+//  DEVELOPER DEVTOOLS EASTER EGG
+// ══════════════════════════════════════════
+console.log(
+    "%c[ AISHWARY SAXENA // AI & BACKEND SYSTEMS ENGINEER ]\n" +
+    "%c> Stack: Python | FastAPI | LangGraph | Kafka | Docker | React\n" +
+    "%c> LeetCode: 300+ Solved | GitHub: @Ash052006\n" +
+    "%c> Direct Contact: aishwarysaxena2006@gmail.com",
+    "color: #a855f7; font-size: 14px; font-weight: bold; font-family: monospace; padding: 4px 0;",
+    "color: #06b6d4; font-size: 12px; font-family: monospace; padding: 2px 0;",
+    "color: #10b981; font-size: 12px; font-family: monospace; padding: 2px 0;",
+    "color: #e2e8f0; font-size: 12px; font-family: monospace; padding: 2px 0;"
+);
+
 document.addEventListener('DOMContentLoaded', () => {
     const observerOptions = {
         root: null,
@@ -567,17 +581,3 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial check
     checkNavVisibility();
 })();
-
-// ══════════════════════════════════════════
-//  DEVELOPER DEVTOOLS EASTER EGG
-// ══════════════════════════════════════════
-console.log(
-    "%c[ AISHWARY SAXENA // AI & BACKEND SYSTEMS ENGINEER ]\n" +
-    "%c> Stack: Python | FastAPI | LangGraph | Kafka | Docker | React\n" +
-    "%c> LeetCode: 300+ Solved | GitHub: @Ash052006\n" +
-    "%c> Direct Contact: aishwarysaxena2006@gmail.com",
-    "color: #a855f7; font-size: 14px; font-weight: bold; font-family: monospace; padding: 4px 0;",
-    "color: #06b6d4; font-size: 12px; font-family: monospace; padding: 2px 0;",
-    "color: #10b981; font-size: 12px; font-family: monospace; padding: 2px 0;",
-    "color: #e2e8f0; font-size: 12px; font-family: monospace; padding: 2px 0;"
-);
