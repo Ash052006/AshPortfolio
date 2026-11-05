@@ -2213,25 +2213,34 @@ body {
 
 .form-group label {
     position: absolute;
-    top: 15px;
+    top: -18px;
     left: 0;
-    font-size: 1.1rem;
-    color: #6b7280;
+    font-size: 0.82rem;
+    color: #94a3b8;
     pointer-events: none;
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    letter-spacing: 0.8px;
 }
-
 
 .form-group input:focus~label,
 .form-group textarea:focus~label,
 .form-group input:not(:placeholder-shown)~label,
 .form-group textarea:not(:placeholder-shown)~label {
-    top: -20px;
-    font-size: 0.9rem;
+    top: -18px;
+    font-size: 0.82rem;
     color: var(--accent-purple);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.8px;
+}
 
-    font-family: 'VALORANT', sans-serif;
-    letter-spacing: 1px;
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #475569;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    opacity: 0.8;
 }
 
 
