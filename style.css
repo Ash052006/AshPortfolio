@@ -2852,17 +2852,8 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    transform: perspective(1000px) rotateX(15deg) translateY(40px) scale(0.92);
-    opacity: 0;
-    filter: blur(8px);
-    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.scroll-reveal.expanded.bento-container,
-.bento-container.expanded {
-    transform: perspective(1000px) rotateX(0deg) translateY(0) scale(1);
-    opacity: 1;
-    filter: blur(0);
+    position: relative;
+    z-index: 2;
 }
 
 .bento-header {
@@ -2885,12 +2876,14 @@ body {
 }
 
 .bento-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #0d121f;
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     padding: 32px;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(168, 85, 247, 0.08);
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     overflow: hidden;
