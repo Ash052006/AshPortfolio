@@ -15,14 +15,15 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const { name, email, message } = req.body;
+    const { name, email, message, topic } = req.body;
 
     const payload = JSON.stringify({
       from: 'Portfolio Contact <onboarding@resend.dev>',
       to: receiverEmail,
-      subject: `New Portfolio Message from ${name}`,
+      subject: `New Portfolio Message [${topic || 'General'}] from ${name}`,
       html: `
         <h3>New Contact Form Submission</h3>
+        <p><strong>Topic:</strong> ${topic || 'General Inquiry'}</p>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Message:</strong><br/>${message.replace(/\n/g, '<br/>')}</p>

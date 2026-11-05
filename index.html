@@ -68,6 +68,9 @@
                 <i class="fa-solid fa-envelope nav-icon"></i>
                 <span class="nav-label">Contact</span>
             </a>
+            <button id="sfxToggle" class="nav-sfx-btn" title="Toggle Sound Effects" aria-label="Toggle Sound Effects">
+                <i class="fa-solid fa-volume-xmark" id="sfxIcon"></i>
+            </button>
         </div>
     </nav>
 
@@ -110,17 +113,36 @@
 
     <main class="hero" id="home">
 
-        <div class="floating-icon icon-top-left">
-            <i class="fa-solid fa-code"></i>
+        <div class="floating-metric metric-top-left">
+            <span class="metric-icon-wrap icon-cyan"><i class="fa-solid fa-bolt"></i></span>
+            <div class="metric-info">
+                <span class="metric-val">300+ Solved</span>
+                <span class="metric-sub">LeetCode Algorithmic</span>
+            </div>
         </div>
-        <div class="floating-icon icon-top-right">
-            <i class="fa-solid fa-brain"></i>
+
+        <div class="floating-metric metric-top-right">
+            <span class="metric-icon-wrap icon-purple"><i class="fa-solid fa-network-wired"></i></span>
+            <div class="metric-info">
+                <span class="metric-val">9 MCP Tools</span>
+                <span class="metric-sub">Autonomous Orchestration</span>
+            </div>
         </div>
-        <div class="floating-icon icon-bottom-left">
-            <i class="fa-solid fa-robot"></i>
+
+        <div class="floating-metric metric-bottom-left">
+            <span class="metric-icon-wrap icon-green"><i class="fa-solid fa-shield-halved"></i></span>
+            <div class="metric-info">
+                <span class="metric-val">900+ Tests</span>
+                <span class="metric-sub">SOC Pipeline Verification</span>
+            </div>
         </div>
-        <div class="floating-icon icon-bottom-right">
-            <i class="fa-solid fa-network-wired"></i>
+
+        <div class="floating-metric metric-bottom-right">
+            <span class="metric-pulse-dot"></span>
+            <div class="metric-info">
+                <span class="metric-val text-green">Available</span>
+                <span class="metric-sub">AI &amp; Backend Engineering</span>
+            </div>
         </div>
 
         <div class="content-wrapper">
@@ -148,18 +170,63 @@
     </main>
 
     <section class="about-section" id="about">
-        <div class="glass-card scroll-reveal">
-            <h2>About Me - <span class="purple-text">Behind The Code!</span></h2>
-            <p>
-                I am an <strong>AI Engineer</strong> with hands-on experience building autonomous agentic systems,
-                LLM-integrated backends, and retrieval-augmented pipelines. Currently building full-stack AI features at
-                <strong>LearnWithAI</strong>, alongside independent projects spanning MCP-based agent orchestration,
-                RAG-driven security detection, and cyber-defence.
-                <br><br>
-                Comfortable across <strong>Python / FastAPI</strong>, LLM integration (OpenAI, Gemini, Groq, HuggingFace),
-                and <strong>React</strong> — with <strong>300+ LeetCode problems solved</strong>. Currently pursuing my
-                Bachelor of Technology in Computer Science at <strong>GL Bajaj College of Technology & Management</strong> (2023 – Present).
-            </p>
+        <div class="bento-container scroll-reveal">
+            <div class="bento-header">
+                <h2 class="section-title">About Me - <span class="purple-text">Engineering Core!</span></h2>
+                <p class="bento-subtitle">// ARCHITECTING HIGH-THROUGHPUT AGENTIC BACKENDS &amp; RAG ENGINES</p>
+            </div>
+
+            <div class="bento-grid">
+                <!-- Bento 1: Primary Philosophy & Role -->
+                <div class="bento-card bento-hero-card">
+                    <div class="bento-card-badge"><i class="fa-solid fa-terminal"></i> CORE FOCUS</div>
+                    <h3>Transforming Stochastic LLMs into <span class="purple-text">Reliable Systems</span></h3>
+                    <p>
+                        I engineer autonomous agentic systems, LLM-integrated backends, and retrieval-augmented pipelines designed for production predictability. My work focuses on deterministic guardrails, structured memory layers, and tool-calling orchestration with sub-second response times.
+                    </p>
+                    <div class="bento-footer-stat">
+                        <span><i class="fa-solid fa-microchip text-purple"></i> Model Context Protocol (MCP)</span>
+                        <span><i class="fa-solid fa-diagram-project text-cyan"></i> LangGraph Multi-Agent</span>
+                    </div>
+                </div>
+
+                <!-- Bento 2: Live Status / Internship -->
+                <div class="bento-card bento-status-card">
+                    <div class="bento-card-badge status-live"><span class="pulse-green"></span> CURRENT ROLE</div>
+                    <div class="bento-company">LearnWithAI</div>
+                    <h4>Full Stack AI Engineer Intern</h4>
+                    <p>
+                        Building production full-stack AI features, autonomous tool-use agents, and evaluation harnesses for high-throughput user interactions.
+                    </p>
+                    <span class="bento-date"><i class="fa-regular fa-clock"></i> Aug 2026 – Present</span>
+                </div>
+
+                <!-- Bento 3: Quick Facts & Education -->
+                <div class="bento-card bento-facts-card">
+                    <div class="bento-card-badge"><i class="fa-solid fa-fingerprint"></i> QUICK FACTS</div>
+                    <ul class="bento-facts-list">
+                        <li><i class="fa-solid fa-graduation-cap text-purple"></i> <span><strong>B.Tech CSE:</strong> GL Bajaj (2023–Present)</span></li>
+                        <li><i class="fa-solid fa-location-dot text-cyan"></i> <span><strong>Location:</strong> Noida, India</span></li>
+                        <li><i class="fa-solid fa-code text-green"></i> <span><strong>LeetCode:</strong> 300+ Problems Solved</span></li>
+                        <li><i class="fa-solid fa-language text-purple"></i> <span><strong>Languages:</strong> English (Prof.) • French (Learning)</span></li>
+                    </ul>
+                </div>
+
+                <!-- Bento 4: Core Arsenal Preview -->
+                <div class="bento-card bento-tech-card">
+                    <div class="bento-card-badge"><i class="fa-solid fa-layer-group"></i> PRODUCTION ARSENAL</div>
+                    <div class="bento-tech-pills">
+                        <span class="bento-pill"><i class="devicon-fastapi-plain colored"></i> FastAPI</span>
+                        <span class="bento-pill"><i class="fa-brands fa-python" style="color: #3776AB;"></i> Python</span>
+                        <span class="bento-pill"><i class="devicon-apachekafka-original colored"></i> Kafka</span>
+                        <span class="bento-pill"><i class="devicon-docker-plain colored"></i> Docker</span>
+                        <span class="bento-pill"><i class="devicon-postgresql-plain colored"></i> Postgres</span>
+                        <span class="bento-pill"><i class="devicon-react-original colored"></i> React</span>
+                        <span class="bento-pill"><i class="fa-solid fa-database text-purple"></i> ChromaDB</span>
+                        <span class="bento-pill"><i class="devicon-neo4j-plain colored"></i> Neo4j</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -234,6 +301,12 @@
                 <p>
                     Contextual Learning and Autonomous Response Assistant. MCP-based agent routing 9 natural-language intents to 9 tool actions across 2 live OAuth 2.0 integrations (Google Calendar CRUD, Gmail send/read/reply). Features speech-to-text voice execution and HuggingFace LLM execution with Groq fallback and Specmatic contract testing in Dockerized GitHub Actions CI.
                 </p>
+                <div class="project-specs-bar">
+                    <div class="spec-item"><span class="spec-label">ARCHITECTURE</span><span class="spec-val">Modular MCP</span></div>
+                    <div class="spec-item"><span class="spec-label">INTENTS</span><span class="spec-val">9 Actions Routed</span></div>
+                    <div class="spec-item"><span class="spec-label">INTEGRATIONS</span><span class="spec-val">Google Cal &amp; Gmail</span></div>
+                    <div class="spec-item"><span class="spec-label">TESTING</span><span class="spec-val">Specmatic CI</span></div>
+                </div>
                 <div class="project-tech-tags">
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">FastAPI</span>
@@ -257,6 +330,12 @@
                 <p>
                     Autonomous Multi-Agent Cyber Defence Platform. Event-driven SOC pipeline (Kafka pub/sub) spanning Log Collection, Enrichment, Threat Intelligence, Detection, MITRE ATT&CK mapping, and Policy-gated Response. Includes Provider-registry Threat Intelligence Agent integrating VirusTotal, AbuseIPDB, OTX, plus JWT auth & RBAC backed by 900+ passing tests and LangGraph human-in-the-loop policy gating.
                 </p>
+                <div class="project-specs-bar">
+                    <div class="spec-item"><span class="spec-label">PIPELINE</span><span class="spec-val">Kafka Event-Driven</span></div>
+                    <div class="spec-item"><span class="spec-label">INTEL AGENT</span><span class="spec-val">VirusTotal + AbuseIPDB</span></div>
+                    <div class="spec-item"><span class="spec-label">DATA LAYER</span><span class="spec-val">Polyglot DB Layer</span></div>
+                    <div class="spec-item"><span class="spec-label">TEST SUITE</span><span class="spec-val">900+ Tests Passed</span></div>
+                </div>
                 <div class="project-tech-tags">
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">FastAPI</span>
@@ -281,6 +360,12 @@
                 <p>
                     High-speed detection engine containing 13 YAML rules (242 patterns) covering 8+ attack classes with 100% detection, zero false positives, under 200ms. Features a RAG pipeline (Sentence Transformers + ChromaDB) auto-generating plain-English alert explanations with interactive CLI explain/chat modes powered by HuggingFace LLMs.
                 </p>
+                <div class="project-specs-bar">
+                    <div class="spec-item"><span class="spec-label">DETECTION</span><span class="spec-val">13 YAML / 242 Rules</span></div>
+                    <div class="spec-item"><span class="spec-label">ACCURACY</span><span class="spec-val">100% / 0% False Pos</span></div>
+                    <div class="spec-item"><span class="spec-label">RAG ENGINE</span><span class="spec-val">ChromaDB + S-Transformers</span></div>
+                    <div class="spec-item"><span class="spec-label">LATENCY</span><span class="spec-val">&lt; 200ms Speed</span></div>
+                </div>
                 <div class="project-tech-tags">
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">RAG</span>
@@ -302,6 +387,12 @@
                 <p>
                     API reverse engineering of LinkedIn's internal request flows. Built a high-throughput Node.js & Python scraper to automate secure data extraction, schema validation, and structured processing pipelines for analytical ingestion.
                 </p>
+                <div class="project-specs-bar">
+                    <div class="spec-item"><span class="spec-label">TECHNIQUE</span><span class="spec-val">Reverse Flow Analysis</span></div>
+                    <div class="spec-item"><span class="spec-label">RUNTIME</span><span class="spec-val">Node.js + Python</span></div>
+                    <div class="spec-item"><span class="spec-label">PIPELINE</span><span class="spec-val">Auto Normalization</span></div>
+                    <div class="spec-item"><span class="spec-label">INGESTION</span><span class="spec-val">Structured JSON Schema</span></div>
+                </div>
                 <div class="project-tech-tags">
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">Node.js</span>
@@ -600,6 +691,15 @@
 
             <div class="contact-card">
                 <form id="contactForm" class="contact-form">
+                    <div class="contact-topic-selector">
+                        <label class="topic-label"><i class="fa-solid fa-tag"></i> Select Ingestion Topic:</label>
+                        <div class="topic-pills">
+                            <button type="button" class="topic-pill active" data-topic="Opportunity">💼 Hiring / Role</button>
+                            <button type="button" class="topic-pill" data-topic="AI Project Collaboration">🤝 AI Collab</button>
+                            <button type="button" class="topic-pill" data-topic="Tech Discussion">☕ Tech Chat</button>
+                        </div>
+                        <input type="hidden" name="topic" id="selectedTopic" value="Opportunity">
+                    </div>
                     <div class="form-group">
                         <input type="text" id="name" name="name" required placeholder=" " autocomplete="off">
                         <label for="name">Name</label>

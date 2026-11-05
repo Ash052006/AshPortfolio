@@ -13,6 +13,74 @@ console.log(
     "color: #e2e8f0; font-size: 12px; font-family: monospace; padding: 2px 0;"
 );
 
+// ══════════════════════════════════════════
+//  WEB AUDIO API — CYBER SOUND SYNTHESIZER
+// ══════════════════════════════════════════
+class CyberSoundSystem {
+    constructor() {
+        this.ctx = null;
+        this.enabled = localStorage.getItem('portfolio_sfx') === 'true';
+    }
+
+    init() {
+        if (!this.ctx) {
+            const AudioCtx = window.AudioContext || window.webkitAudioContext;
+            if (AudioCtx) this.ctx = new AudioCtx();
+        }
+        if (this.ctx && this.ctx.state === 'suspended') {
+            this.ctx.resume();
+        }
+    }
+
+    toggle() {
+        this.init();
+        this.enabled = !this.enabled;
+        localStorage.setItem('portfolio_sfx', this.enabled);
+        if (this.enabled) this.playSuccess();
+        return this.enabled;
+    }
+
+    playTone(freq, type = 'sine', duration = 0.08, gainVal = 0.04) {
+        if (!this.enabled) return;
+        try {
+            this.init();
+            if (!this.ctx) return;
+            const osc = this.ctx.createOscillator();
+            const gain = this.ctx.createGain();
+            osc.type = type;
+            osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+            gain.gain.setValueAtTime(gainVal, this.ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + duration);
+            osc.connect(gain);
+            gain.connect(this.ctx.destination);
+            osc.start();
+            osc.stop(this.ctx.currentTime + duration);
+        } catch (e) {}
+    }
+
+    playHover() {
+        this.playTone(900, 'sine', 0.03, 0.015);
+    }
+
+    playClick() {
+        this.playTone(550, 'triangle', 0.06, 0.04);
+    }
+
+    playSuccess() {
+        if (!this.enabled) return;
+        this.playTone(523.25, 'sine', 0.08, 0.04);
+        setTimeout(() => this.playTone(659.25, 'sine', 0.1, 0.04), 70);
+        setTimeout(() => this.playTone(783.99, 'sine', 0.14, 0.05), 140);
+    }
+
+    playError() {
+        if (!this.enabled) return;
+        this.playTone(220, 'sawtooth', 0.12, 0.03);
+        setTimeout(() => this.playTone(165, 'sawtooth', 0.16, 0.03), 80);
+    }
+}
+window.soundSystem = new CyberSoundSystem();
+
 document.addEventListener('DOMContentLoaded', () => {
     const observerOptions = {
         root: null,
@@ -98,10 +166,52 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { duration: 500, fill: "forwards" });
     });
 
-    const interactables = document.querySelectorAll('a, button, .floating-icon');
+    const interactables = document.querySelectorAll('a, button, .floating-metric, .bento-card, .skill-card, .cert-item');
     interactables.forEach(el => {
-        el.addEventListener('mouseenter', () => cursorOutline.classList.add('hovered'));
+        el.addEventListener('mouseenter', () => {
+            cursorOutline.classList.add('hovered');
+            if (window.soundSystem) window.soundSystem.playHover();
+        });
         el.addEventListener('mouseleave', () => cursorOutline.classList.remove('hovered'));
+        el.addEventListener('click', () => {
+            if (window.soundSystem) window.soundSystem.playClick();
+        });
+    });
+
+    // ── SFX Navbar Toggle ──
+    const sfxToggleBtn = document.getElementById('sfxToggle');
+    const sfxIcon = document.getElementById('sfxIcon');
+    function updateSfxUI(enabled) {
+        if (!sfxToggleBtn || !sfxIcon) return;
+        if (enabled) {
+            sfxIcon.className = 'fa-solid fa-volume-high';
+            sfxToggleBtn.classList.add('sfx-active');
+            sfxToggleBtn.setAttribute('title', 'Sound Effects: ON (Click to Mute)');
+        } else {
+            sfxIcon.className = 'fa-solid fa-volume-xmark';
+            sfxToggleBtn.classList.remove('sfx-active');
+            sfxToggleBtn.setAttribute('title', 'Sound Effects: OFF (Click to Enable)');
+        }
+    }
+    if (sfxToggleBtn) {
+        updateSfxUI(window.soundSystem.enabled);
+        sfxToggleBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const state = window.soundSystem.toggle();
+            updateSfxUI(state);
+        });
+    }
+
+    // ── Contact Topic Selector ──
+    const topicPills = document.querySelectorAll('.topic-pill');
+    const selectedTopicInput = document.getElementById('selectedTopic');
+    topicPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+            topicPills.forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+            if (selectedTopicInput) selectedTopicInput.value = pill.dataset.topic;
+            if (window.soundSystem) window.soundSystem.playClick();
+        });
     });
 
     const timelineSections = document.querySelectorAll('.timeline');
@@ -148,6 +258,23 @@ document.addEventListener('DOMContentLoaded', () => {
             const y = e.clientY - rect.top;
             card.style.setProperty('--mouse-x', `${x}px`);
             card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+
+    const bentoCards = document.querySelectorAll('.bento-card');
+    bentoCards.forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -5;
+            const rotateY = ((x - centerX) / centerX) * 5;
+            card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
         });
     });
 
