@@ -694,9 +694,9 @@
                     <div class="contact-topic-selector">
                         <label class="topic-label"><i class="fa-solid fa-tag"></i> Select Ingestion Topic:</label>
                         <div class="topic-pills">
-                            <button type="button" class="topic-pill active" data-topic="Opportunity">💼 Hiring / Role</button>
-                            <button type="button" class="topic-pill" data-topic="AI Project Collaboration">🤝 AI Collab</button>
-                            <button type="button" class="topic-pill" data-topic="Tech Discussion">☕ Tech Chat</button>
+                            <button type="button" class="topic-pill active" onclick="selectTopic(this, 'Opportunity')">💼 Hiring / Role</button>
+                            <button type="button" class="topic-pill" onclick="selectTopic(this, 'AI Project Collaboration')">🤝 AI Collab</button>
+                            <button type="button" class="topic-pill" onclick="selectTopic(this, 'Tech Discussion')">☕ Tech Chat</button>
                         </div>
                         <input type="hidden" name="topic" id="selectedTopic" value="Opportunity">
                     </div>
@@ -797,9 +797,28 @@
             "color: #10b981; font-size: 12px; font-family: monospace; padding: 2px 0;",
             "color: #e2e8f0; font-size: 12px; font-family: monospace; padding: 2px 0;"
         );
+
+        // ── Direct Topic Selector Handler (Bulletproof & Immediate) ──
+        window.selectTopic = function(btn, topic) {
+            document.querySelectorAll('.topic-pill').forEach(function(p) { p.classList.remove('active'); });
+            btn.classList.add('active');
+            var input = document.getElementById('selectedTopic');
+            if (input) input.value = topic;
+            var msg = document.getElementById('message');
+            if (msg && !msg.value.trim()) {
+                if (topic === 'Opportunity') {
+                    msg.setAttribute('placeholder', "Hi Aishwary, I'd like to discuss an engineering role / internship with you...");
+                } else if (topic === 'AI Project Collaboration') {
+                    msg.setAttribute('placeholder', "Hi Aishwary, let's collaborate on an autonomous agent / backend project...");
+                } else {
+                    msg.setAttribute('placeholder', "Hi Aishwary, let's connect and discuss AI pipelines and distributed systems...");
+                }
+            }
+            if (window.soundSystem) window.soundSystem.playClick();
+        };
     </script>
     <script src="3d_background.js"></script>
-    <script src="app.js"></script>
+    <script src="app.js?v=2.0"></script>
 </body>
 
 </html>
