@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arshbibhaw/DevHQ-Personal-Portfolio-Website.git"
+    "url": "git+https://github.com/Ash052006/AshPortfolio.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Aishwary Saxena",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/arshbibhaw/DevHQ-Personal-Portfolio-Website/issues"
+    "url": "https://github.com/Ash052006/AshPortfolio/issues"
   },
-  "homepage": "https://github.com/arshbibhaw/DevHQ-Personal-Portfolio-Website#readme",
+  "homepage": "https://github.com/Ash052006/AshPortfolio#readme",
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0"
