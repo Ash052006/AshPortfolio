@@ -123,18 +123,6 @@ portfolio/
 
 ---
 
-## Author
-
-**Aakarsh Bibhaw**  
-CSE Sophomore | Full Stack Developer | WebGL Enthusiast
-
-- LinkedIn: [@aakarsh-bibhaw](https://linkedin.com/in/aakarsh-bibhaw)
-- GitHub: [@arshbibhaw](https://github.com/arshbibhaw)
-- LeetCode: [@arshbibhaw](https://leetcode.com/arshbibhaw)
-- HackerRank: [@arshbibhaw](https://hackerrank.com/arshbibhaw)
-
----
-
 ## Acknowledgments
 
 - **Three.js Team** - 3D graphics library
@@ -148,7 +136,7 @@ CSE Sophomore | Full Stack Developer | WebGL Enthusiast
   
   **Star this repo if you found the 3D effects impressive!**
   
-  Made by Aakarsh Bibhaw
+  Made by Aishwary Saxena
   
   © 2026 All Rights Reserved
   
