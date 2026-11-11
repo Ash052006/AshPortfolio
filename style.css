@@ -1107,16 +1107,22 @@ body {
 }
 
 .project-tag {
+    display: inline-flex;
+    align-items: center;
     background: rgba(168, 85, 247, 0.14);
     color: #c084fc;
-    padding: 6px 18px;
+    padding: 5px 14px;
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     font-family: 'JetBrains Mono', monospace;
     font-weight: 600;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.5px;
     border: 1px solid rgba(168, 85, 247, 0.3);
-    margin-bottom: 25px;
+    margin: 0;
+    width: fit-content;
+    max-width: 100%;
+    white-space: normal;
+    word-break: break-word;
 }
 
 
@@ -1468,20 +1474,35 @@ body {
     border-color: rgba(168, 85, 247, 0.3);
 }
 
+/* ── Card Meta / Badges Row ── */
+.card-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
 .experience-date {
+    position: static !important;
+    display: inline-flex;
+    align-items: center;
     font-family: 'JetBrains Mono', monospace;
     color: #06b6d4;
-    font-size: 0.8rem;
+    font-size: 0.74rem;
     font-weight: 700;
-    letter-spacing: 1.5px;
-    position: absolute;
-    top: 36px;
-    right: 36px;
-    padding: 4px 14px;
+    letter-spacing: 0.8px;
+    padding: 5px 12px;
     background: rgba(6, 182, 212, 0.08);
     border: 1px solid rgba(6, 182, 212, 0.3);
     border-radius: 20px;
     text-shadow: 0 0 10px rgba(6, 182, 212, 0.35);
+    margin: 0 !important;
+    width: fit-content;
+    max-width: 100%;
+    white-space: normal;
+    word-break: break-word;
 }
 
 .project-links-wrapper {
@@ -3419,26 +3440,32 @@ body {
 .project-specs-bar {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 12px 14px;
     margin: 18px 0;
-    padding: 12px 14px;
-    background: rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 10px;
+    padding: 14px 16px;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
 }
 
 .spec-item {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 4px;
+    min-width: 0;
+    overflow: hidden;
 }
 
 .spec-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.68rem;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
     color: #64748b;
+    text-transform: uppercase;
 }
 
 .spec-val {
@@ -3446,14 +3473,16 @@ body {
     font-size: 0.78rem;
     font-weight: 600;
     color: #38bdf8;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    line-height: 1.4;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 650px) {
     .project-specs-bar {
         grid-template-columns: 1fr;
+        gap: 10px;
     }
 }
 

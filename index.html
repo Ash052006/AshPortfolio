@@ -20,7 +20,7 @@
     <meta name="twitter:image" content="portfolio_assets/DevHQ_Favicon.jpg">
 
     <link rel="icon" href="portfolio_assets/DevHQ_Favicon.jpg" type="image/jpeg">
-    <link rel="stylesheet" href="style.css?v=2.8">
+    <link rel="stylesheet" href="style.css?v=2.9">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -63,10 +63,6 @@
             <a href="#profiles" class="nav-link" data-section="profiles">
                 <i class="fa-solid fa-globe nav-icon"></i>
                 <span class="nav-label">Profiles</span>
-            </a>
-            <a href="#contact" class="nav-link" data-section="contact">
-                <i class="fa-solid fa-envelope nav-icon"></i>
-                <span class="nav-label">Contact</span>
             </a>
             <button id="sfxToggle" class="nav-sfx-btn" title="Toggle Sound Effects" aria-label="Toggle Sound Effects">
                 <i class="fa-solid fa-volume-xmark" id="sfxIcon"></i>
@@ -274,8 +270,10 @@
             <!-- Flagship Project: SparkPlan -->
             <div class="experience-card flagship-card" data-category="agents-mcp systems-security">
                 <div class="flagship-badge"><i class="fa-solid fa-crown"></i> FLAGSHIP AI SYSTEMS PROJECT</div>
-                <div class="experience-date">AI SYSTEMS &amp; HARDWARE-SOFTWARE CO-DESIGN</div>
-                <div class="project-tag" style="display: inline-block; width: max-content;">Autonomous Hardware Compiler</div>
+                <div class="card-meta-row">
+                    <div class="project-tag">Autonomous Hardware Compiler</div>
+                    <div class="experience-date">AI SYSTEMS &amp; HARDWARE-SOFTWARE CO-DESIGN</div>
+                </div>
                 <h3>SparkPlan</h3>
                 <div class="project-tagline">// Autonomous Hardware Compiler — Natural Language to Validated Electronics, Parametric 3D CAD &amp; ESP32 Firmware</div>
                 <p>
@@ -307,14 +305,16 @@
                 <div class="project-links-wrapper">
                     <a href="https://github.com/Ash052006/SparkPlan" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
                     <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openSparkPlanModalBtn" onclick="openSparkPlanModal()"><i class="fa-solid fa-microchip"></i> System Architecture &amp; Case Study</button>
-                    <a href="#contact" class="project-btn primary-btn"><i class="fa-regular fa-paper-plane"></i> Discuss</a>
+                    <a href="mailto:aishwarysaxena2006@gmail.com" class="project-btn primary-btn"><i class="fa-regular fa-envelope"></i> Discuss</a>
                 </div>
             </div>
 
             <!-- Project: Signal (MCP Monorepo) -->
             <div class="experience-card" data-category="agents-mcp systems-security">
-                <div class="experience-date">DETERMINISTIC CI &amp; MCP PROTOCOL</div>
-                <div class="project-tag" style="display: inline-block; width: max-content;">Deterministic Agent Tooling</div>
+                <div class="card-meta-row">
+                    <div class="project-tag">Deterministic Agent Tooling</div>
+                    <div class="experience-date">DETERMINISTIC CI &amp; MCP PROTOCOL</div>
+                </div>
                 <h3>Signal (MCP)</h3>
                 <div class="project-tagline" style="font-size: 0.84rem;">// Deterministic MCP Tooling Isolating Flakes, Order-Dependence &amp; Test Tampering for Coding Agents</div>
                 <p>
@@ -339,14 +339,16 @@
                 <div class="project-links-wrapper">
                     <a href="https://github.com/Ash052006" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
                     <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openSignalModalBtn" onclick="openSignalModal()"><i class="fa-solid fa-microchip"></i> System Architecture &amp; Case Study</button>
-                    <a href="#contact" class="project-btn primary-btn"><i class="fa-regular fa-paper-plane"></i> Discuss</a>
+                    <a href="mailto:aishwarysaxena2006@gmail.com" class="project-btn primary-btn"><i class="fa-regular fa-envelope"></i> Discuss</a>
                 </div>
             </div>
 
             <!-- Project 1: CLARA -->
             <div class="experience-card" data-category="agents-mcp">
-                <div class="experience-date">AUTONOMOUS AGENT &amp; MCP PROTOCOL</div>
-                <div class="project-tag" style="display: inline-block; width: max-content;">Autonomous Assistant</div>
+                <div class="card-meta-row">
+                    <div class="project-tag">Autonomous Assistant</div>
+                    <div class="experience-date">AUTONOMOUS AGENT &amp; MCP PROTOCOL</div>
+                </div>
                 <h3>CLARA</h3>
                 <div class="project-tagline" style="font-size: 0.84rem;">// Decoupled MCP Tool Architecture, Sub-Second Voice Pipeline &amp; Zero-Trust Gating</div>
                 <p>
@@ -375,14 +377,16 @@
                 <div class="project-links-wrapper">
                     <a href="https://github.com/Ash052006/CLARA" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
                     <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openClaraModalBtn" onclick="openClaraModal()"><i class="fa-solid fa-robot"></i> System Architecture &amp; Case Study</button>
-                    <a href="#contact" class="project-btn primary-btn"><i class="fa-regular fa-paper-plane"></i> Discuss</a>
+                    <a href="mailto:aishwarysaxena2006@gmail.com" class="project-btn primary-btn"><i class="fa-regular fa-envelope"></i> Discuss</a>
                 </div>
             </div>
 
             <!-- Project: SmartShop-AI -->
             <div class="experience-card" data-category="fullstack-ai">
-                <div class="experience-date">FULL-STACK AI &amp; BEHAVIORAL ANALYTICS</div>
-                <div class="project-tag" style="display: inline-block; width: max-content;">Shopper Intent &amp; Recs</div>
+                <div class="card-meta-row">
+                    <div class="project-tag">Shopper Intent &amp; Recs</div>
+                    <div class="experience-date">FULL-STACK AI &amp; BEHAVIORAL ANALYTICS</div>
+                </div>
                 <h3>SmartShop-AI</h3>
                 <div class="project-tagline" style="font-size: 0.84rem;">// Event-Driven Shopper Intent Classification &amp; Real-Time Generative Recommendation Engine</div>
                 <p>
@@ -408,14 +412,16 @@
                 <div class="project-links-wrapper">
                     <a href="https://github.com/Ash052006/SmartShop-AI" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
                     <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openSmartShopModalBtn" onclick="openSmartShopModal()"><i class="fa-solid fa-cart-shopping"></i> System Architecture &amp; Case Study</button>
-                    <a href="#contact" class="project-btn primary-btn"><i class="fa-regular fa-paper-plane"></i> Discuss</a>
+                    <a href="mailto:aishwarysaxena2006@gmail.com" class="project-btn primary-btn"><i class="fa-regular fa-envelope"></i> Discuss</a>
                 </div>
             </div>
 
             <!-- Project 2: SentinelAI -->
             <div class="experience-card" data-category="systems-security agents-mcp">
-                <div class="experience-date">AUTONOMOUS CYBER DEFENCE</div>
-                <div class="project-tag" style="display: inline-block; width: max-content;">Multi-Agent SOC Platform</div>
+                <div class="card-meta-row">
+                    <div class="project-tag">Multi-Agent SOC Platform</div>
+                    <div class="experience-date">AUTONOMOUS CYBER DEFENCE</div>
+                </div>
                 <h3>SentinelAI</h3>
                 <div class="project-tagline" style="font-size: 0.84rem;">// Event-Driven Autonomous SOC &amp; 5-Agent Adversarial Debate Engine</div>
                 <p>
@@ -443,14 +449,16 @@
                 <div class="project-links-wrapper">
                     <a href="https://github.com/Ash052006/Sentinel-AI" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
                     <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openSentinelModalBtn" onclick="openSentinelModal()"><i class="fa-solid fa-shield-halved"></i> System Architecture &amp; Case Study</button>
-                    <a href="#contact" class="project-btn primary-btn"><i class="fa-regular fa-paper-plane"></i> Discuss</a>
+                    <a href="mailto:aishwarysaxena2006@gmail.com" class="project-btn primary-btn"><i class="fa-regular fa-envelope"></i> Discuss</a>
                 </div>
             </div>
 
             <!-- Project: LiveKit Voice AI -->
             <div class="experience-card" data-category="fullstack-ai agents-mcp">
-                <div class="experience-date">REAL-TIME MULTIMODAL AI &amp; WEBRTC</div>
-                <div class="project-tag" style="display: inline-block; width: max-content;">Conversational Voice Agent</div>
+                <div class="card-meta-row">
+                    <div class="project-tag">Conversational Voice Agent</div>
+                    <div class="experience-date">REAL-TIME MULTIMODAL AI &amp; WEBRTC</div>
+                </div>
                 <h3>LiveKit Voice AI</h3>
                 <div class="project-tagline" style="font-size: 0.84rem;">// Sub-Second WebRTC Speech-to-Speech Assistant with Semantic Turn-Detection &amp; Background Noise Cancellation</div>
                 <p>
@@ -475,14 +483,16 @@
                 <div class="project-links-wrapper">
                     <a href="https://github.com/Ash052006" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
                     <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openVoiceAiModalBtn" onclick="openVoiceAiModal()"><i class="fa-solid fa-headset"></i> System Architecture &amp; Case Study</button>
-                    <a href="#contact" class="project-btn primary-btn"><i class="fa-regular fa-paper-plane"></i> Discuss</a>
+                    <a href="mailto:aishwarysaxena2006@gmail.com" class="project-btn primary-btn"><i class="fa-regular fa-envelope"></i> Discuss</a>
                 </div>
             </div>
 
             <!-- Project 3: Detection-as-Code -->
             <div class="experience-card" data-category="systems-security">
-                <div class="experience-date">GITOPS &amp; NEURAL SOC DETECTION</div>
-                <div class="project-tag" style="display: inline-block; width: max-content;">Declarative Detection Engine</div>
+                <div class="card-meta-row">
+                    <div class="project-tag">Declarative Detection Engine</div>
+                    <div class="experience-date">GITOPS &amp; NEURAL SOC DETECTION</div>
+                </div>
                 <h3>Detection-as-Code</h3>
                 <div class="project-tagline" style="font-size: 0.84rem;">// Declarative GitOps YAML Detections, In-Memory Vector RAG &amp; Multi-Model LLM Gateway</div>
                 <p>
@@ -510,14 +520,16 @@
                 <div class="project-links-wrapper">
                     <a href="https://github.com/Ash052006/Detection-as-Code" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
                     <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openDacModalBtn" onclick="openDacModal()"><i class="fa-solid fa-code-compare"></i> System Architecture &amp; Case Study</button>
-                    <a href="#contact" class="project-btn primary-btn"><i class="fa-regular fa-paper-plane"></i> Discuss</a>
+                    <a href="mailto:aishwarysaxena2006@gmail.com" class="project-btn primary-btn"><i class="fa-regular fa-envelope"></i> Discuss</a>
                 </div>
             </div>
 
             <!-- Project: Staff Training LMS -->
             <div class="experience-card" data-category="fullstack-ai systems-security">
-                <div class="experience-date">ENTERPRISE BACKEND &amp; GITHUB ACTIONS CI/CD</div>
-                <div class="project-tag" style="display: inline-block; width: max-content;">Staff Training LMS Platform</div>
+                <div class="card-meta-row">
+                    <div class="project-tag">Staff Training LMS Platform</div>
+                    <div class="experience-date">ENTERPRISE BACKEND &amp; GITHUB ACTIONS CI/CD</div>
+                </div>
                 <h3>Legal Services LMS</h3>
                 <div class="project-tagline" style="font-size: 0.84rem;">// Production Django 5 &amp; DRF Platform with Granular RBAC, Automated CI/CD &amp; Docker Containerization</div>
                 <p>
@@ -542,14 +554,16 @@
                 <div class="project-links-wrapper">
                     <a href="https://github.com/Ash052006/LearningMangementSystem" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
                     <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openLmsModalBtn" onclick="openLmsModal()"><i class="fa-solid fa-graduation-cap"></i> System Architecture &amp; Case Study</button>
-                    <a href="#contact" class="project-btn primary-btn"><i class="fa-regular fa-paper-plane"></i> Discuss</a>
+                    <a href="mailto:aishwarysaxena2006@gmail.com" class="project-btn primary-btn"><i class="fa-regular fa-envelope"></i> Discuss</a>
                 </div>
             </div>
 
             <!-- Project 4: LinkStream Engine -->
             <div class="experience-card" data-category="systems-security">
-                <div class="experience-date">REVERSE ENGINEERING &amp; SDUI COMPILERS</div>
-                <div class="project-tag" style="display: inline-block; width: max-content;">Zero-Browser Extraction API</div>
+                <div class="card-meta-row">
+                    <div class="project-tag">Zero-Browser Extraction API</div>
+                    <div class="experience-date">REVERSE ENGINEERING &amp; SDUI COMPILERS</div>
+                </div>
                 <h3>LinkStream Engine</h3>
                 <div class="project-tagline" style="font-size: 0.84rem;">// Headless-Free React Server Components (RSC) Deserializer &amp; SDUI Ingestion Microservice</div>
                 <p>
@@ -575,7 +589,7 @@
                 <div class="project-links-wrapper">
                     <a href="https://github.com/Ash052006/LinkedIn-Scrapper" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
                     <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openLinkStreamModalBtn" onclick="openLinkStreamModal()"><i class="fa-solid fa-bolt-lightning"></i> System Architecture &amp; Case Study</button>
-                    <a href="#contact" class="project-btn primary-btn"><i class="fa-regular fa-paper-plane"></i> Discuss</a>
+                    <a href="mailto:aishwarysaxena2006@gmail.com" class="project-btn primary-btn"><i class="fa-regular fa-envelope"></i> Discuss</a>
                 </div>
             </div>
 
@@ -855,51 +869,6 @@
 
     <br>
 
-    <section class="contact-section" id="contact">
-        <div class="contact-container">
-            <h2 class="section-title">Get In Touch - <span class="purple-text">Let's Collaborate!</span></h2>
-            <h4 class="contact-note">
-                Interested in building autonomous AI systems, LLM agents, or scalable backends together?<br>
-                I'm always open to new engineering opportunities and conversations.
-            </h4>
-
-            <div class="contact-card">
-                <form id="contactForm" class="contact-form">
-                    <div class="contact-topic-selector">
-                        <label class="topic-label"><i class="fa-solid fa-tag"></i> Select Ingestion Topic:</label>
-                        <div class="topic-pills">
-                            <button type="button" class="topic-pill active" onclick="selectTopic(this, 'Opportunity')">💼 Hiring / Role</button>
-                            <button type="button" class="topic-pill" onclick="selectTopic(this, 'AI Project Collaboration')">🤝 AI Collab</button>
-                            <button type="button" class="topic-pill" onclick="selectTopic(this, 'Tech Discussion')">☕ Tech Chat</button>
-                        </div>
-                        <input type="hidden" name="topic" id="selectedTopic" value="Opportunity">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" required placeholder="e.g. Alex Vance" autocomplete="off">
-                        <label for="name">Name</label>
-                        <i class="fa-solid fa-user input-icon"></i>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" required placeholder="e.g. alex@example.com" autocomplete="off">
-                        <label for="email">Email</label>
-                        <i class="fa-solid fa-envelope input-icon"></i>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" rows="4" required placeholder="Hi Aishwary, I'd like to discuss an engineering role / internship with you..."></textarea>
-                        <label for="message">Message</label>
-                        <i class="fa-solid fa-comment input-icon"></i>
-                    </div>
-                    <button type="submit" class="btn-resume btn-submit">
-                        <span>Send Message</span>
-                        <i class="fa-solid fa-paper-plane"></i>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <br>
-
     <footer class="footer">
         <div class="footer-container">
 
@@ -916,7 +885,7 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#profiles">Profiles</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="mailto:aishwarysaxena2006@gmail.com">Contact</a></li>
             </ul>
 
             <div class="footer-socials">
@@ -1147,7 +1116,7 @@
                         <a href="https://github.com/Ash052006/SparkPlan" target="_blank" class="project-btn primary-btn" style="box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);">
                             <i class="fa-brands fa-github"></i> View GitHub Repository
                         </a>
-                        <a href="#contact" onclick="closeSparkPlanModal()" class="project-btn primary-btn">
+                        <a href="mailto:aishwarysaxena2006@gmail.com" onclick="closeSparkPlanModal()" class="project-btn primary-btn">
                             <i class="fa-regular fa-paper-plane"></i> Discuss This Architecture
                         </a>
                     </div>
@@ -1388,7 +1357,7 @@
                         <a href="https://github.com/Ash052006/Sentinel-AI" target="_blank" class="project-btn primary-btn" style="box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);">
                             <i class="fa-brands fa-github"></i> View GitHub Repository
                         </a>
-                        <a href="#contact" onclick="closeSentinelModal()" class="project-btn primary-btn">
+                        <a href="mailto:aishwarysaxena2006@gmail.com" onclick="closeSentinelModal()" class="project-btn primary-btn">
                             <i class="fa-regular fa-paper-plane"></i> Discuss This Architecture
                         </a>
                     </div>
@@ -1640,7 +1609,7 @@
                         <a href="https://github.com/Ash052006/CLARA" target="_blank" class="project-btn primary-btn" style="box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);">
                             <i class="fa-brands fa-github"></i> View GitHub Repository
                         </a>
-                        <a href="#contact" onclick="closeClaraModal()" class="project-btn primary-btn">
+                        <a href="mailto:aishwarysaxena2006@gmail.com" onclick="closeClaraModal()" class="project-btn primary-btn">
                             <i class="fa-regular fa-paper-plane"></i> Discuss This Architecture
                         </a>
                     </div>
@@ -1959,7 +1928,7 @@
                         <a href="https://github.com/Ash052006/Detection-as-Code" target="_blank" class="project-btn primary-btn" style="box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);">
                             <i class="fa-brands fa-github"></i> View GitHub Repository
                         </a>
-                        <a href="#contact" onclick="closeDacModal()" class="project-btn primary-btn">
+                        <a href="mailto:aishwarysaxena2006@gmail.com" onclick="closeDacModal()" class="project-btn primary-btn">
                             <i class="fa-regular fa-paper-plane"></i> Discuss This Architecture
                         </a>
                     </div>
@@ -2171,7 +2140,7 @@
                         <a href="https://github.com/Ash052006/LinkedIn-Scrapper" target="_blank" class="project-btn primary-btn" style="box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);">
                             <i class="fa-brands fa-github"></i> View GitHub Repository
                         </a>
-                        <a href="#contact" onclick="closeLinkStreamModal()" class="project-btn primary-btn">
+                        <a href="mailto:aishwarysaxena2006@gmail.com" onclick="closeLinkStreamModal()" class="project-btn primary-btn">
                             <i class="fa-regular fa-paper-plane"></i> Discuss This Architecture
                         </a>
                     </div>
@@ -2832,7 +2801,7 @@
         };
     </script>
     <script src="3d_background.js"></script>
-    <script src="app.js?v=2.7"></script>
+    <script src="app.js?v=2.8"></script>
 </body>
 
 </html>
