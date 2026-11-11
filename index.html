@@ -20,7 +20,7 @@
     <meta name="twitter:image" content="portfolio_assets/DevHQ_Favicon.jpg">
 
     <link rel="icon" href="portfolio_assets/DevHQ_Favicon.jpg" type="image/jpeg">
-    <link rel="stylesheet" href="style.css?v=2.1">
+    <link rel="stylesheet" href="style.css?v=2.2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -293,6 +293,46 @@
         <br>
         <div class="experience-grid">
 
+            <!-- Flagship Project: SparkPlan -->
+            <div class="experience-card flagship-card">
+                <div class="flagship-badge"><i class="fa-solid fa-crown"></i> FLAGSHIP AI SYSTEMS PROJECT</div>
+                <div class="experience-date">AI SYSTEMS &amp; HARDWARE-SOFTWARE CO-DESIGN</div>
+                <div class="project-tag" style="display: inline-block; width: max-content;">Autonomous Hardware Compiler</div>
+                <h3>SparkPlan</h3>
+                <div class="project-tagline">// Autonomous Hardware Compiler — Natural Language to Validated Electronics, Parametric 3D CAD &amp; ESP32 Firmware</div>
+                <p>
+                    An end-to-end autonomous hardware compilation platform that turns plain-language IoT ideas into electrically validated schematics, 3D-printable snap-fit enclosures, production PCB Gerbers, and compiled C++ firmware — verified through deterministic physics and electrical rule checks with zero hallucinations.
+                </p>
+                <div class="project-specs-bar">
+                    <div class="spec-item"><span class="spec-label">ARCHITECTURE</span><span class="spec-val">Compiler + Deterministic Gates</span></div>
+                    <div class="spec-item"><span class="spec-label">VERIFICATION</span><span class="spec-val">100% Deterministic (Zero Hallucination)</span></div>
+                    <div class="spec-item"><span class="spec-label">CAD ENGINE</span><span class="spec-val">CadQuery / OpenCascade B-Rep</span></div>
+                    <div class="spec-item"><span class="spec-label">TEST SUITE</span><span class="spec-val">599 Pytest + Playwright E2E</span></div>
+                </div>
+                <div class="project-tech-tags">
+                    <span class="tech-tag">Python 3.11</span>
+                    <span class="tech-tag">Pydantic v2</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">CadQuery (OpenCascade)</span>
+                    <span class="tech-tag">Trimesh</span>
+                    <span class="tech-tag">React 18</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Three.js</span>
+                    <span class="tech-tag">Web Serial API</span>
+                    <span class="tech-tag">Wokwi Engine</span>
+                    <span class="tech-tag">arduino-cli</span>
+                    <span class="tech-tag">ESP32</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">Redis</span>
+                    <span class="tech-tag">Playwright</span>
+                </div>
+                <div class="project-links-wrapper">
+                    <a href="https://github.com/Ash052006/SparkPlan" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openSparkPlanModalBtn" onclick="openSparkPlanModal()"><i class="fa-solid fa-microchip"></i> System Architecture &amp; Case Study</button>
+                    <a href="#contact" class="project-btn primary-btn"><i class="fa-regular fa-paper-plane"></i> Discuss</a>
+                </div>
+            </div>
+
             <!-- Project 1: CLARA -->
             <div class="experience-card">
                 <div class="experience-date">AI AGENT</div>
@@ -317,7 +357,7 @@
                     <span class="tech-tag">React</span>
                 </div>
                 <div class="project-links-wrapper">
-                    <a href="https://github.com/Ash052006" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <a href="https://github.com/Ash052006/CLARA" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
                     <a href="#contact" class="project-btn primary-btn"><i class="fa-regular fa-paper-plane"></i> Discuss</a>
                 </div>
             </div>
@@ -781,6 +821,210 @@
         </div>
     </div>
 
+    <!-- SparkPlan Deep-Dive Case Study Modal -->
+    <div id="sparkplanModal" class="case-study-modal" role="dialog" aria-modal="true" aria-labelledby="sparkplanModalTitle">
+        <div class="case-study-dialog">
+            <div class="case-study-header">
+                <div class="case-study-title-wrap">
+                    <div class="flagship-badge"><i class="fa-solid fa-microchip"></i> CASE STUDY // AI &amp; EMBEDDED SYSTEMS</div>
+                    <h2 id="sparkplanModalTitle">SparkPlan — <span class="purple-text">Autonomous Hardware Compiler</span></h2>
+                    <div class="case-study-tagline">// Turning natural language into validated electronics, parametric 3D CAD, and compiled ESP32 firmware.</div>
+                </div>
+                <button type="button" class="case-study-close-btn" id="closeSparkPlanBtn" onclick="closeSparkPlanModal()" aria-label="Close Case Study">&times;</button>
+            </div>
+
+            <div class="case-study-body">
+                <!-- KPI Badges Grid -->
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <span class="kpi-val text-green">599 Tests</span>
+                        <span class="kpi-label">Pytest (100% Pass Rate)</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val text-purple">Deterministic</span>
+                        <span class="kpi-label">Zero-Hallucination Gates</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val text-cyan">&lt; 60 Seconds</span>
+                        <span class="kpi-label">Full Synthesis Turnaround</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val" style="color: #fbbf24;">ESP32 + 20</span>
+                        <span class="kpi-label">Sensors &amp; Silicon Targets</span>
+                    </div>
+                </div>
+
+                <!-- Overview Section -->
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-rocket text-purple"></i> 1. Executive Summary &amp; Overview</h3>
+                    <p>
+                        Prototyping connected embedded hardware typically requires days of manual component selection, pinout calculation, electrical load budgeting, CAD enclosure drafting, boilerplate firmware development, and trial-and-error breadboarding.
+                    </p>
+                    <p>
+                        <strong>SparkPlan automates this entire lifecycle in under 60 seconds.</strong> Users describe a hardware device in plain English (e.g., <em>"A solar-powered garden monitor with soil moisture, OLED readout, and deep sleep"</em>), and SparkPlan synthesizes a complete, production-ready engineering package:
+                    </p>
+                    <div class="cs-feature-grid" style="margin-top: 14px;">
+                        <div class="cs-feature-card">
+                            <h4><i class="fa-solid fa-list-check text-cyan"></i> Validated BOM &amp; Wiring</h4>
+                            <p>Grounded in a real 20-part catalog with pin headers, logic-level shifting (3.3V vs 5V), and strict power rail constraints.</p>
+                        </div>
+                        <div class="cs-feature-card">
+                            <h4><i class="fa-solid fa-cube text-purple"></i> Parametric 3D Enclosure (STL)</h4>
+                            <p>Programmatically drafted using CadQuery / OpenCascade with component mounting bosses, ports, and snap-fit lids.</p>
+                        </div>
+                        <div class="cs-feature-card">
+                            <h4><i class="fa-solid fa-layer-group text-green"></i> Automated PCB Gerbers</h4>
+                            <p>Standard RS-274X copper layers, soldermask, silkscreen, and Excellon drill files ready for JLCPCB / PCBWay manufacturing.</p>
+                        </div>
+                        <div class="cs-feature-card">
+                            <h4><i class="fa-solid fa-bolt" style="color: #fbbf24;"></i> Direct-to-Silicon Flashing</h4>
+                            <p>Modular C++ compiled via <code>arduino-cli</code>, simulated in-browser via Wokwi, and flashed directly to physical ESP32 via Web Serial API.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Architecture Section -->
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-brain text-cyan"></i> 2. Core Architectural Innovation: "LLM Proposes, Deterministic Code Verifies"</h3>
+                    <p>
+                        Traditional generative AI hallucinates incompatible GPIOs, shorts voltage rails, and produces invalid non-manifold 3D meshes. SparkPlan eliminates hallucinations completely by separating semantic intent from deterministic physical verification:
+                    </p>
+
+                    <div class="arch-diagram-box">
+                        <div class="arch-diagram-title">SYSTEM COMPILATION PIPELINE &amp; REPAIR LOOP</div>
+<pre>
+[ User Prompt (Natural Language) ]
+               │
+               ▼
+   [ LLM Planner Engine ] ──► Emits Structured Pydantic BuildSpec (JSON Only)
+               │
+               ▼
+[ Deterministic Python Validators ] ◄── (Max 3 repair loops on failure)
+    ├── Electrical: 3.3V vs 5V logic check, rail current budgeting
+    ├── GPIO Pinout: Strapping pins, ADC2/WiFi conflict, I2C SDA/SCL
+    └── Geometry: Part clearances, mounting boss overlap, watertight mesh
+               │
+               ▼ (All Rules Passed)
+   [ Parallel Artifact Generators ]
+    ├── CadQuery / OpenCascade ──► Solid 3D Base &amp; Lid STLs
+    ├── RS-274X Gerber Engine   ──► 2-Layer PCB Fab Package
+    ├── Catalog C++ Templates   ──► sketch.ino &amp; firmware.bin
+    └── Assembly Guide Builder  ──► Interactive Checklist &amp; Sourcing
+</pre>
+                    </div>
+
+                    <ul class="bento-facts-list" style="margin-top: 14px;">
+                        <li><i class="fa-solid fa-check-double text-green"></i> <span><strong>Zero Firmware/CAD Hallucination:</strong> The LLM never writes raw C++ firmware or 3D geometry code directly. It only outputs a strictly typed Pydantic <code>BuildSpec</code> schema.</span></li>
+                        <li><i class="fa-solid fa-arrows-rotate text-purple"></i> <span><strong>Automated 3-Round Repair Loop:</strong> When an electrical rule or GPIO pin assignment fails deterministic verification, structured machine-readable <code>Issue</code> objects are returned to the planner for self-correction.</span></li>
+                        <li><i class="fa-solid fa-shield-halved text-cyan"></i> <span><strong>Honesty-First Verification Pipeline:</strong> Every artifact displays software verification badges (<em>Validated, Compiled, Sliced, Simulated, Not physically built</em>). Prompts exceeding hardware catalog capabilities are explicitly refused rather than approximated.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Key Features & Pillars -->
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-gears text-purple"></i> 3. Key Technical Features &amp; Enterprise Architecture</h3>
+                    <div class="cs-feature-grid">
+                        <div class="cs-feature-card">
+                            <h4><i class="fa-solid fa-comments text-cyan"></i> ChatGPT-Style Single-Column Workspace</h4>
+                            <p>Sleek interface with collapsible history drawer, sticky prompt dock, and AI Optimizer cards offering real-time BOM cost cutting (sensor substitutions, bus consolidation, SMD passives).</p>
+                        </div>
+                        <div class="cs-feature-card">
+                            <h4><i class="fa-solid fa-vr-cardboard text-purple"></i> Interactive Three.js 3D CAD Viewer</h4>
+                            <p>Hardware-accelerated WebGL viewer with component explode sliders, wireframe modes, and direct STL mesh download for 3D slicing engines.</p>
+                        </div>
+                        <div class="cs-feature-card">
+                            <h4><i class="fa-solid fa-microchip text-green"></i> In-Browser Simulation &amp; USB Flasher</h4>
+                            <p>Embedded Wokwi engine simulates real-time LEDs, displays, and sensors before physical assembly, with Web Serial API enabling 1-click binary flashing over Chrome/Edge USB.</p>
+                        </div>
+                        <div class="cs-feature-card">
+                            <h4><i class="fa-solid fa-clipboard-check" style="color: #fbbf24;"></i> Pre-Flight Safety Checklist</h4>
+                            <p>Interactive step-by-step assembly guide tracking multimeter rail checks, short-circuit validation, and enclosure clearance guarantees.</p>
+                        </div>
+                    </div>
+
+                    <h4 style="margin: 24px 0 12px; color: #ffffff; font-size: 1rem; font-family: 'JetBrains Mono', monospace;">// THE 6 DISTRIBUTED PRODUCTION PILLARS</h4>
+                    <div class="pillar-list">
+                        <div class="pillar-item">
+                            <strong>PILLAR 1: DETERMINISTIC ENGINE</strong>
+                            Physics and electrical rules engine validating voltage drops, pin strapping constraints, and part collision bounds.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>PILLAR 2: DISTRIBUTED ASYNC WORKERS</strong>
+                            Celery/Redis worker queues orchestrating heavy OpenCascade rendering with real-time Server-Sent Events (SSE) streaming.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>PILLAR 3: MULTI-STAGE DOCKER ARCHITECTURE</strong>
+                            Containerized runtime bundling Vite frontend, pre-cached arduino-cli ESP32 cores, and CadQuery headless dependencies.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>PILLAR 4: SECURE AUTH &amp; RATE LIMITING</strong>
+                            OAuth2 (GitHub &amp; Google) with HMAC-SHA256 signed session cookies and tiered token-bucket rate limiting (60 req/min auth vs 10 req/min anon).
+                        </div>
+                        <div class="pillar-item">
+                            <strong>PILLAR 5: HIL SILICON TEST RIG</strong>
+                            Hardware-in-the-Loop test bench auto-detecting physical ESP32 microcontrollers on USB serial, verifying bootloader banners and UART telemetry.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>PILLAR 6: AUTOMATED PCB GERBER ENGINE</strong>
+                            Automated RS-274X copper layers, soldermask, silkscreen, and Excellon drill file generator for instant factory manufacturing.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Verification Metrics -->
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-chart-line text-green"></i> 4. Verification &amp; Production Metrics</h3>
+                    <div class="cs-metrics-row">
+                        <div class="cs-metric-badge"><i class="fa-solid fa-vial-circle-check"></i> 599 Pytest Tests Passing (100% Deterministic)</div>
+                        <div class="cs-metric-badge"><i class="fa-solid fa-mobile-screen-button"></i> Full Playwright E2E Test Suite (iPhone 390px Viewport)</div>
+                        <div class="cs-metric-badge"><i class="fa-solid fa-code-commit"></i> Strict Zero-Warning Ruff &amp; Black across 149 Python Files</div>
+                        <div class="cs-metric-badge"><i class="fa-solid fa-network-wired"></i> Zero Network Mock Leaks in CI/HIL Pipelines</div>
+                    </div>
+                </div>
+
+                <!-- Tech Stack Tags -->
+                <div class="cs-section" style="margin-bottom: 10px;">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-layer-group text-cyan"></i> 5. Complete Tech Stack &amp; Tools</h3>
+                    <div class="project-tech-tags" style="margin-top: 10px;">
+                        <span class="tech-tag">Python 3.11</span>
+                        <span class="tech-tag">Pydantic v2</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">CadQuery (OpenCascade)</span>
+                        <span class="tech-tag">Trimesh</span>
+                        <span class="tech-tag">React 18</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Vite</span>
+                        <span class="tech-tag">Three.js</span>
+                        <span class="tech-tag">Web Serial API</span>
+                        <span class="tech-tag">Wokwi Engine</span>
+                        <span class="tech-tag">arduino-cli</span>
+                        <span class="tech-tag">ESP32 DevKit</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">Pytest</span>
+                        <span class="tech-tag">Playwright</span>
+                        <span class="tech-tag">GitHub Actions CI/HIL</span>
+                    </div>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="case-study-footer">
+                    <div class="case-study-actions">
+                        <a href="https://github.com/Ash052006/SparkPlan" target="_blank" class="project-btn primary-btn" style="box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);">
+                            <i class="fa-brands fa-github"></i> View GitHub Repository
+                        </a>
+                        <a href="#contact" onclick="closeSparkPlanModal()" class="project-btn primary-btn">
+                            <i class="fa-regular fa-paper-plane"></i> Discuss This Architecture
+                        </a>
+                    </div>
+                    <button type="button" class="btn-resume" onclick="closeSparkPlanModal()" style="padding: 8px 20px; font-size: 0.85rem;">
+                        Close Case Study
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -797,6 +1041,39 @@
             "color: #10b981; font-size: 12px; font-family: monospace; padding: 2px 0;",
             "color: #e2e8f0; font-size: 12px; font-family: monospace; padding: 2px 0;"
         );
+
+        // ── SparkPlan Case Study Modal Controls (Bulletproof & Immediate) ──
+        window.openSparkPlanModal = function(e) {
+            if (e && e.preventDefault) e.preventDefault();
+            var modal = document.getElementById('sparkplanModal');
+            if (modal) {
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+            if (window.soundSystem) window.soundSystem.playClick();
+        };
+
+        window.closeSparkPlanModal = function() {
+            var modal = document.getElementById('sparkplanModal');
+            if (modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        };
+
+        // Close on backdrop click and ESC key
+        document.addEventListener('click', function(e) {
+            var modal = document.getElementById('sparkplanModal');
+            if (modal && e.target === modal) {
+                window.closeSparkPlanModal();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' || e.key === 'Esc') {
+                window.closeSparkPlanModal();
+            }
+        });
 
         // ── Direct Topic Selector Handler (Bulletproof & Immediate) ──
         window.selectTopic = function(btn, topic) {
@@ -818,7 +1095,7 @@
         };
     </script>
     <script src="3d_background.js"></script>
-    <script src="app.js?v=2.0"></script>
+    <script src="app.js?v=2.1"></script>
 </body>
 
 </html>

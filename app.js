@@ -104,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const typingText = document.getElementById('typing-text');
     const words = [
         "AI SYSTEMS ENGINEER",
+        "HARDWARE-SOFTWARE CO-DESIGNER",
         "AUTONOMOUS AGENT ARCHITECT",
         "BACKEND SYSTEMS ENGINEER",
         "RAG PIPELINE SPECIALIST",
@@ -426,6 +427,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 closeModal();
             }
         });
+    }
+
+    // ── SparkPlan Case Study Modal ──
+    const sparkplanModal = document.getElementById('sparkplanModal');
+    const openSparkPlanModalBtn = document.getElementById('openSparkPlanModalBtn');
+    const closeSparkPlanBtn = document.getElementById('closeSparkPlanBtn');
+
+    if (sparkplanModal) {
+        if (openSparkPlanModalBtn) {
+            openSparkPlanModalBtn.addEventListener('click', (e) => {
+                if (window.openSparkPlanModal) window.openSparkPlanModal(e);
+            });
+        }
+        if (closeSparkPlanBtn) {
+            closeSparkPlanBtn.addEventListener('click', () => {
+                if (window.closeSparkPlanModal) window.closeSparkPlanModal();
+            });
+        }
     }
 
     // ── Interactive Skill Filtering ──
