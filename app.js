@@ -143,12 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (typingText) {
-        // Wait for preloader to finish before starting the hero animation
-        if (document.getElementById('preloader')) {
-            window.addEventListener('preloaderComplete', type, { once: true });
-        } else {
-            type();
-        }
+        type();
     }
 
     const cursorDot = document.querySelector('[data-cursor-dot]');
@@ -731,84 +726,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ══════════════════════════════════════════
-//  PRELOADER
+//  PAGE READY
 // ══════════════════════════════════════════
-(function () {
-    const preloader = document.getElementById('preloader');
-    const sleekFill = document.getElementById('preloaderSleekFill');
-    const particlesContainer = document.getElementById('preloaderParticles');
-    if (!preloader) return;
-
-    const DURATION = 3500;         // Total animation duration in ms
-    const startTime = performance.now();
-    let pageLoaded = false;
-    let animationDone = false;
-
-    // ── Spawn floating particles ──
-    if (particlesContainer) {
-        for (let i = 0; i < 100; i++) {
-            const p = document.createElement('div');
-            p.classList.add('preloader-particle');
-            p.style.left = Math.random() * 100 + '%';
-            p.style.bottom = -(Math.random() * 20) + '%';
-
-            // Sync with the ~3.5s DURATION. Duration between 2s and 4s, delay up to 1.5s
-            p.style.animationDuration = (2 + Math.random() * 2) + 's';
-            p.style.animationDelay = (Math.random() * 1.5) + 's';
-            p.style.width = p.style.height = (2 + Math.random() * 4) + 'px';
-            particlesContainer.appendChild(p);
-        }
-    }
-
-    // ── Smooth linear animation via requestAnimationFrame ──
-    function animate(now) {
-        const elapsed = now - startTime;
-        // Ease-out cubic for a natural deceleration feel
-        let t = Math.min(elapsed / DURATION, 1);
-        let easedT = 1 - Math.pow(1 - t, 3);
-
-        // If page has loaded and we're past 80%, accelerate to finish
-        if (pageLoaded && easedT >= 0.8) {
-            easedT = Math.min(easedT + (1 - easedT) * 0.1, 1);
-        }
-
-        // Update loading bar
-        if (sleekFill) {
-            sleekFill.style.width = (easedT * 100) + '%';
-        }
-
-        if (easedT < 1) {
-            requestAnimationFrame(animate);
-        } else {
-            // Reached 100%
-            if (sleekFill) sleekFill.style.width = '100%';
-            animationDone = true;
-            tryDismiss();
-        }
-    }
-
-    requestAnimationFrame(animate);
-
-    // ── Dismiss only when BOTH animation is done AND page is loaded ──
-    function tryDismiss() {
-        if (!animationDone || !pageLoaded) return;
-
-        setTimeout(() => {
-            preloader.classList.add('loaded');
-            setTimeout(() => {
-                preloader.remove();
-                // Dispatch event to tell landing page to start animating
-                document.body.classList.add('page-loaded');
-                window.dispatchEvent(new Event('preloaderComplete'));
-            }, 1000);
-        }, 500);
-    }
-
-    window.addEventListener('load', () => {
-        pageLoaded = true;
-        tryDismiss();
-    });
-})();
+document.body.classList.add('page-loaded');
 
 // ══════════════════════════════════════════
 //  SCROLL PROGRESS BAR
