@@ -483,6 +483,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // ── Detection-as-Code Case Study Modal ──
+    const dacModal = document.getElementById('dacModal');
+    const openDacModalBtn = document.getElementById('openDacModalBtn');
+    const closeDacBtn = document.getElementById('closeDacBtn');
+
+    if (dacModal) {
+        if (openDacModalBtn) {
+            openDacModalBtn.addEventListener('click', (e) => {
+                if (window.openDacModal) window.openDacModal(e);
+            });
+        }
+        if (closeDacBtn) {
+            closeDacBtn.addEventListener('click', () => {
+                if (window.closeDacModal) window.closeDacModal();
+            });
+        }
+    }
+
     // ── Interactive Skill Filtering ──
     const filterBtns = document.querySelectorAll('.filter-btn');
     const skillCards = document.querySelectorAll('.skill-card[data-category]');

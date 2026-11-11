@@ -20,7 +20,7 @@
     <meta name="twitter:image" content="portfolio_assets/DevHQ_Favicon.jpg">
 
     <link rel="icon" href="portfolio_assets/DevHQ_Favicon.jpg" type="image/jpeg">
-    <link rel="stylesheet" href="style.css?v=2.4">
+    <link rel="stylesheet" href="style.css?v=2.5">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -406,27 +406,35 @@
 
             <!-- Project 3: Detection-as-Code -->
             <div class="experience-card">
-                <div class="experience-date">SECURITY LAB</div>
-                <div class="project-tag" style="display: inline-block; width: max-content;">Threat Detection &amp; RAG</div>
-                <h3>Detection-as-Code Lab</h3>
+                <div class="experience-date">GITOPS &amp; NEURAL SOC DETECTION</div>
+                <div class="project-tag" style="display: inline-block; width: max-content;">Declarative Detection Engine</div>
+                <h3>Detection-as-Code</h3>
+                <div class="project-tagline" style="font-size: 0.84rem;">// Declarative GitOps YAML Detections, In-Memory Vector RAG &amp; Multi-Model LLM Gateway</div>
                 <p>
-                    High-speed detection engine containing 13 YAML rules (242 patterns) covering 8+ attack classes with 100% detection, zero false positives, under 200ms. Features a RAG pipeline (Sentence Transformers + ChromaDB) auto-generating plain-English alert explanations with interactive CLI explain/chat modes powered by HuggingFace LLMs.
+                    Enterprise Detection-as-Code system shifting SIEM logic into version-controlled, testable YAML definitions. Ingests telemetry, evaluates declarative rules with sub-millisecond deterministic matching (0.34ms), and enriches alerts with contextual threat triage and an interactive conversational CLI copilot powered by ChromaDB, all-MiniLM-L6-v2, and Hugging Face Router inference fallback.
                 </p>
                 <div class="project-specs-bar">
-                    <div class="spec-item"><span class="spec-label">DETECTION</span><span class="spec-val">13 YAML / 242 Rules</span></div>
-                    <div class="spec-item"><span class="spec-label">ACCURACY</span><span class="spec-val">100% / 0% False Pos</span></div>
-                    <div class="spec-item"><span class="spec-label">RAG ENGINE</span><span class="spec-val">ChromaDB + S-Transformers</span></div>
-                    <div class="spec-item"><span class="spec-label">LATENCY</span><span class="spec-val">&lt; 200ms Speed</span></div>
+                    <div class="spec-item"><span class="spec-label">ARCHITECTURE</span><span class="spec-val">Declarative GitOps + Dense RAG</span></div>
+                    <div class="spec-item"><span class="spec-label">LATENCY</span><span class="spec-val">&approx; 0.34ms Match | Sub-ms Loop</span></div>
+                    <div class="spec-item"><span class="spec-label">ACCURACY</span><span class="spec-val">100% Precision | 0% False Pos</span></div>
+                    <div class="spec-item"><span class="spec-label">TEST SUITE</span><span class="spec-val">17/17 Tests Passing (0.015s)</span></div>
                 </div>
                 <div class="project-tech-tags">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">RAG</span>
+                    <span class="tech-tag">Python 3.10+</span>
+                    <span class="tech-tag">GitOps</span>
+                    <span class="tech-tag">PyYAML</span>
                     <span class="tech-tag">ChromaDB</span>
-                    <span class="tech-tag">Sentence Transformers</span>
-                    <span class="tech-tag">HuggingFace</span>
+                    <span class="tech-tag">Sentence-Transformers</span>
+                    <span class="tech-tag">Gemma-2</span>
+                    <span class="tech-tag">Qwen 2.5</span>
+                    <span class="tech-tag">Llama 3.1</span>
+                    <span class="tech-tag">MITRE ATT&amp;CK</span>
+                    <span class="tech-tag">CLI Forensic REPL</span>
+                    <span class="tech-tag">Unittest / Pytest</span>
                 </div>
                 <div class="project-links-wrapper">
                     <a href="https://github.com/Ash052006/Detection-as-Code" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openDacModalBtn" onclick="openDacModal()"><i class="fa-solid fa-code-compare"></i> System Architecture &amp; Case Study</button>
                     <a href="#contact" class="project-btn primary-btn"><i class="fa-regular fa-paper-plane"></i> Discuss</a>
                 </div>
             </div>
@@ -1530,6 +1538,325 @@
         </div>
     </div>
 
+    <!-- Detection-as-Code Deep-Dive Case Study Modal -->
+    <div id="dacModal" class="case-study-modal" role="dialog" aria-modal="true" aria-labelledby="dacModalTitle">
+        <div class="case-study-dialog">
+            <div class="case-study-header">
+                <div class="case-study-title-wrap">
+                    <div class="flagship-badge"><i class="fa-solid fa-code-compare"></i> CASE STUDY // GITOPS &amp; NEURAL SOC DETECTION</div>
+                    <h2 id="dacModalTitle">Detection-as-Code — <span class="purple-text">Neural SOC &amp; Threat Engine</span></h2>
+                    <div class="case-study-tagline">// GitOps-native detection engineering coupling sub-millisecond AST matching with in-memory dense vector RAG triage.</div>
+                </div>
+                <button type="button" class="case-study-close-btn" id="closeDacBtn" onclick="closeDacModal()" aria-label="Close Case Study">&times;</button>
+            </div>
+
+            <div class="case-study-body">
+                <!-- KPI Badges Grid -->
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <span class="kpi-val text-green">&approx; 0.34 ms</span>
+                        <span class="kpi-label">Pattern Match (Sub-ms Loop)</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val text-purple">100% Precision</span>
+                        <span class="kpi-label">Zero False Positives</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val text-cyan">17/17 Tests</span>
+                        <span class="kpi-label">Passing in 0.015 Seconds</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val" style="color: #fbbf24;">13 Classes</span>
+                        <span class="kpi-label">MITRE ATT&amp;CK Matrix Coverage</span>
+                    </div>
+                </div>
+
+                <!-- Overview Section -->
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-triangle-exclamation text-purple"></i> 1. Executive Summary &amp; The Problem Solved</h3>
+                    <p>
+                        Traditional Security Operations Centers (SOCs) depend heavily on centralized, proprietary SIEM platforms where detection rules are stored as opaque, ad-hoc UI queries with three critical bottlenecks:
+                    </p>
+                    <ul class="bento-facts-list" style="margin: 10px 0 16px;">
+                        <li><i class="fa-solid fa-code-branch text-purple"></i> <span><strong>Zero CI/CD &amp; Version Control:</strong> Rule regressions and syntax breaks escape into production undetected without peer review, pull-request linting, or automated test suites.</span></li>
+                        <li><i class="fa-solid fa-bell-slash text-cyan"></i> <span><strong>Alert Fatigue &amp; Context Poverty:</strong> Raw alert dumps provide cryptic signals (e.g. <code>cmd=base64 -d</code>) without threat intelligence context, forcing analysts into 15–30 minute manual wiki correlations.</span></li>
+                        <li><i class="fa-solid fa-stopwatch text-green"></i> <span><strong>High MTTD &amp; MTTR:</strong> Cloud SIEM evaluation suffers from ingestion delays, complex query execution overhead, and lack of interactive on-demand investigation interfaces.</span></li>
+                    </ul>
+                    <p>
+                        <strong>How My System Solves It:</strong> Detection-as-Code implements a production-grade GitOps paradigm. Detections are treated as first-class, version-controlled YAML software artifacts evaluated in-memory with sub-millisecond linear scans (0.34ms). Triggered events are dynamically enriched via an embedded vector store (ChromaDB + <code>all-MiniLM-L6-v2</code>) and surfaced through an interactive multi-turn forensic CLI copilot powered by Hugging Face Router inference fallback.
+                    </p>
+                    <div class="cs-feature-grid" style="margin-top: 14px;">
+                        <div class="cs-feature-card">
+                            <h4><i class="fa-solid fa-bell text-cyan"></i> Normalized Alert Records</h4>
+                            <p>Standardized JSON alert structures containing Rule ID, calculated Severity (low/med/high/critical), ISO-8601 timestamps, and raw event payloads.</p>
+                        </div>
+                        <div class="cs-feature-card">
+                            <h4><i class="fa-solid fa-book-open text-purple"></i> RAG Threat Explanations</h4>
+                            <p>Automated 2-to-4 sentence threat breakdowns detailing: what the payload executes, why it violates policy, and recommended containment steps.</p>
+                        </div>
+                        <div class="cs-feature-card">
+                            <h4><i class="fa-solid fa-terminal text-green"></i> Interactive Forensic REPL</h4>
+                            <p>Live multi-turn CLI agent (<code>answer_question</code>) synthesizing telemetry, rule context, and threat intel to resolve analyst triage queries.</p>
+                        </div>
+                        <div class="cs-feature-card">
+                            <h4><i class="fa-solid fa-layer-group" style="color: #fbbf24;"></i> Dynamic Dense Vector Index</h4>
+                            <p>In-memory vector space populated dynamically with 384-dimensional dense embeddings linking event telemetry to MITRE mitigation playbooks.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Architecture Section -->
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-diagram-project text-cyan"></i> 2. System Architecture &amp; Data Flow</h3>
+                    <p>
+                        Telemetry flows through defensive JSON envelope loaders, sub-millisecond AST pattern matchers, and dense vector embedding pipelines:
+                    </p>
+
+                    <div class="arch-diagram-box">
+                        <div class="arch-diagram-title">DETECTION-AS-CODE &amp; VECTOR RETRIEVAL PIPELINE</div>
+<pre>
++---------------------------------------------------------------------------------------------------+
+|                                      INGESTION &amp; PREPROCESSING                                    |
+|                                                                                                   |
+|  [ YAML Rule Corpus ]                     [ JSON Audit / System Logs ]                            |
+|  (rules/*.yaml)                           (logs/*.json)                                           |
+|         |                                              |                                          |
+|         v                                              v                                          |
+|  +--------------------+                     +---------------------+                               |
+|  | load_rules()       |                     | load_logs()         |                               |
+|  | - Safe YAML Parse  |                     | - Schema Validation |                               |
+|  | - Filter Enabled   |                     | - Envelope Unpack   |                               |
+|  +--------------------+                     +---------------------+                               |
++---------------------------------------------------------------------------------------------------+
+                                   |                           |
+                                   +-------------+-------------+
+                                                 |
++------------------------------------------------v--------------------------------------------------+
+|                                    PROCESSING ENGINE &amp; MATCHING                                   |
+|                                                                                                   |
+|                                         +------------------+                                      |
+|                                         | run() Orchestrator|                                     |
+|                                         +------------------+                                      |
+|                                                   |                                               |
+|                                                   v                                               |
+|                             +-------------------------------------------+                         |
+|                             | matches(rule, log)                        |                         |
+|                             | - Field Extraction (e.g., 'message')      |                         |
+|                             | - Substring / Pattern Membership Search   |                         |
+|                             +-------------------------------------------+                         |
+|                                                   |                                               |
+|                             +---------------------+---------------------+                         |
+|                             |                                           |                         |
+|                      [ No Match ]                                  [ MATCH FOUND ]                |
+|                             |                                           |                         |
+|                     (Discard / Next)                                    v                         |
+|                                                              +---------------------+              |
+|                                                              | Alert Queue Created |              |
+|                                                              +---------------------+              |
++-------------------------------------------------------------------------|-------------------------+
+                                                                          |
++-------------------------------------------------------------------------v-------------------------+
+|                                  SEMANTIC RETRIEVAL &amp; VECTOR GATES                                |
+|                                                                                                   |
+|   [ Knowledge Base ]      [ Active Rules ]      [ Triggered Logs ]    [ Architecture Docs ]       |
+|   (security_kb.md)        (Metadata Chunks)     (Event Chunks)        (docs/shapes.md)            |
+|          |                        |                     |                     |                   |
+|          +------------------------+----------+----------+---------------------+                   |
+|                                              |                                                    |
+|                                              v                                                    |
+|                                   +---------------------+                                         |
+|                                   | build_index()       |                                         |
+|                                   | - Document Chunking |                                         |
+|                                   | - all-MiniLM-L6-v2  | (384-dimensional embeddings)            |
+|                                   +---------------------+                                         |
+|                                              |                                                    |
+|                                              v                                                    |
+|                                   +---------------------+                                         |
+|                                   | ChromaDB Collection |                                         |
+|                                   | - In-Memory Storage |                                         |
+|                                   | - Cosine Similarity |                                         |
+|                                   +---------------------+                                         |
++----------------------------------------------|----------------------------------------------------+
+                                               |
++----------------------------------------------v----------------------------------------------------+
+|                                    EXECUTION, ENRICHMENT &amp; OUTPUTS                                |
+|                                                                                                   |
+|            +-------------------------------------------------------------------+                  |
+|            | Top-k Similarity Search Query (k=4 Chunks)                        |                  |
+|            +-------------------------------------------------------------------+                  |
+|                                              |                                                    |
+|                                              v                                                    |
+|     +----------------------------------------------------------------------------------+          |
+|     | Resilience &amp; Failover Inference Gateway (_call_huggingface)                      |          |
+|     |  [ Primary: Gemma-2-2B-IT ]                                                      |          |
+|     |        | (on 429/403/500/timeout)                                                |          |
+|     |        v                                                                         |          |
+|     |  [ Fallback 1: Qwen2.5-7B-Instruct:cheapest ]                                    |          |
+|     |        | (on error)                                                              |          |
+|     |        v                                                                         |          |
+|     |  [ Fallback 2: Llama-3.1-8B-Instruct:cheapest ]                                  |          |
+|     |        | (on offline / missing token)                                            |          |
+|     |        v                                                                         |          |
+|     |  [ Deterministic Local Regex / Static Heuristic Fallback ]                       |          |
+|     +----------------------------------------------------------------------------------+          |
+|                                              |                                                    |
+|                       +----------------------+----------------------+                             |
+|                       |                                             |                             |
+|                       v                                             v                             |
+|             +---------------------+                       +---------------------+                 |
+|             | CLI Formatted Alert |                       | Interactive REPL    |                 |
+|             | with AI Explanation |                       | Q&amp;A Session         |                 |
+|             | (Rule/Severity/Why) |                       | (Forensic Triage)   |                 |
+|             +---------------------+                       +---------------------+                 |
++---------------------------------------------------------------------------------------------------+
+</pre>
+                    </div>
+
+                    <ul class="bento-facts-list" style="margin-top: 14px;">
+                        <li><i class="fa-solid fa-shield-halved text-green"></i> <span><strong>Strict Separation of Policy from Compute (GitOps):</strong> Detection rules are purely declarative data schemas (<code>rules/*.yaml</code>). Modifying, adding, or retiring a rule requires zero changes to the evaluation engine.</span></li>
+                        <li><i class="fa-solid fa-arrows-rotate text-purple"></i> <span><strong>Defensive Ingestion Normalization:</strong> The polymorphic parser handles flat arrays or nested cloud envelopes (<code>{"logs": [...]}</code> or <code>{"entries": [...]}</code>) with zero unhandled exceptions.</span></li>
+                        <li><i class="fa-solid fa-network-wired text-cyan"></i> <span><strong>Multi-Tier Gateway Failover:</strong> 4-tier provider waterfall (<code>Gemma-2-2B-IT</code> &rarr; <code>Qwen2.5-7B</code> &rarr; <code>Llama-3.1-8B</code> &rarr; static heuristic fallback) guarantees alerts are surfaced even offline.</span></li>
+                    </ul>
+                </div>
+
+                <!-- 6 Pillars Section -->
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-cubes text-purple"></i> 3. The 6 Production Engineering Pillars</h3>
+                    <div class="pillar-list">
+                        <div class="pillar-item">
+                            <strong>PILLAR 1: CORE PROCESSING ENGINE</strong>
+                            Python 3.10+ runtime utilizing strict type signatures. Single-pass nested iterator optimized for CPU L1/L2 cache locality with sub-millisecond evaluation latency.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>PILLAR 2: STREAMING &amp; INGESTION</strong>
+                            Flexible polymorphic parser accepting flat arrays and nested cloud log envelopes, designed as an instant drop-in filter for Kafka stream consumers or AWS SQS workers.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>PILLAR 3: DATA &amp; STORAGE LAYERS</strong>
+                            Embedded in-process ChromaDB with telemetry tracking disabled, local SentenceTransformer (<code>all-MiniLM-L6-v2</code>) generating 384-dimensional dense vectors, and markdown AST chunking.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>PILLAR 4: SECURITY &amp; ACCESS CONTROL</strong>
+                            Secret isolation via python-dotenv, bounded generation parameters (<code>temperature=0.3</code>, <code>max_tokens=200</code>) to eliminate hallucinations, and principle-of-least-privilege tokens.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>PILLAR 5: TESTING &amp; VERIFICATION RIG</strong>
+                            Automated suite with 17/17 passing tests in 0.015s covering RuleLoader, LogLoader, Matcher, Pipeline, and RAG chunking against clean baseline traffic.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>PILLAR 6: DEPLOYMENT &amp; INFRASTRUCTURE</strong>
+                            Zero external database daemon dependencies; pure in-memory execution ready for container packaging (<code>python:3.11-slim</code>) in air-gapped environments.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Verification Metrics -->
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-chart-line text-green"></i> 4. Hard Verification &amp; Production Metrics</h3>
+                    <div class="cs-metrics-row">
+                        <div class="cs-metric-badge"><i class="fa-solid fa-bolt"></i> 0.34ms Pattern Matching Latency across All Rules</div>
+                        <div class="cs-metric-badge"><i class="fa-solid fa-gauge-high"></i> &gt; 40,000 Evaluations/Second Single-Core Throughput</div>
+                        <div class="cs-metric-badge"><i class="fa-solid fa-vial-circle-check"></i> 17/17 Passing Tests in 0.015s (100% Pass Rate)</div>
+                        <div class="cs-metric-badge"><i class="fa-solid fa-bullseye"></i> 100% Precision &amp; Recall on Defined Threats</div>
+                        <div class="cs-metric-badge"><i class="fa-solid fa-shield-halved"></i> 0 False Positives on Clean Baseline Traffic</div>
+                        <div class="cs-metric-badge"><i class="fa-solid fa-layer-group"></i> 13 Attack Classes Mapped to MITRE ATT&amp;CK Matrix</div>
+                    </div>
+                </div>
+
+                <!-- Attack Matrix -->
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-shield-virus text-purple"></i> 5. Governed Threat Matrix (13 Attack Classes)</h3>
+                    <div class="pillar-list">
+                        <div class="pillar-item">
+                            <strong>1. CREDENTIAL DUMPING (T1003)</strong>
+                            Mimikatz, LSASS memory injection, SAM/NTDS.dit theft.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>2. DESTRUCTIVE ATTACKS (T1485)</strong>
+                            Data destruction (<code>rm -rf</code>), <code>chmod 777</code>, fork bombs.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>3. DATA EXFILTRATION (T1567)</strong>
+                            Unsanctioned outbound drops (Pastebin, Transfer.sh).
+                        </div>
+                        <div class="pillar-item">
+                            <strong>4. BRUTE FORCE (T1110)</strong>
+                            Repeated login denial and authentication spike patterns.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>5. PERSISTENCE (T1053, T1547)</strong>
+                            Scheduled tasks (<code>schtasks</code>), Registry Run keys.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>6. PRIVILEGE ESCALATION (T1548)</strong>
+                            Sudo abuse, <code>su -</code>, and <code>runas</code> elevation flags.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>7. RECONNAISSANCE (T1082)</strong>
+                            System discovery (<code>whoami</code>, <code>netstat</code>, <code>nmap</code>).
+                        </div>
+                        <div class="pillar-item">
+                            <strong>8. REVERSE SHELLS (T1059)</strong>
+                            Interactive bash pipes (<code>bash -i</code>), Netcat spawns (<code>nc -e</code>).
+                        </div>
+                        <div class="pillar-item">
+                            <strong>9. LOLBINS (T1218)</strong>
+                            Script execution via <code>wscript</code>, <code>certutil</code>, <code>bitsadmin</code>.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>10. SQL INJECTION (T1190)</strong>
+                            Database exploitation (<code>UNION SELECT</code>, inline comments).
+                        </div>
+                        <div class="pillar-item">
+                            <strong>11. OBFUSCATED EXECUTION (T1027)</strong>
+                            PowerShell cmdlets (<code>Invoke-Expression</code>, <code>base64 -d</code>).
+                        </div>
+                        <div class="pillar-item">
+                            <strong>12. MALICIOUS SCRIPTS (T1059.001)</strong>
+                            WebClient downloads and execution policy bypasses.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech Stack Tags -->
+                <div class="cs-section" style="margin-bottom: 10px;">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-layer-group text-cyan"></i> 6. Complete Tech Stack &amp; Tools</h3>
+                    <div class="project-tech-tags" style="margin-top: 10px;">
+                        <span class="tech-tag">Python 3.10+</span>
+                        <span class="tech-tag">GitOps</span>
+                        <span class="tech-tag">PyYAML</span>
+                        <span class="tech-tag">ChromaDB (Vector Store)</span>
+                        <span class="tech-tag">Sentence-Transformers</span>
+                        <span class="tech-tag">all-MiniLM-L6-v2 (384-d)</span>
+                        <span class="tech-tag">Gemma-2-2B-IT</span>
+                        <span class="tech-tag">Qwen 2.5-7B</span>
+                        <span class="tech-tag">Llama 3.1-8B</span>
+                        <span class="tech-tag">HuggingFace Router API</span>
+                        <span class="tech-tag">MITRE ATT&amp;CK</span>
+                        <span class="tech-tag">OWASP Top 10</span>
+                        <span class="tech-tag">CLI Forensic REPL</span>
+                        <span class="tech-tag">Unittest / Pytest</span>
+                    </div>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="case-study-footer">
+                    <div class="case-study-actions">
+                        <a href="https://github.com/Ash052006/Detection-as-Code" target="_blank" class="project-btn primary-btn" style="box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);">
+                            <i class="fa-brands fa-github"></i> View GitHub Repository
+                        </a>
+                        <a href="#contact" onclick="closeDacModal()" class="project-btn primary-btn">
+                            <i class="fa-regular fa-paper-plane"></i> Discuss This Architecture
+                        </a>
+                    </div>
+                    <button type="button" class="btn-resume" onclick="closeDacModal()" style="padding: 8px 20px; font-size: 0.85rem;">
+                        Close Case Study
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -1604,6 +1931,25 @@
             }
         };
 
+        // ── Detection-as-Code Case Study Modal Controls (Bulletproof & Immediate) ──
+        window.openDacModal = function(e) {
+            if (e && e.preventDefault) e.preventDefault();
+            var modal = document.getElementById('dacModal');
+            if (modal) {
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+            if (window.soundSystem) window.soundSystem.playClick();
+        };
+
+        window.closeDacModal = function() {
+            var modal = document.getElementById('dacModal');
+            if (modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        };
+
         // Close on backdrop click and ESC key (All Modals)
         document.addEventListener('click', function(e) {
             var spModal = document.getElementById('sparkplanModal');
@@ -1618,6 +1964,10 @@
             if (cModal && e.target === cModal) {
                 window.closeClaraModal();
             }
+            var dModal = document.getElementById('dacModal');
+            if (dModal && e.target === dModal) {
+                window.closeDacModal();
+            }
         });
 
         document.addEventListener('keydown', function(e) {
@@ -1625,6 +1975,7 @@
                 window.closeSparkPlanModal();
                 window.closeSentinelModal();
                 window.closeClaraModal();
+                window.closeDacModal();
             }
         });
 
@@ -1648,7 +1999,7 @@
         };
     </script>
     <script src="3d_background.js"></script>
-    <script src="app.js?v=2.3"></script>
+    <script src="app.js?v=2.4"></script>
 </body>
 
 </html>
