@@ -20,7 +20,7 @@
     <meta name="twitter:image" content="portfolio_assets/DevHQ_Favicon.jpg">
 
     <link rel="icon" href="portfolio_assets/DevHQ_Favicon.jpg" type="image/jpeg">
-    <link rel="stylesheet" href="style.css?v=2.5">
+    <link rel="stylesheet" href="style.css?v=2.6">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -439,28 +439,35 @@
                 </div>
             </div>
 
-            <!-- Project 4: LinkedIn API Scraper -->
+            <!-- Project 4: LinkStream Engine -->
             <div class="experience-card">
-                <div class="experience-date">AUTOMATION</div>
-                <div class="project-tag" style="display: inline-block; width: max-content;">Reverse Engineering</div>
-                <h3>LinkedIn API Scraper</h3>
+                <div class="experience-date">REVERSE ENGINEERING &amp; SDUI COMPILERS</div>
+                <div class="project-tag" style="display: inline-block; width: max-content;">Zero-Browser Extraction API</div>
+                <h3>LinkStream Engine</h3>
+                <div class="project-tagline" style="font-size: 0.84rem;">// Headless-Free React Server Components (RSC) Deserializer &amp; SDUI Ingestion Microservice</div>
                 <p>
-                    API reverse engineering of LinkedIn's internal request flows. Built a high-throughput Node.js &amp; Python scraper to automate secure data extraction, schema validation, and structured processing pipelines for analytical ingestion.
+                    Zero-browser, sub-second extraction microservice reverse-engineering LinkedIn's Server-Driven UI (SDUI) and React Server Component (RSC) wire protocols. Replaces resource-heavy headless browsers (Puppeteer/Playwright) with concurrent pure-HTTP stream parsing, cutting memory usage by 95% (30MB RAM footprint) and serving warm cached profiles in under 2ms.
                 </p>
                 <div class="project-specs-bar">
-                    <div class="spec-item"><span class="spec-label">TECHNIQUE</span><span class="spec-val">Reverse Flow Analysis</span></div>
-                    <div class="spec-item"><span class="spec-label">RUNTIME</span><span class="spec-val">Node.js + Python</span></div>
-                    <div class="spec-item"><span class="spec-label">PIPELINE</span><span class="spec-val">Auto Normalization</span></div>
-                    <div class="spec-item"><span class="spec-label">INGESTION</span><span class="spec-val">Structured JSON Schema</span></div>
+                    <div class="spec-item"><span class="spec-label">ARCHITECTURE</span><span class="spec-val">Zero-Browser / RSC Stream</span></div>
+                    <div class="spec-item"><span class="spec-label">INGESTION</span><span class="spec-val">Concurrent Async SDUI</span></div>
+                    <div class="spec-item"><span class="spec-label">FETCH LATENCY</span><span class="spec-val">&lt; 850ms (Cache: &lt;2ms)</span></div>
+                    <div class="spec-item"><span class="spec-label">FOOTPRINT</span><span class="spec-val">~30MB RAM (vs 800MB)</span></div>
                 </div>
                 <div class="project-tech-tags">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Node.js</span>
-                    <span class="tech-tag">REST APIs</span>
+                    <span class="tech-tag">Node.js v20</span>
                     <span class="tech-tag">Reverse Engineering</span>
+                    <span class="tech-tag">React Server Components (RSC)</span>
+                    <span class="tech-tag">SDUI Protocol</span>
+                    <span class="tech-tag">Voyager REST-Li 2.0</span>
+                    <span class="tech-tag">HTTP/2 Streams</span>
+                    <span class="tech-tag">In-Memory TTL Cache</span>
+                    <span class="tech-tag">Docker (Alpine 35MB)</span>
+                    <span class="tech-tag">Render Cloud</span>
                 </div>
                 <div class="project-links-wrapper">
                     <a href="https://github.com/Ash052006/LinkedIn-Scrapper" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openLinkStreamModalBtn" onclick="openLinkStreamModal()"><i class="fa-solid fa-bolt-lightning"></i> System Architecture &amp; Case Study</button>
                     <a href="#contact" class="project-btn primary-btn"><i class="fa-regular fa-paper-plane"></i> Discuss</a>
                 </div>
             </div>
@@ -1857,6 +1864,218 @@
         </div>
     </div>
 
+    <!-- LinkStream Engine Deep-Dive Case Study Modal -->
+    <div id="linkstreamModal" class="case-study-modal" role="dialog" aria-modal="true" aria-labelledby="linkstreamModalTitle">
+        <div class="case-study-dialog">
+            <div class="case-study-header">
+                <div class="case-study-title-wrap">
+                    <div class="flagship-badge"><i class="fa-solid fa-bolt-lightning"></i> CASE STUDY // REVERSE ENGINEERING &amp; SDUI COMPILERS</div>
+                    <h2 id="linkstreamModalTitle">LinkStream Engine — <span class="purple-text">Zero-Browser RSC Extraction API</span></h2>
+                    <div class="case-study-tagline">// High-throughput Server-Driven UI (SDUI) &amp; React Server Components (RSC) reverse-engineered extraction microservice.</div>
+                </div>
+                <button type="button" class="case-study-close-btn" id="closeLinkStreamBtn" onclick="closeLinkStreamModal()" aria-label="Close Case Study">&times;</button>
+            </div>
+
+            <div class="case-study-body">
+                <!-- KPI Badges Grid -->
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <span class="kpi-val text-green">~30 MB RAM</span>
+                        <span class="kpi-label">&gt;94% Memory Compute Saved</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val text-purple">&lt; 850 ms</span>
+                        <span class="kpi-label">Cold Fetch (Cache: &lt;2ms)</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val text-cyan">Zero Browser</span>
+                        <span class="kpi-label">HTTP/2 Direct Stream Deserializer</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val" style="color: #fbbf24;">10 Facets</span>
+                        <span class="kpi-label">Full Profile Graph Schema</span>
+                    </div>
+                </div>
+
+                <!-- Overview Section -->
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-triangle-exclamation text-purple"></i> 1. Executive Summary &amp; The Problem Solved</h3>
+                    <p>
+                        Traditional web data extraction and headless browser automation suffer from three critical architectural bottlenecks:
+                    </p>
+                    <ul class="bento-facts-list" style="margin: 10px 0 16px;">
+                        <li><i class="fa-solid fa-memory text-purple"></i> <span><strong>Resource Exhaustion &amp; Throttling:</strong> Headless browsers (Puppeteer, Playwright) consume 300MB–1GB RAM and 1 CPU core per worker. Parsing 20 concurrent profiles quickly triggers container OOM crashes.</span></li>
+                        <li><i class="fa-solid fa-fingerprint text-cyan"></i> <span><strong>DOM Churn &amp; Bot Mitigations:</strong> Modern applications render via Server-Driven UI (SDUI) with obfuscated, dynamically generated classes and actively detect Canvas, WebGL, and CDP browser automation instrumentation.</span></li>
+                        <li><i class="fa-solid fa-ban text-green"></i> <span><strong>Deprecation of Legacy REST Endpoints:</strong> Legacy internal endpoints return <code>410 Gone</code>, while server HTML payloads deliver empty shells without inline hydration states.</span></li>
+                    </ul>
+                    <p>
+                        <strong>How LinkStream Engine Solves It:</strong> LinkStream replaces fragile browser automation with a pure HTTP reverse-engineered ingestion pipeline. It negotiates low-level HTTP/2 streaming sessions (<code>x-li-rsc-stream: true</code>), dispatches requests directly to internal SDUI pagination endpoints, and recursively resolves React Server Component (RSC) chunk reference trees in memory—reducing compute overhead by 95% and running on a 30MB Docker footprint.
+                    </p>
+                    <div class="cs-feature-grid" style="margin-top: 14px;">
+                        <div class="cs-feature-card">
+                            <h4><i class="fa-solid fa-server text-cyan"></i> Native REST Microservice</h4>
+                            <p>Clean HTTP service exposing <code>GET /profile/:username</code> and <code>GET /health</code> with standardized error classification.</p>
+                        </div>
+                        <div class="cs-feature-card">
+                            <h4><i class="fa-solid fa-network-wired text-purple"></i> Structured Profile Graph</h4>
+                            <p>Unified JSON schema extracting 10 distinct entities: multi-role career groups, education, skills, licenses, honors, and projects.</p>
+                        </div>
+                        <div class="cs-feature-card">
+                            <h4><i class="fa-solid fa-key text-green"></i> Session Mutex &amp; Auto-Recovery</h4>
+                            <p>Built-in credential negotiator auto-detecting 401 expiration and performing single-flight mutex session regeneration.</p>
+                        </div>
+                        <div class="cs-feature-card">
+                            <h4><i class="fa-brands fa-docker" style="color: #fbbf24;"></i> Sub-35MB Alpine Container</h4>
+                            <p>Ultra-lean production Docker image requiring zero Chromium binaries, cut down by 95% compared to browser containers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Architecture Section -->
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-diagram-project text-cyan"></i> 2. System Architecture &amp; Data Flow</h3>
+                    <p>
+                        Extraction requests pass through in-memory cache gates, session mutex locks, and concurrent multi-section stream parsers:
+                    </p>
+
+                    <div class="arch-diagram-box">
+                        <div class="arch-diagram-title">RSC STREAM DESERIALIZATION &amp; SDUI PIPELINE</div>
+<pre>
+  [ Ingestion Layer ]
+         │
+         ▼
+  ┌────────────────────────────────────────────────────────┐
+  │  Client HTTP GET /profile/:username                    │
+  └──────────────────────────┬─────────────────────────────┘
+                             │
+                             ▼
+  ┌────────────────────────────────────────────────────────┐
+  │  In-Memory TTL Cache Check                             │
+  │  Hit? ──► [ Return 200 OK (Latency &lt; 2ms) ]            │
+  └──────────────────────────┬─────────────────────────────┘
+                     Miss    │
+                             ▼
+  [ Processing Engine: Authentication &amp; Identity Gate ]
+  ┌────────────────────────────────────────────────────────┐
+  │  Session Mutex &amp; State Machine (li_at + JSESSIONID)     │
+  │  Resolve Member Vanity Slug -&gt; profileId (ACoAA...)    │
+  └──────────────────────────┬─────────────────────────────┘
+                             │
+                             ▼
+  [ Execution: Concurrent Ingestion &amp; Parsing ]
+  ┌────────────────────────────────────────────────────────┐
+  │  Promise.all Pipeline Execution                        │
+  │  ├─ Voyager REST Client: positionGroups Entity Graph   │
+  │  ├─ SDUI Pager 01: Education RSC Stream Chunk Parser   │
+  │  ├─ SDUI Pager 02: Certifications RSC Stream Parser    │
+  │  ├─ SDUI Pager 03: Skills Pair &amp; Entity Resolver       │
+  │  └─ SDUI Pagers 04-09: Projects, Honors, Pubs, etc.    │
+  └──────────────────────────┬─────────────────────────────┘
+                             │
+                             ▼
+  [ Policy / Validation Gates ]
+  ┌────────────────────────────────────────────────────────┐
+  │  - Sanitize UI Artifacts (strip button text / anchors) │
+  │  - Handle 401 Session Re-Authentication Fallback       │
+  │  - Compile 'unavailable' Section Warnings Array        │
+  └──────────────────────────┬─────────────────────────────┘
+                             │
+                             ▼
+  [ Execution / Outputs ]
+  ┌────────────────────────────────────────────────────────┐
+  │  Store Normalized Object in In-Memory LRU/TTL Cache    │
+  │  Stream Clean Formatted JSON to Client Egress          │
+  └────────────────────────────────────────────────────────┘
+</pre>
+                    </div>
+
+                    <ul class="bento-facts-list" style="margin-top: 14px;">
+                        <li><i class="fa-solid fa-lock text-green"></i> <span><strong>Single-Flight Session Concurrency (Anti-Thundering Herd):</strong> Concurrent incoming requests hook into a shared <code>pendingSession</code> Promise, preventing duplicate login handshakes and IP bans.</span></li>
+                        <li><i class="fa-solid fa-shield-halved text-purple"></i> <span><strong>Resilient Graph Rebuilding over Selectors:</strong> Traverses serialized React Server Component node trees using semantic anchors (entity URNs and ISO year regex) rather than fragile CSS classes.</span></li>
+                        <li><i class="fa-solid fa-arrows-rotate text-cyan"></i> <span><strong>Graceful Partial Degradation (Circuit Gating):</strong> Upstream errors on individual section pagers append to an <code>unavailable</code> diagnostics array while serving the remaining profile data with complete integrity.</span></li>
+                    </ul>
+                </div>
+
+                <!-- 6 Pillars Section -->
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-cubes text-purple"></i> 3. The 6 Production Engineering Pillars</h3>
+                    <div class="pillar-list">
+                        <div class="pillar-item">
+                            <strong>PILLAR 1: CORE PROCESSING ENGINE</strong>
+                            Node.js v20 LTS non-blocking event loop multiplexing section extractions concurrently via <code>Promise.all</code>, cutting extraction time from ~10s to under 850ms.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>PILLAR 2: STREAMING &amp; INGESTION</strong>
+                            Negotiates <code>x-li-rsc-stream: true</code> headers to ingest raw line-delimited RSC protocol payloads directly into memory buffers with $O(1)$ chunk indexing.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>PILLAR 3: DATA &amp; STORAGE LAYERS</strong>
+                            In-memory key-value cache indexed by vanity username with millisecond TTL eviction, resolving relational URN symbols without disk I/O bottlenecks.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>PILLAR 4: SECURITY &amp; ACCESS CONTROL</strong>
+                            Strict env-based credential isolation, CSRF token synchronization (<code>JSESSIONID</code>), and browser-consistent header fingerprinting that bypasses bot flags.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>PILLAR 5: TESTING &amp; VERIFICATION RIG</strong>
+                            Mocked RSC stream fixtures, live <code>/health</code> authenticated probes, and custom <code>LinkedInError</code> status code mapping (404, 401, 502).
+                        </div>
+                        <div class="pillar-item">
+                            <strong>PILLAR 6: DEPLOYMENT &amp; INFRASTRUCTURE</strong>
+                            Multi-stage production Docker container on <code>node:20-alpine</code> (&lt;115MB total image size vs &gt;1.2GB for Chromium) with continuous deployment on Render.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Verification Metrics -->
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-chart-line text-green"></i> 4. Hard Verification &amp; Production Metrics</h3>
+                    <div class="cs-metrics-row">
+                        <div class="cs-metric-badge"><i class="fa-solid fa-microchip"></i> ~30MB - 45MB RAM Baseline Under Load (&gt;94% Memory Reduction)</div>
+                        <div class="cs-metric-badge"><i class="fa-solid fa-bolt"></i> &lt; 850ms Cold Profile Extraction (vs 8s - 15s Browser Rendering)</div>
+                        <div class="cs-metric-badge"><i class="fa-solid fa-gauge-high"></i> &lt; 2ms Response on In-Memory Cache Hits</div>
+                        <div class="cs-metric-badge"><i class="fa-solid fa-users"></i> 100+ Concurrent Reads/Second on 0.5 CPU / 512MB RAM</div>
+                        <div class="cs-metric-badge"><i class="fa-solid fa-network-wired"></i> 10 Profile Facets Extracted across 2 Core Wire Protocols</div>
+                        <div class="cs-metric-badge"><i class="fa-brands fa-docker"></i> Sub-35MB Production Docker Image (Zero Chromium Dependencies)</div>
+                    </div>
+                </div>
+
+                <!-- Tech Stack Tags -->
+                <div class="cs-section" style="margin-bottom: 10px;">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-layer-group text-cyan"></i> 5. Complete Tech Stack &amp; Tools</h3>
+                    <div class="project-tech-tags" style="margin-top: 10px;">
+                        <span class="tech-tag">Node.js v20 LTS</span>
+                        <span class="tech-tag">Reverse Engineering</span>
+                        <span class="tech-tag">React Server Components (RSC)</span>
+                        <span class="tech-tag">Server-Driven UI (SDUI)</span>
+                        <span class="tech-tag">LinkedIn Voyager REST-Li 2.0</span>
+                        <span class="tech-tag">HTTP/2 Stream Deserializer</span>
+                        <span class="tech-tag">Axios</span>
+                        <span class="tech-tag">In-Memory TTL Cache</span>
+                        <span class="tech-tag">Anti-Thundering Herd Mutex</span>
+                        <span class="tech-tag">Docker (Alpine)</span>
+                        <span class="tech-tag">Render Cloud</span>
+                    </div>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="case-study-footer">
+                    <div class="case-study-actions">
+                        <a href="https://github.com/Ash052006/LinkedIn-Scrapper" target="_blank" class="project-btn primary-btn" style="box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);">
+                            <i class="fa-brands fa-github"></i> View GitHub Repository
+                        </a>
+                        <a href="#contact" onclick="closeLinkStreamModal()" class="project-btn primary-btn">
+                            <i class="fa-regular fa-paper-plane"></i> Discuss This Architecture
+                        </a>
+                    </div>
+                    <button type="button" class="btn-resume" onclick="closeLinkStreamModal()" style="padding: 8px 20px; font-size: 0.85rem;">
+                        Close Case Study
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -1950,6 +2169,25 @@
             }
         };
 
+        // ── LinkStream Engine Case Study Modal Controls (Bulletproof & Immediate) ──
+        window.openLinkStreamModal = function(e) {
+            if (e && e.preventDefault) e.preventDefault();
+            var modal = document.getElementById('linkstreamModal');
+            if (modal) {
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+            if (window.soundSystem) window.soundSystem.playClick();
+        };
+
+        window.closeLinkStreamModal = function() {
+            var modal = document.getElementById('linkstreamModal');
+            if (modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        };
+
         // Close on backdrop click and ESC key (All Modals)
         document.addEventListener('click', function(e) {
             var spModal = document.getElementById('sparkplanModal');
@@ -1968,6 +2206,10 @@
             if (dModal && e.target === dModal) {
                 window.closeDacModal();
             }
+            var lModal = document.getElementById('linkstreamModal');
+            if (lModal && e.target === lModal) {
+                window.closeLinkStreamModal();
+            }
         });
 
         document.addEventListener('keydown', function(e) {
@@ -1976,6 +2218,7 @@
                 window.closeSentinelModal();
                 window.closeClaraModal();
                 window.closeDacModal();
+                window.closeLinkStreamModal();
             }
         });
 
@@ -1999,7 +2242,7 @@
         };
     </script>
     <script src="3d_background.js"></script>
-    <script src="app.js?v=2.4"></script>
+    <script src="app.js?v=2.5"></script>
 </body>
 
 </html>

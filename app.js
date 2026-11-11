@@ -501,6 +501,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // ── LinkStream Engine Case Study Modal ──
+    const linkstreamModal = document.getElementById('linkstreamModal');
+    const openLinkStreamModalBtn = document.getElementById('openLinkStreamModalBtn');
+    const closeLinkStreamBtn = document.getElementById('closeLinkStreamBtn');
+
+    if (linkstreamModal) {
+        if (openLinkStreamModalBtn) {
+            openLinkStreamModalBtn.addEventListener('click', (e) => {
+                if (window.openLinkStreamModal) window.openLinkStreamModal(e);
+            });
+        }
+        if (closeLinkStreamBtn) {
+            closeLinkStreamBtn.addEventListener('click', () => {
+                if (window.closeLinkStreamModal) window.closeLinkStreamModal();
+            });
+        }
+    }
+
     // ── Interactive Skill Filtering ──
     const filterBtns = document.querySelectorAll('.filter-btn');
     const skillCards = document.querySelectorAll('.skill-card[data-category]');
