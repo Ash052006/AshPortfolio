@@ -519,8 +519,142 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // ── Signal (MCP) Case Study Modal ──
+    const signalModal = document.getElementById('signalModal');
+    const openSignalModalBtn = document.getElementById('openSignalModalBtn');
+    const closeSignalBtn = document.getElementById('closeSignalBtn');
+
+    if (signalModal) {
+        if (openSignalModalBtn) {
+            openSignalModalBtn.addEventListener('click', (e) => {
+                if (window.openSignalModal) window.openSignalModal(e);
+            });
+        }
+        if (closeSignalBtn) {
+            closeSignalBtn.addEventListener('click', () => {
+                if (window.closeSignalModal) window.closeSignalModal();
+            });
+        }
+    }
+
+    // ── SmartShop-AI Case Study Modal ──
+    const smartshopModal = document.getElementById('smartshopModal');
+    const openSmartShopModalBtn = document.getElementById('openSmartShopModalBtn');
+    const closeSmartShopBtn = document.getElementById('closeSmartShopBtn');
+
+    if (smartshopModal) {
+        if (openSmartShopModalBtn) {
+            openSmartShopModalBtn.addEventListener('click', (e) => {
+                if (window.openSmartShopModal) window.openSmartShopModal(e);
+            });
+        }
+        if (closeSmartShopBtn) {
+            closeSmartShopBtn.addEventListener('click', () => {
+                if (window.closeSmartShopModal) window.closeSmartShopModal();
+            });
+        }
+    }
+
+    // ── LiveKit Voice AI Case Study Modal ──
+    const voiceAiModal = document.getElementById('voiceAiModal');
+    const openVoiceAiModalBtn = document.getElementById('openVoiceAiModalBtn');
+    const closeVoiceAiBtn = document.getElementById('closeVoiceAiBtn');
+
+    if (voiceAiModal) {
+        if (openVoiceAiModalBtn) {
+            openVoiceAiModalBtn.addEventListener('click', (e) => {
+                if (window.openVoiceAiModal) window.openVoiceAiModal(e);
+            });
+        }
+        if (closeVoiceAiBtn) {
+            closeVoiceAiBtn.addEventListener('click', () => {
+                if (window.closeVoiceAiModal) window.closeVoiceAiModal();
+            });
+        }
+    }
+
+    // ── Staff Training LMS Case Study Modal ──
+    const lmsModal = document.getElementById('lmsModal');
+    const openLmsModalBtn = document.getElementById('openLmsModalBtn');
+    const closeLmsBtn = document.getElementById('closeLmsBtn');
+
+    if (lmsModal) {
+        if (openLmsModalBtn) {
+            openLmsModalBtn.addEventListener('click', (e) => {
+                if (window.openLmsModal) window.openLmsModal(e);
+            });
+        }
+        if (closeLmsBtn) {
+            closeLmsBtn.addEventListener('click', () => {
+                if (window.closeLmsModal) window.closeLmsModal();
+            });
+        }
+    }
+
+    // ── Interactive Project Filtering ──
+    const projectFilterBtns = document.querySelectorAll('#projectFilters .filter-btn');
+    const projectCards = document.querySelectorAll('.experience-card[data-category]');
+    let isProjectFiltering = false;
+
+    if (projectFilterBtns.length && projectCards.length) {
+        projectFilterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (isProjectFiltering) return;
+                isProjectFiltering = true;
+
+                if (window.soundSystem) window.soundSystem.playClick();
+
+                projectFilterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+                const visibleCards = Array.from(projectCards).filter(card => !card.classList.contains('d-none'));
+
+                visibleCards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('filter-hide');
+                    }, index * 25);
+                });
+
+                const hideDuration = visibleCards.length * 25 + 250;
+
+                setTimeout(() => {
+                    let cardsToShow = [];
+                    projectCards.forEach(card => {
+                        const categories = (card.dataset.category || '').split(/\s+/);
+                        const shouldShow = filter === 'all' || categories.includes(filter);
+
+                        card.style.transition = 'none';
+
+                        if (shouldShow) {
+                            card.classList.remove('d-none');
+                            card.classList.add('filter-hide');
+                            cardsToShow.push(card);
+                        } else {
+                            card.classList.add('d-none');
+                        }
+                    });
+
+                    projectCards.forEach(card => void card.offsetWidth);
+                    projectCards.forEach(card => card.style.transition = '');
+
+                    cardsToShow.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.remove('filter-hide');
+                        }, index * 40);
+                    });
+
+                    setTimeout(() => {
+                        isProjectFiltering = false;
+                        if (window.ScrollTrigger) ScrollTrigger.refresh();
+                    }, cardsToShow.length * 40 + 200);
+                }, hideDuration);
+            });
+        });
+    }
+
     // ── Interactive Skill Filtering ──
-    const filterBtns = document.querySelectorAll('.filter-btn');
+    const filterBtns = document.querySelectorAll('#skillFilters .filter-btn');
     const skillCards = document.querySelectorAll('.skill-card[data-category]');
     let isFiltering = false;
 

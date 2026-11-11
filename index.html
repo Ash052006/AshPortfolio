@@ -290,11 +290,19 @@
 
     <section class="projects-section" id="projects">
         <h2 class="section-title">Featured Projects - <span class="purple-text">What I've Built!</span></h2>
-        <br>
+
+        <!-- Interactive Project Category Filters -->
+        <div class="project-filters" id="projectFilters">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="agents-mcp">Autonomous Agents &amp; MCP</button>
+            <button class="filter-btn" data-filter="fullstack-ai">Full-Stack AI &amp; Products</button>
+            <button class="filter-btn" data-filter="systems-security">Systems &amp; Security</button>
+        </div>
+
         <div class="experience-grid">
 
             <!-- Flagship Project: SparkPlan -->
-            <div class="experience-card flagship-card">
+            <div class="experience-card flagship-card" data-category="agents-mcp systems-security">
                 <div class="flagship-badge"><i class="fa-solid fa-crown"></i> FLAGSHIP AI SYSTEMS PROJECT</div>
                 <div class="experience-date">AI SYSTEMS &amp; HARDWARE-SOFTWARE CO-DESIGN</div>
                 <div class="project-tag" style="display: inline-block; width: max-content;">Autonomous Hardware Compiler</div>
@@ -333,8 +341,40 @@
                 </div>
             </div>
 
+            <!-- Project: Signal (MCP Monorepo) -->
+            <div class="experience-card" data-category="agents-mcp systems-security">
+                <div class="experience-date">DETERMINISTIC CI &amp; MCP PROTOCOL</div>
+                <div class="project-tag" style="display: inline-block; width: max-content;">Deterministic Agent Tooling</div>
+                <h3>Signal (MCP)</h3>
+                <div class="project-tagline" style="font-size: 0.84rem;">// Deterministic MCP Tooling Isolating Flakes, Order-Dependence &amp; Test Tampering for Coding Agents</div>
+                <p>
+                    Deterministic Model Context Protocol (MCP) tooling for autonomous coding agents (e.g. Alan). Automatically converts failed CI runs into actionable evidence by reproducing failures across isolated sandbox executions, isolating true software defects from flaky tests and suite execution order-dependence, detecting test tampering, and issuing a definitive merge verdict — with zero LLM hallucinations and zero external server network requests.
+                </p>
+                <div class="project-specs-bar">
+                    <div class="spec-item"><span class="spec-label">ARCHITECTURE</span><span class="spec-val">Monorepo MCP Server</span></div>
+                    <div class="spec-item"><span class="spec-label">VERDICT ENGINE</span><span class="spec-val">100% Deterministic (Zero LLM)</span></div>
+                    <div class="spec-item"><span class="spec-label">DETECTION</span><span class="spec-val">Flakes, Order-Dep &amp; Tampering</span></div>
+                    <div class="spec-item"><span class="spec-label">TEST SUITE</span><span class="spec-val">40 Vitest + 6 Seeded Flakes</span></div>
+                </div>
+                <div class="project-tech-tags">
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Node.js 20+</span>
+                    <span class="tech-tag">MCP Protocol</span>
+                    <span class="tech-tag">Vitest</span>
+                    <span class="tech-tag">Monorepo</span>
+                    <span class="tech-tag">Deterministic Testing</span>
+                    <span class="tech-tag">CI/CD Automation</span>
+                    <span class="tech-tag">JSON-RPC</span>
+                </div>
+                <div class="project-links-wrapper">
+                    <a href="https://github.com/Ash052006" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openSignalModalBtn" onclick="openSignalModal()"><i class="fa-solid fa-microchip"></i> System Architecture &amp; Case Study</button>
+                    <a href="#contact" class="project-btn primary-btn"><i class="fa-regular fa-paper-plane"></i> Discuss</a>
+                </div>
+            </div>
+
             <!-- Project 1: CLARA -->
-            <div class="experience-card">
+            <div class="experience-card" data-category="agents-mcp">
                 <div class="experience-date">AUTONOMOUS AGENT &amp; MCP PROTOCOL</div>
                 <div class="project-tag" style="display: inline-block; width: max-content;">Autonomous Assistant</div>
                 <h3>CLARA</h3>
@@ -369,8 +409,41 @@
                 </div>
             </div>
 
+            <!-- Project: SmartShop-AI -->
+            <div class="experience-card" data-category="fullstack-ai">
+                <div class="experience-date">FULL-STACK AI &amp; BEHAVIORAL ANALYTICS</div>
+                <div class="project-tag" style="display: inline-block; width: max-content;">Shopper Intent &amp; Recs</div>
+                <h3>SmartShop-AI</h3>
+                <div class="project-tagline" style="font-size: 0.84rem;">// Event-Driven Shopper Intent Classification &amp; Real-Time Generative Recommendation Engine</div>
+                <p>
+                    Full-stack event-driven commerce intelligence platform that ingests real-time shopper telemetry streams (dwell velocity, micro-clicks, cart state mutations). Features a decoupled rule and confidence scoring engine coupled with Gemini generative models to classify shopper personas (Cart Abandoner, Discount Seeker, Comparer, Loyal Customer) and synthesize high-conversion personalized recommendations with an interactive in-browser simulation studio.
+                </p>
+                <div class="project-specs-bar">
+                    <div class="spec-item"><span class="spec-label">ARCHITECTURE</span><span class="spec-val">FastAPI + React 18 + Vite</span></div>
+                    <div class="spec-item"><span class="spec-label">INFERENCE</span><span class="spec-val">Deterministic Rules + LLM</span></div>
+                    <div class="spec-item"><span class="spec-label">SIMULATOR</span><span class="spec-val">In-Browser Event Studio</span></div>
+                    <div class="spec-item"><span class="spec-label">STREAMING</span><span class="spec-val">Sub-100ms Event Evaluation</span></div>
+                </div>
+                <div class="project-tech-tags">
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">Python 3.11</span>
+                    <span class="tech-tag">React 18</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Tailwind CSS</span>
+                    <span class="tech-tag">Rule Engine</span>
+                    <span class="tech-tag">Confidence Scoring</span>
+                    <span class="tech-tag">Gemini API</span>
+                    <span class="tech-tag">Vite</span>
+                </div>
+                <div class="project-links-wrapper">
+                    <a href="https://github.com/Ash052006/SmartShop-AI" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openSmartShopModalBtn" onclick="openSmartShopModal()"><i class="fa-solid fa-cart-shopping"></i> System Architecture &amp; Case Study</button>
+                    <a href="#contact" class="project-btn primary-btn"><i class="fa-regular fa-paper-plane"></i> Discuss</a>
+                </div>
+            </div>
+
             <!-- Project 2: SentinelAI -->
-            <div class="experience-card">
+            <div class="experience-card" data-category="systems-security agents-mcp">
                 <div class="experience-date">AUTONOMOUS CYBER DEFENCE</div>
                 <div class="project-tag" style="display: inline-block; width: max-content;">Multi-Agent SOC Platform</div>
                 <h3>SentinelAI</h3>
@@ -404,8 +477,40 @@
                 </div>
             </div>
 
+            <!-- Project: LiveKit Voice AI -->
+            <div class="experience-card" data-category="fullstack-ai agents-mcp">
+                <div class="experience-date">REAL-TIME MULTIMODAL AI &amp; WEBRTC</div>
+                <div class="project-tag" style="display: inline-block; width: max-content;">Conversational Voice Agent</div>
+                <h3>LiveKit Voice AI</h3>
+                <div class="project-tagline" style="font-size: 0.84rem;">// Sub-Second WebRTC Speech-to-Speech Assistant with Semantic Turn-Detection &amp; Background Noise Cancellation</div>
+                <p>
+                    Production real-time conversational voice assistant built on the LiveKit WebRTC distributed network. Features streaming audio ingestion via AssemblyAI, semantic turn-detection via Silero VAD and multilingual acoustic models, sub-second natural language reasoning with OpenAI GPT-4.1-mini, and expressive neural speech synthesis via Cartesia Sonic, reinforced with real-time deep learning Background Voice Cancellation (BVC).
+                </p>
+                <div class="project-specs-bar">
+                    <div class="spec-item"><span class="spec-label">NETWORK</span><span class="spec-val">LiveKit WebRTC Distributed Room</span></div>
+                    <div class="spec-item"><span class="spec-label">SPEECH PIPELINE</span><span class="spec-val">AssemblyAI + GPT-4.1 + Cartesia</span></div>
+                    <div class="spec-item"><span class="spec-label">ACOUSTICS</span><span class="spec-val">Silero VAD + Multilingual Turn</span></div>
+                    <div class="spec-item"><span class="spec-label">AUDIO SHIELD</span><span class="spec-val">Background Voice Cancellation</span></div>
+                </div>
+                <div class="project-tech-tags">
+                    <span class="tech-tag">Python 3.11</span>
+                    <span class="tech-tag">LiveKit Agents SDK</span>
+                    <span class="tech-tag">WebRTC</span>
+                    <span class="tech-tag">Cartesia Sonic</span>
+                    <span class="tech-tag">AssemblyAI</span>
+                    <span class="tech-tag">Silero VAD</span>
+                    <span class="tech-tag">OpenAI GPT-4.1</span>
+                    <span class="tech-tag">AsyncIO</span>
+                </div>
+                <div class="project-links-wrapper">
+                    <a href="https://github.com/Ash052006" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openVoiceAiModalBtn" onclick="openVoiceAiModal()"><i class="fa-solid fa-headset"></i> System Architecture &amp; Case Study</button>
+                    <a href="#contact" class="project-btn primary-btn"><i class="fa-regular fa-paper-plane"></i> Discuss</a>
+                </div>
+            </div>
+
             <!-- Project 3: Detection-as-Code -->
-            <div class="experience-card">
+            <div class="experience-card" data-category="systems-security">
                 <div class="experience-date">GITOPS &amp; NEURAL SOC DETECTION</div>
                 <div class="project-tag" style="display: inline-block; width: max-content;">Declarative Detection Engine</div>
                 <h3>Detection-as-Code</h3>
@@ -439,8 +544,40 @@
                 </div>
             </div>
 
+            <!-- Project: Staff Training LMS -->
+            <div class="experience-card" data-category="fullstack-ai systems-security">
+                <div class="experience-date">ENTERPRISE BACKEND &amp; GITHUB ACTIONS CI/CD</div>
+                <div class="project-tag" style="display: inline-block; width: max-content;">Staff Training LMS Platform</div>
+                <h3>Legal Services LMS</h3>
+                <div class="project-tagline" style="font-size: 0.84rem;">// Production Django 5 &amp; DRF Platform with Granular RBAC, Automated CI/CD &amp; Docker Containerization</div>
+                <p>
+                    Full-featured enterprise learning management and onboarding platform designed for a legal services organization. Implements clean domain service architecture (`services.py`), custom user authentication with strict role-based access control (Learners, Instructors, Admins), ordered modular lessons with progress gating, dynamic assessment quizzes, RESTful DRF APIs, and containerized Docker deployments validated by an automated GitHub Actions CI pipeline.
+                </p>
+                <div class="project-specs-bar">
+                    <div class="spec-item"><span class="spec-label">BACKEND</span><span class="spec-val">Django 5.x + DRF + Python 3.12</span></div>
+                    <div class="spec-item"><span class="spec-label">ARCHITECTURE</span><span class="spec-val">Clean Service-Layer Pattern</span></div>
+                    <div class="spec-item"><span class="spec-label">CI/CD PIPELINE</span><span class="spec-val">GitHub Actions Automated Suite</span></div>
+                    <div class="spec-item"><span class="spec-label">DEPLOYMENT</span><span class="spec-val">Docker Multi-Stage Entrypoints</span></div>
+                </div>
+                <div class="project-tech-tags">
+                    <span class="tech-tag">Python 3.12</span>
+                    <span class="tech-tag">Django 5.x</span>
+                    <span class="tech-tag">Django REST Framework</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">GitHub Actions</span>
+                    <span class="tech-tag">PostgreSQL/SQLite</span>
+                    <span class="tech-tag">Ruff</span>
+                    <span class="tech-tag">RBAC</span>
+                </div>
+                <div class="project-links-wrapper">
+                    <a href="https://github.com/Ash052006/LearningMangementSystem" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openLmsModalBtn" onclick="openLmsModal()"><i class="fa-solid fa-graduation-cap"></i> System Architecture &amp; Case Study</button>
+                    <a href="#contact" class="project-btn primary-btn"><i class="fa-regular fa-paper-plane"></i> Discuss</a>
+                </div>
+            </div>
+
             <!-- Project 4: LinkStream Engine -->
-            <div class="experience-card">
+            <div class="experience-card" data-category="systems-security">
                 <div class="experience-date">REVERSE ENGINEERING &amp; SDUI COMPILERS</div>
                 <div class="project-tag" style="display: inline-block; width: max-content;">Zero-Browser Extraction API</div>
                 <h3>LinkStream Engine</h3>
@@ -2076,6 +2213,397 @@
         </div>
     </div>
 
+    <!-- Signal (MCP) Case Study Modal -->
+    <div id="signalModal" class="case-study-modal" role="dialog" aria-modal="true" aria-labelledby="signalModalTitle">
+        <div class="case-study-dialog">
+            <div class="case-study-header">
+                <div class="case-study-title-wrap">
+                    <div class="flagship-badge"><i class="fa-solid fa-microchip"></i> CASE STUDY // DETERMINISTIC MCP &amp; CI HARNESS</div>
+                    <h2 id="signalModalTitle">Signal — <span class="purple-text">Deterministic CI Defect &amp; Flake Isolation</span></h2>
+                    <div class="case-study-tagline">// Deterministic MCP tooling converting failed CI runs into reproducible test evidence with zero LLM hallucinations.</div>
+                </div>
+                <button type="button" class="case-study-close-btn" id="closeSignalBtn" onclick="closeSignalModal()" aria-label="Close Case Study">&times;</button>
+            </div>
+
+            <div class="case-study-body">
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <span class="kpi-val text-green">100% Deterministic</span>
+                        <span class="kpi-label">Zero LLM Calls / Zero Server Network</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val text-purple">Flake Isolation</span>
+                        <span class="kpi-label">Multi-Pass Seed Reproducibility</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val text-cyan">Anti-Tampering</span>
+                        <span class="kpi-label">Detects Weakened/Deleted Assertions</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val" style="color: #fbbf24;">Monorepo MCP</span>
+                        <span class="kpi-label">@signal/mcp + @signal/core + site</span>
+                    </div>
+                </div>
+
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-triangle-exclamation text-purple"></i> 1. Executive Summary &amp; The Problem Solved</h3>
+                    <p>
+                        When autonomous AI coding agents (such as Alan) work against CI pipelines, a red build usually arrives as a single uninformative string: <code>"tests failed"</code>. In response, coding agents frequently fall into three failure modes:
+                    </p>
+                    <ul class="bento-facts-list" style="margin: 10px 0 16px;">
+                        <li><i class="fa-solid fa-arrows-rotate text-purple"></i> <span><strong>Blind Retries &amp; Guesswork:</strong> Retrying builds hoping non-deterministic tests will pass without diagnosing the underlying bug.</span></li>
+                        <li><i class="fa-solid fa-bug-slash text-cyan"></i> <span><strong>Conflating Flakes with Real Regressions:</strong> Treating order-dependent test suite pollution or timing flakes as legitimate code defects.</span></li>
+                        <li><i class="fa-solid fa-shield-halved text-green"></i> <span><strong>Test Assertion Tampering:</strong> Modifying or deleting unit tests simply to get a green CI badge rather than solving the regression.</span></li>
+                    </ul>
+                    <p>
+                        <strong>Signal</strong> eliminates these pitfalls by serving as deterministic Model Context Protocol (MCP) tooling. It reproduces failures under strict test isolation, isolates flakes from real regressions, catches assertion tampering, and returns a reliable, evidence-backed merge verdict.
+                    </p>
+                </div>
+
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-diagram-project text-cyan"></i> 2. Monorepo Architecture &amp; Protocol Integration</h3>
+                    <div class="arch-diagram-box">
+                        <pre>
+┌─────────────────────────┐          ┌──────────────────────────────────────────────┐
+│  AI Coding Agent (Alan) │  JSON-RPC│  Signal MCP Server (@signal/mcp)             │
+│                         │─────────▶│  ├─ Tool: run_test_isolation                │
+│  Decision: Merge/Block  │          │  ├─ Tool: flake_detector                     │
+└─────────────────────────┘          │  └─ Tool: verify_tampering                   │
+                                     └──────────────────────┬───────────────────────┘
+                                                            ▼
+                                     ┌──────────────────────────────────────────────┐
+                                     │  Signal Core Engine (@signal/core)           │
+                                     │  ├─ Sandboxed Vitest Runner                  │
+                                     │  ├─ Multi-Pass Seed Matrix Execution         │
+                                     │  ├─ Suite Order Reordering Matrix            │
+                                     │  └─ Git AST Diff &amp; Assertion Invariant Check │
+                                     └──────────────────────┬───────────────────────┘
+                                                            ▼
+                                     ┌──────────────────────────────────────────────┐
+                                     │  Deterministic Verdict: MERGE / QUARANTINE   │
+                                     └──────────────────────────────────────────────┘</pre>
+                    </div>
+                </div>
+
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-gears text-purple"></i> 3. Key Capabilities &amp; Verification Matrix</h3>
+                    <ul class="bento-facts-list">
+                        <li><i class="fa-solid fa-check text-green"></i> <span><strong>Deterministic Reproducibility:</strong> Runs candidate tests across randomized and reversed order matrices to detect hidden global state leakage.</span></li>
+                        <li><i class="fa-solid fa-check text-green"></i> <span><strong>Tampering Defense:</strong> AST-level parser monitors changes to test files to ensure assertions were not disabled, commented out, or weakened.</span></li>
+                        <li><i class="fa-solid fa-check text-green"></i> <span><strong>Interactive Trace Replay:</strong> Comes with a lightweight dashboard (loaded from <code>site/data/demo-trace.json</code>) displaying Tier 1 precision/recall and Tier 2 per-run harness test evidence.</span></li>
+                    </ul>
+                </div>
+
+                <div class="case-study-footer" style="margin-top: 30px; text-align: center;">
+                    <button type="button" class="btn-resume" onclick="closeSignalModal()" style="padding: 8px 20px; font-size: 0.85rem;">
+                        Close Case Study
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- SmartShop-AI Case Study Modal -->
+    <div id="smartshopModal" class="case-study-modal" role="dialog" aria-modal="true" aria-labelledby="smartshopModalTitle">
+        <div class="case-study-dialog">
+            <div class="case-study-header">
+                <div class="case-study-title-wrap">
+                    <div class="flagship-badge"><i class="fa-solid fa-cart-shopping"></i> CASE STUDY // BEHAVIORAL ANALYTICS &amp; RECOMMENDATIONS</div>
+                    <h2 id="smartshopModalTitle">SmartShop-AI — <span class="purple-text">Shopper Intent &amp; Generative Recs</span></h2>
+                    <div class="case-study-tagline">// Full-stack event streaming platform pairing rule/confidence engines with LLM synthesis for e-commerce conversion.</div>
+                </div>
+                <button type="button" class="case-study-close-btn" id="closeSmartShopBtn" onclick="closeSmartShopModal()" aria-label="Close Case Study">&times;</button>
+            </div>
+
+            <div class="case-study-body">
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <span class="kpi-val text-green">&lt; 100 ms</span>
+                        <span class="kpi-label">Real-Time Ingestion &amp; Triage</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val text-purple">5 Personas</span>
+                        <span class="kpi-label">Abandoner, Hunter, Comparer, Loyal, Browser</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val text-cyan">Conflict Resolver</span>
+                        <span class="kpi-label">Deterministic Confidence Engine</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val" style="color: #fbbf24;">Full-Stack Studio</span>
+                        <span class="kpi-label">React 18 + Vite + FastAPI</span>
+                    </div>
+                </div>
+
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-triangle-exclamation text-purple"></i> 1. Executive Summary &amp; The Problem Solved</h3>
+                    <p>
+                        Modern e-commerce stores lose over 70% of potential buyers to cart abandonment and indecision. Standard recommendation engines rely either on cold offline collaborative filtering or sluggish, expensive LLM calls per click:
+                    </p>
+                    <ul class="bento-facts-list" style="margin: 10px 0 16px;">
+                        <li><i class="fa-solid fa-clock text-purple"></i> <span><strong>Offline Delays:</strong> Traditional batch ML updates recommendations hours after the user has already bounced.</span></li>
+                        <li><i class="fa-solid fa-dollar-sign text-cyan"></i> <span><strong>Pure LLM Cost &amp; Latency:</strong> Firing an LLM prompt on every scroll or hover adds 1-2 second latency and massive API bills.</span></li>
+                        <li><i class="fa-solid fa-scale-unbalanced text-green"></i> <span><strong>Intent Ambiguity:</strong> Shoppers switch rapidly between browsing, price comparing, and discount hunting in a single session.</span></li>
+                    </ul>
+                    <p>
+                        <strong>SmartShop-AI</strong> solves this with a two-tier hybrid architecture: microsecond rule and confidence engines continuously score incoming events, triggering targeted LLM generation only when high-value conversion inflection points occur.
+                    </p>
+                </div>
+
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-diagram-project text-cyan"></i> 2. Hybrid Pipeline Architecture</h3>
+                    <div class="arch-diagram-box">
+                        <pre>
+┌─────────────────────────────────┐
+│  React 18 Event Studio / Client │  (Dwell Time, Fast Clicks, Cart Delta, Tab Blur)
+└────────────────┬────────────────┘
+                 │ HTTP POST /api/classify
+                 ▼
+┌─────────────────────────────────┐
+│  FastAPI Event Validator        │  (Pydantic Schema Validation &amp; Timestamp Sync)
+└────────────────┬────────────────┘
+                 │
+                 ▼
+┌─────────────────────────────────┐
+│  Deterministic Rule Engine      │  (Evaluates cart_abandoner, discount_seeker, comparer rules)
+└────────────────┬────────────────┘
+                 │
+                 ▼
+┌─────────────────────────────────┐
+│  Confidence &amp; Conflict Resolver │  (Weight matrices &amp; probabilistic intent vector)
+└────────────────┬────────────────┘
+                 │
+                 ▼
+┌─────────────────────────────────┐
+│  Gemini AI Synthesis Service    │  (Generates dynamic conversion copy &amp; tailored bundle offers)
+└────────────────┬────────────────┘
+                 │
+                 ▼
+┌─────────────────────────────────┐
+│  Interactive Visual Dashboard   │  (Timeline, InsightCard, ClassificationCard, EvidenceCard)
+└─────────────────────────────────┘</pre>
+                    </div>
+                </div>
+
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-gears text-purple"></i> 3. Key Capabilities &amp; Verification Matrix</h3>
+                    <ul class="bento-facts-list">
+                        <li><i class="fa-solid fa-check text-green"></i> <span><strong>In-Browser Simulator:</strong> Built-in visual event studio allowing engineers and merchandisers to simulate edge cases (rapid price jumps, checkout hesitation) live.</span></li>
+                        <li><i class="fa-solid fa-check text-green"></i> <span><strong>Explainable AI Evidence:</strong> Every classification displays exact evidence triggers that activated the persona score.</span></li>
+                        <li><i class="fa-solid fa-check text-green"></i> <span><strong>Zero Latency Overhead:</strong> Lightweight FastAPI async handlers maintain sub-100ms response times for all classification queries.</span></li>
+                    </ul>
+                </div>
+
+                <div class="case-study-footer" style="margin-top: 30px; text-align: center;">
+                    <button type="button" class="btn-resume" onclick="closeSmartShopModal()" style="padding: 8px 20px; font-size: 0.85rem;">
+                        Close Case Study
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- LiveKit Voice AI Case Study Modal -->
+    <div id="voiceAiModal" class="case-study-modal" role="dialog" aria-modal="true" aria-labelledby="voiceAiModalTitle">
+        <div class="case-study-dialog">
+            <div class="case-study-header">
+                <div class="case-study-title-wrap">
+                    <div class="flagship-badge"><i class="fa-solid fa-headset"></i> CASE STUDY // REAL-TIME MULTIMODAL AI &amp; WEBRTC</div>
+                    <h2 id="voiceAiModalTitle">LiveKit Voice AI — <span class="purple-text">Sub-Second Multimodal Conversational Agent</span></h2>
+                    <div class="case-study-tagline">// Real-time speech-to-speech assistant orchestrating WebRTC rooms, streaming STT, semantic turn-detection &amp; neural TTS.</div>
+                </div>
+                <button type="button" class="case-study-close-btn" id="closeVoiceAiBtn" onclick="closeVoiceAiModal()" aria-label="Close Case Study">&times;</button>
+            </div>
+
+            <div class="case-study-body">
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <span class="kpi-val text-green">&lt; 650 ms</span>
+                        <span class="kpi-label">Full Speech-to-Speech Latency</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val text-purple">Semantic Turn</span>
+                        <span class="kpi-label">Silero VAD + Multilingual Turn Model</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val text-cyan">BVC Deep Shield</span>
+                        <span class="kpi-label">Background Voice Cancellation</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val" style="color: #fbbf24;">WebRTC Core</span>
+                        <span class="kpi-label">LiveKit Distributed SFU Transport</span>
+                    </div>
+                </div>
+
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-triangle-exclamation text-purple"></i> 1. Executive Summary &amp; The Problem Solved</h3>
+                    <p>
+                        Building natural voice assistants is notoriously difficult due to latency accumulation and turn-taking failures:
+                    </p>
+                    <ul class="bento-facts-list" style="margin: 10px 0 16px;">
+                        <li><i class="fa-solid fa-hourglass-half text-purple"></i> <span><strong>Pipeline Latency Cascades:</strong> Chaining separate HTTP STT, LLM, and TTS calls commonly results in 2.5 to 4-second delays, destroying conversational cadence.</span></li>
+                        <li><i class="fa-solid fa-comment-slash text-cyan"></i> <span><strong>Awkward Interruptions:</strong> Primitive energy-based silence detection cuts speakers off while pausing to think.</span></li>
+                        <li><i class="fa-solid fa-volume-xmark text-green"></i> <span><strong>Background Acoustic Bleed:</strong> Room noise and nearby voices trigger false responses and degrade transcription accuracy.</span></li>
+                    </ul>
+                    <p>
+                        <strong>LiveKit Voice AI</strong> resolves these bottlenecks with persistent WebRTC audio streaming, semantic turn boundary detection, streaming chunked inference, and real-time deep learning background voice suppression.
+                    </p>
+                </div>
+
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-diagram-project text-cyan"></i> 2. Sub-Second Streaming Architecture</h3>
+                    <div class="arch-diagram-box">
+                        <pre>
+┌────────────────────────────────────────────────────────┐
+│  WebRTC Audio Track (Caller Input via LiveKit Room)   │
+└───────────────────────────┬────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│  Acoustic Pre-Processing &amp; Shield:                     │
+│  ├─ Background Voice Cancellation (BVC Deep Filter)    │
+│  ├─ Silero Voice Activity Detector (Sub-30ms VAD)      │
+│  └─ MultilingualModel Semantic Turn Detection          │
+└───────────────────────────┬────────────────────────────┘
+                            │ Chunked PCM Audio
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│  AssemblyAI Universal Streaming (Live Transcription)   │
+└───────────────────────────┬────────────────────────────┘
+                            │ Token Stream
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│  OpenAI GPT-4.1-mini (Concise Low-Latency Reasoning)   │
+└───────────────────────────┬────────────────────────────┘
+                            │ Text Chunks
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│  Cartesia Sonic Neural TTS (Sub-100ms Audio Synthesis) │
+└───────────────────────────┬────────────────────────────┘
+                            │ Opus Audio Stream
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│  LiveKit SFU Downlink ──▶ Caller Speaker (Total &lt;650ms)│
+└────────────────────────────────────────────────────────┘</pre>
+                    </div>
+                </div>
+
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-gears text-purple"></i> 3. Key Capabilities &amp; Verification Matrix</h3>
+                    <ul class="bento-facts-list">
+                        <li><i class="fa-solid fa-check text-green"></i> <span><strong>Natural Turn-Taking:</strong> Uses contextual linguistic embeddings to differentiate natural mid-thought pauses from true end-of-turn statements.</span></li>
+                        <li><i class="fa-solid fa-check text-green"></i> <span><strong>Concise Prompting Policy:</strong> Strictly bounds response lengths to keep dialog interactive and punchy.</span></li>
+                        <li><i class="fa-solid fa-check text-green"></i> <span><strong>Production Resiliency:</strong> Asynchronous session management ensures audio buffers never block Python event loops during network jitter.</span></li>
+                    </ul>
+                </div>
+
+                <div class="case-study-footer" style="margin-top: 30px; text-align: center;">
+                    <button type="button" class="btn-resume" onclick="closeVoiceAiModal()" style="padding: 8px 20px; font-size: 0.85rem;">
+                        Close Case Study
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Staff Training LMS Case Study Modal -->
+    <div id="lmsModal" class="case-study-modal" role="dialog" aria-modal="true" aria-labelledby="lmsModalTitle">
+        <div class="case-study-dialog">
+            <div class="case-study-header">
+                <div class="case-study-title-wrap">
+                    <div class="flagship-badge"><i class="fa-solid fa-graduation-cap"></i> CASE STUDY // ENTERPRISE BACKEND &amp; CI/CD</div>
+                    <h2 id="lmsModalTitle">Legal Services LMS — <span class="purple-text">Staff Training &amp; Assessment Platform</span></h2>
+                    <div class="case-study-tagline">// Production Django 5 &amp; DRF platform featuring clean service-layer design, granular RBAC, and automated CI/CD.</div>
+                </div>
+                <button type="button" class="case-study-close-btn" id="closeLmsBtn" onclick="closeLmsModal()" aria-label="Close Case Study">&times;</button>
+            </div>
+
+            <div class="case-study-body">
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <span class="kpi-val text-green">Django 5.x</span>
+                        <span class="kpi-label">Python 3.12 + DRF REST APIs</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val text-purple">100% CI Green</span>
+                        <span class="kpi-label">GitHub Actions Automated Workflows</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val text-cyan">Granular RBAC</span>
+                        <span class="kpi-label">Learners, Instructors, Admins</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val" style="color: #fbbf24;">Service Layer</span>
+                        <span class="kpi-label">Decoupled Business Logic (Zero Fat Models)</span>
+                    </div>
+                </div>
+
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-triangle-exclamation text-purple"></i> 1. Executive Summary &amp; The Problem Solved</h3>
+                    <p>
+                        Internal staff compliance and professional legal training require strict integrity, auditability, and progress gating:
+                    </p>
+                    <ul class="bento-facts-list" style="margin: 10px 0 16px;">
+                        <li><i class="fa-solid fa-lock text-purple"></i> <span><strong>Regulatory &amp; Gating Mandates:</strong> Lessons and quizzes must enforce strict progression rules—learners cannot skip prerequisites or self-certify.</span></li>
+                        <li><i class="fa-solid fa-code-merge text-cyan"></i> <span><strong>Spaghetti Business Logic in Views:</strong> Fast-growing enterprise apps often degenerate when business logic pollutes Django views and templates.</span></li>
+                        <li><i class="fa-solid fa-server text-green"></i> <span><strong>Deployment Drift:</strong> Uncontainerized setups lead to runtime mismatches between developer laptops and production servers.</span></li>
+                    </ul>
+                    <p>
+                        <strong>Legal Services LMS</strong> establishes a robust production standard: strict separation of concerns via <code>services.py</code>, customizable role-based permissions, automated GitHub Actions testing on every commit, and reproducible Docker container builds.
+                    </p>
+                </div>
+
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-diagram-project text-cyan"></i> 2. Domain &amp; Service Layer Architecture</h3>
+                    <div class="arch-diagram-box">
+                        <pre>
+┌────────────────────────────────────────────────────────┐
+│  Presentation Layer: Django Server-Side Templates + DRF│
+└───────────────────────────┬────────────────────────────┘
+                            │ Calls Services
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│  Service Layer (services.py Modules):                  │
+│  ├─ CourseEnrolmentService (Prereq &amp; Progression)     │
+│  ├─ LessonCompletionService (Order Validation)         │
+│  ├─ QuizGradingService (Score Calculation &amp; Locking)   │
+│  └─ CertificateService (Audit Log Generation)          │
+└───────────────────────────┬────────────────────────────┘
+                            │ Mutates Domain Models
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│  Data Layer: Custom User, Course, Lesson, Quiz Models  │
+└───────────────────────────┬────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│  DevOps &amp; Quality: Docker + Ruff + GitHub Actions CI  │
+└────────────────────────────────────────────────────────┘</pre>
+                    </div>
+                </div>
+
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-gears text-purple"></i> 3. Key Capabilities &amp; Verification Matrix</h3>
+                    <ul class="bento-facts-list">
+                        <li><i class="fa-solid fa-check text-green"></i> <span><strong>Role-Based Access Control:</strong> Fine-grained permissions isolating instructor course authoring from learner assessments.</span></li>
+                        <li><i class="fa-solid fa-check text-green"></i> <span><strong>Continuous Integration:</strong> Automated test matrices verifying unit tests, DRF serialization, and Ruff code standards on each PR.</span></li>
+                        <li><i class="fa-solid fa-check text-green"></i> <span><strong>Production Dockerization:</strong> Includes multi-stage Docker build and entrypoint script for immediate deployment.</span></li>
+                    </ul>
+                </div>
+
+                <div class="case-study-footer" style="margin-top: 30px; text-align: center;">
+                    <button type="button" class="btn-resume" onclick="closeLmsModal()" style="padding: 8px 20px; font-size: 0.85rem;">
+                        Close Case Study
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -2188,6 +2716,78 @@
             }
         };
 
+        // ── Signal (MCP) Case Study Modal Controls ──
+        window.openSignalModal = function(e) {
+            if (e && e.preventDefault) e.preventDefault();
+            var modal = document.getElementById('signalModal');
+            if (modal) {
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+            if (window.soundSystem) window.soundSystem.playClick();
+        };
+        window.closeSignalModal = function() {
+            var modal = document.getElementById('signalModal');
+            if (modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        };
+
+        // ── SmartShop-AI Case Study Modal Controls ──
+        window.openSmartShopModal = function(e) {
+            if (e && e.preventDefault) e.preventDefault();
+            var modal = document.getElementById('smartshopModal');
+            if (modal) {
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+            if (window.soundSystem) window.soundSystem.playClick();
+        };
+        window.closeSmartShopModal = function() {
+            var modal = document.getElementById('smartshopModal');
+            if (modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        };
+
+        // ── LiveKit Voice AI Case Study Modal Controls ──
+        window.openVoiceAiModal = function(e) {
+            if (e && e.preventDefault) e.preventDefault();
+            var modal = document.getElementById('voiceAiModal');
+            if (modal) {
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+            if (window.soundSystem) window.soundSystem.playClick();
+        };
+        window.closeVoiceAiModal = function() {
+            var modal = document.getElementById('voiceAiModal');
+            if (modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        };
+
+        // ── Staff Training LMS Case Study Modal Controls ──
+        window.openLmsModal = function(e) {
+            if (e && e.preventDefault) e.preventDefault();
+            var modal = document.getElementById('lmsModal');
+            if (modal) {
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+            if (window.soundSystem) window.soundSystem.playClick();
+        };
+        window.closeLmsModal = function() {
+            var modal = document.getElementById('lmsModal');
+            if (modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        };
+
         // Close on backdrop click and ESC key (All Modals)
         document.addEventListener('click', function(e) {
             var spModal = document.getElementById('sparkplanModal');
@@ -2210,6 +2810,22 @@
             if (lModal && e.target === lModal) {
                 window.closeLinkStreamModal();
             }
+            var sigModal = document.getElementById('signalModal');
+            if (sigModal && e.target === sigModal) {
+                window.closeSignalModal();
+            }
+            var shopModal = document.getElementById('smartshopModal');
+            if (shopModal && e.target === shopModal) {
+                window.closeSmartShopModal();
+            }
+            var vModal = document.getElementById('voiceAiModal');
+            if (vModal && e.target === vModal) {
+                window.closeVoiceAiModal();
+            }
+            var lmModal = document.getElementById('lmsModal');
+            if (lmModal && e.target === lmModal) {
+                window.closeLmsModal();
+            }
         });
 
         document.addEventListener('keydown', function(e) {
@@ -2219,6 +2835,10 @@
                 window.closeClaraModal();
                 window.closeDacModal();
                 window.closeLinkStreamModal();
+                window.closeSignalModal();
+                window.closeSmartShopModal();
+                window.closeVoiceAiModal();
+                window.closeLmsModal();
             }
         });
 

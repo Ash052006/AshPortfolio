@@ -620,7 +620,8 @@ body {
 }
 
 /* ── Skill Filter Bar ── */
-.skill-filters {
+.skill-filters,
+.project-filters {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -677,13 +678,15 @@ body {
     overflow: hidden;
 }
 
-.skill-card.filter-hide {
+.skill-card.filter-hide,
+.experience-card.filter-hide {
     opacity: 0 !important;
-    transform: scale(0.8) !important;
+    transform: scale(0.92) translateY(12px) !important;
     pointer-events: none;
 }
 
-.skill-card.d-none {
+.skill-card.d-none,
+.experience-card.d-none {
     display: none !important;
 }
 
