@@ -20,7 +20,7 @@
     <meta name="twitter:image" content="portfolio_assets/DevHQ_Favicon.jpg">
 
     <link rel="icon" href="portfolio_assets/DevHQ_Favicon.jpg" type="image/jpeg">
-    <link rel="stylesheet" href="style.css?v=2.2">
+    <link rel="stylesheet" href="style.css?v=2.3">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -132,8 +132,8 @@
         <div class="floating-metric metric-bottom-left">
             <span class="metric-icon-wrap icon-green"><i class="fa-solid fa-shield-halved"></i></span>
             <div class="metric-info">
-                <span class="metric-val">900+ Tests</span>
-                <span class="metric-sub">SOC Pipeline Verification</span>
+                <span class="metric-val">5,000+ Tests</span>
+                <span class="metric-sub">SOC Cyber Defense Verified</span>
             </div>
         </div>
 
@@ -364,30 +364,35 @@
 
             <!-- Project 2: SentinelAI -->
             <div class="experience-card">
-                <div class="experience-date">CYBER DEFENCE</div>
+                <div class="experience-date">AUTONOMOUS CYBER DEFENCE</div>
                 <div class="project-tag" style="display: inline-block; width: max-content;">Multi-Agent SOC Platform</div>
                 <h3>SentinelAI</h3>
+                <div class="project-tagline" style="font-size: 0.84rem;">// Event-Driven Autonomous SOC &amp; 5-Agent Adversarial Debate Engine</div>
                 <p>
-                    Autonomous Multi-Agent Cyber Defence Platform. Event-driven SOC pipeline (Kafka pub/sub) spanning Log Collection, Enrichment, Threat Intelligence, Detection, MITRE ATT&CK mapping, and Policy-gated Response. Includes Provider-registry Threat Intelligence Agent integrating VirusTotal, AbuseIPDB, OTX, plus JWT auth & RBAC backed by 900+ passing tests and LangGraph human-in-the-loop policy gating.
+                    Enterprise Autonomous SOC platform streaming security telemetry through an Apache Kafka event spine. Features dual-engine detection (Sigma &amp; YARA), an in-memory knowledge graph, a 5-agent LLM debate engine (Detection, Threat Intel, Behavioral, Devil's Advocate, Incident Commander), and strict Human-in-the-Loop (HITL) digital twin policy governance with zero unchecked mutations.
                 </p>
                 <div class="project-specs-bar">
-                    <div class="spec-item"><span class="spec-label">PIPELINE</span><span class="spec-val">Kafka Event-Driven</span></div>
-                    <div class="spec-item"><span class="spec-label">INTEL AGENT</span><span class="spec-val">VirusTotal + AbuseIPDB</span></div>
-                    <div class="spec-item"><span class="spec-label">DATA LAYER</span><span class="spec-val">Polyglot DB Layer</span></div>
-                    <div class="spec-item"><span class="spec-label">TEST SUITE</span><span class="spec-val">900+ Tests Passed</span></div>
+                    <div class="spec-item"><span class="spec-label">ARCHITECTURE</span><span class="spec-val">Event-Driven Multi-Agent</span></div>
+                    <div class="spec-item"><span class="spec-label">INGESTION</span><span class="spec-val">Kafka KRaft + Async Worker</span></div>
+                    <div class="spec-item"><span class="spec-label">TEST SUITE</span><span class="spec-val">5,052+ Passing Tests</span></div>
+                    <div class="spec-item"><span class="spec-label">DETECTION</span><span class="spec-val">53 Rules (Sigma + YARA)</span></div>
                 </div>
                 <div class="project-tech-tags">
-                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Python 3.12</span>
                     <span class="tech-tag">FastAPI</span>
-                    <span class="tech-tag">LangGraph</span>
-                    <span class="tech-tag">Kafka</span>
-                    <span class="tech-tag">PostgreSQL</span>
-                    <span class="tech-tag">OpenSearch</span>
+                    <span class="tech-tag">Apache Kafka (KRaft)</span>
+                    <span class="tech-tag">pySigma</span>
+                    <span class="tech-tag">YARA</span>
+                    <span class="tech-tag">PostgreSQL 17</span>
                     <span class="tech-tag">Qdrant</span>
-                    <span class="tech-tag">Neo4j</span>
+                    <span class="tech-tag">React 19</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">Pytest 9.1</span>
                 </div>
                 <div class="project-links-wrapper">
-                    <a href="https://github.com/Ash052006" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <a href="https://github.com/Ash052006/Sentinel-AI" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openSentinelModalBtn" onclick="openSentinelModal()"><i class="fa-solid fa-shield-halved"></i> System Architecture &amp; Case Study</button>
                     <a href="#contact" class="project-btn primary-btn"><i class="fa-regular fa-paper-plane"></i> Discuss</a>
                 </div>
             </div>
@@ -395,7 +400,7 @@
             <!-- Project 3: Detection-as-Code -->
             <div class="experience-card">
                 <div class="experience-date">SECURITY LAB</div>
-                <div class="project-tag" style="display: inline-block; width: max-content;">Threat Detection & RAG</div>
+                <div class="project-tag" style="display: inline-block; width: max-content;">Threat Detection &amp; RAG</div>
                 <h3>Detection-as-Code Lab</h3>
                 <p>
                     High-speed detection engine containing 13 YAML rules (242 patterns) covering 8+ attack classes with 100% detection, zero false positives, under 200ms. Features a RAG pipeline (Sentence Transformers + ChromaDB) auto-generating plain-English alert explanations with interactive CLI explain/chat modes powered by HuggingFace LLMs.
@@ -414,7 +419,7 @@
                     <span class="tech-tag">HuggingFace</span>
                 </div>
                 <div class="project-links-wrapper">
-                    <a href="https://github.com/Ash052006" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <a href="https://github.com/Ash052006/Detection-as-Code" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
                     <a href="#contact" class="project-btn primary-btn"><i class="fa-regular fa-paper-plane"></i> Discuss</a>
                 </div>
             </div>
@@ -425,7 +430,7 @@
                 <div class="project-tag" style="display: inline-block; width: max-content;">Reverse Engineering</div>
                 <h3>LinkedIn API Scraper</h3>
                 <p>
-                    API reverse engineering of LinkedIn's internal request flows. Built a high-throughput Node.js & Python scraper to automate secure data extraction, schema validation, and structured processing pipelines for analytical ingestion.
+                    API reverse engineering of LinkedIn's internal request flows. Built a high-throughput Node.js &amp; Python scraper to automate secure data extraction, schema validation, and structured processing pipelines for analytical ingestion.
                 </p>
                 <div class="project-specs-bar">
                     <div class="spec-item"><span class="spec-label">TECHNIQUE</span><span class="spec-val">Reverse Flow Analysis</span></div>
@@ -440,7 +445,7 @@
                     <span class="tech-tag">Reverse Engineering</span>
                 </div>
                 <div class="project-links-wrapper">
-                    <a href="https://github.com/Ash052006" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <a href="https://github.com/Ash052006/LinkedIn-Scrapper" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
                     <a href="#contact" class="project-btn primary-btn"><i class="fa-regular fa-paper-plane"></i> Discuss</a>
                 </div>
             </div>
@@ -1025,6 +1030,247 @@
         </div>
     </div>
 
+    <!-- SentinelAI Deep-Dive Case Study Modal -->
+    <div id="sentinelModal" class="case-study-modal" role="dialog" aria-modal="true" aria-labelledby="sentinelModalTitle">
+        <div class="case-study-dialog">
+            <div class="case-study-header">
+                <div class="case-study-title-wrap">
+                    <div class="flagship-badge"><i class="fa-solid fa-shield-halved"></i> CASE STUDY // AUTONOMOUS SOC &amp; CYBER DEFENCE</div>
+                    <h2 id="sentinelModalTitle">SentinelAI — <span class="purple-text">Autonomous SOC &amp; Multi-Agent Platform</span></h2>
+                    <div class="case-study-tagline">// Event-driven ingestion (Kafka KRaft), dual-engine detection (Sigma/YARA), and 5-agent LLM debate with HITL governance.</div>
+                </div>
+                <button type="button" class="case-study-close-btn" id="closeSentinelBtn" onclick="closeSentinelModal()" aria-label="Close Case Study">&times;</button>
+            </div>
+
+            <div class="case-study-body">
+                <!-- KPI Badges Grid -->
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <span class="kpi-val text-green">5,052+ Tests</span>
+                        <span class="kpi-label">Passing Backend Tests (&lt; 46s)</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val text-purple">53 Rules</span>
+                        <span class="kpi-label">Sigma + YARA (100% Pass)</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val text-cyan">&lt; 12 ms</span>
+                        <span class="kpi-label">Single-Event Kafka Ingestion</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val" style="color: #fbbf24;">Zero Mutation</span>
+                        <span class="kpi-label">Strict HITL &amp; Digital Twin Guard</span>
+                    </div>
+                </div>
+
+                <!-- Overview Section -->
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-triangle-exclamation text-purple"></i> 1. Executive Summary &amp; The Problem Solved</h3>
+                    <p>
+                        Traditional enterprise SOCs operate under crushing alert fatigue, fragmented data silos, and fragile manual triage:
+                    </p>
+                    <ul class="bento-facts-list" style="margin: 10px 0 16px;">
+                        <li><i class="fa-solid fa-bell-slash text-purple"></i> <span><strong>Alert Drowning &amp; False Positives:</strong> Analysts process thousands of disassociated alerts across disjointed SIEMs/EDRs without cross-event graph correlation.</span></li>
+                        <li><i class="fa-solid fa-triangle-exclamation text-cyan"></i> <span><strong>Hallucination in Security AI:</strong> Naive LLM security implementations hallucinate IOCs, invent non-existent MITRE techniques, and lack verifiable audit trails.</span></li>
+                        <li><i class="fa-solid fa-ban text-green"></i> <span><strong>Runaway Automation Risks:</strong> Legacy SOAR playbooks execute disruptive actions (isolating mission-critical servers) without blast-radius simulation or formal policy gating.</span></li>
+                    </ul>
+                    <p>
+                        <strong>How SentinelAI Solves It:</strong> SentinelAI introduces an <em>evidence-first, layered autonomous defense architecture</em>. It enforces absolute separation between ground-truth observations (<code>provenance = 'observed'</code>) and AI conclusions (<code>provenance = 'ai_generated'</code>), runs a 5-agent adversarial cross-examination debate, and gates all remediations behind cryptographically signed Human-in-the-Loop (HITL) tokens and Digital Twin simulation sandboxes.
+                    </p>
+                    <div class="cs-feature-grid" style="margin-top: 14px;">
+                        <div class="cs-feature-card">
+                            <h4><i class="fa-solid fa-network-wired text-cyan"></i> Incident Knowledge Graph</h4>
+                            <p>Materialized graph linking events, detections, IOCs, affected assets, and lateral attack paths in real time.</p>
+                        </div>
+                        <div class="cs-feature-card">
+                            <h4><i class="fa-solid fa-users-viewfinder text-purple"></i> 5-Agent Corroborated Debate</h4>
+                            <p>Cryptographically anchored analytical dossiers detailing cross-agent cross-examination, evidence citations, and confidence scoring.</p>
+                        </div>
+                        <div class="cs-feature-card">
+                            <h4><i class="fa-solid fa-signature text-green"></i> Governed HITL Approval Trail</h4>
+                            <p>Cryptographic policy tokens requiring explicit CISO/Analyst authorization before executing high-impact playbooks.</p>
+                        </div>
+                        <div class="cs-feature-card">
+                            <h4><i class="fa-solid fa-clone" style="color: #fbbf24;"></i> Digital Twin Blast Simulation</h4>
+                            <p>Pre-simulates proposed SOAR quarantine and remediation actions inside a digital sandbox before touching production.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Architecture Section -->
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-diagram-project text-cyan"></i> 2. System Architecture &amp; Event-Driven Data Flow</h3>
+                    <p>
+                        Security telemetry flows from raw ingestion to policy-gated execution across a 4-tier pipeline bounded by Kafka KRaft message brokers, dual detection engines, and an asynchronous worker cluster:
+                    </p>
+
+                    <div class="arch-diagram-box">
+                        <div class="arch-diagram-title">EVENT STREAMING &amp; MULTI-AGENT DEBATE PIPELINE</div>
+<pre>
++----------------------------------------------------------------------------------------------------+
+|                                    1. INGESTION &amp; BUFFERING                                        |
+|  [ Syslog / Raw Telemetry ] ──▶ [ File Collector / REST API ] ──▶ [ Apache Kafka: security-events ] |
+|                                                                             │                      |
+|                                         (Malformed / Invalid Event) ────────┼──▶ [ DLQ Topic ]     |
++-----------------------------------------------------------------------------┼----------------------+
+                                                                              ▼
++----------------------------------------------------------------------------------------------------+
+|                                 2. PROCESSING ENGINE &amp; PIPELINE                                    |
+|                                                                                                    |
+|                                     [ Kafka Ingestion Worker ]                                     |
+|                                                 │                                                  |
+|                                                 ▼                                                  |
+|                                      [ Normalization Pipeline ]                                    |
+|                                                 │                                                  |
+|                       ┌─────────────────────────┴─────────────────────────┐                        |
+|                       ▼                                                   ▼                        |
+|             [ pySigma AST Engine ]                               [ YARA Pattern Engine ]           |
+|            (28 Governed Log Rules)                             (25 Governed Payload Rules)         |
+|                       └─────────────────────────┬─────────────────────────┘                        |
+|                                                 ▼                                                  |
+|                                      [ Correlation Engine ]                                        |
+|                                                 │                                                  |
+|                         ┌───────────────────────┴───────────────────────┐                          |
+|                         ▼                                               ▼                          |
+|             [ Threat Intel Enrichment ]                    [ Knowledge Graph Builder ]             |
+|          (VirusTotal, AbuseIPDB, OTX)                      (Nodes: Event, Detection, IOC)          |
+|                         └───────────────────────┬───────────────────────┘                          |
+|                                                 ▼                                                  |
+|                                      [ Risk Scoring Engine ]                                       |
+|                                                 │                                                  |
+|                                                 ▼                                                  |
+|                                 [ 5-Agent Debate Engine (LLM) ]                                    |
+|                                 (Facts Citing Read-Only Graph)                                     |
++-------------------------------------------------┼--------------------------------------------------+
+                                                  ▼
++----------------------------------------------------------------------------------------------------+
+|                                   3. POLICY &amp; VALIDATION GATES                                     |
+|                                                                                                    |
+|                                      [ Policy Decision Engine ]                                    |
+|                                                 │                                                  |
+|                         ┌───────────────────────┴───────────────────────┐                          |
+|                         ▼                                               ▼                          |
+|              [ ALLOW: Low Impact ]                         [ REQUIRES_APPROVAL: High Impact ]      |
+|                         │                                               │                          |
+|                         │                                               ▼                          |
+|                         │                                    [ HITL Approval Request ]             |
+|                         │                                (RBAC: CISO / SOC Analyst Grant)          |
+|                         └───────────────────────┬───────────────────────┘                          |
++-------------------------------------------------┼--------------------------------------------------+
+                                                  ▼
++----------------------------------------------------------------------------------------------------+
+|                                    4. EXECUTION &amp; OUTPUTS                                          |
+|                                                                                                    |
+|                                    [ SOAR Orchestrator ]                                           |
+|                                                 │                                                  |
+|                         ┌───────────────────────┴───────────────────────┐                          |
+|                         ▼                                               ▼                          |
+|             [ Digital Twin Sandbox ]                       [ Production Mock Adapter ]             |
+|          (Pre-Simulate Blast Radius)                       (Simulated Network Quarantine)          |
+|                                                                         │                          |
+|                                                                         ▼                          |
+|                                                             [ Immutable Audit Log ]                |
+|                                                               (PostgreSQL 17 Store)                |
++----------------------------------------------------------------------------------------------------+
+</pre>
+                    </div>
+
+                    <ul class="bento-facts-list" style="margin-top: 14px;">
+                        <li><i class="fa-solid fa-shield-halved text-green"></i> <span><strong>Immutable Ground-Truth vs Ephemeral Reasoning:</strong> Relational constraints strictly segregate <code>observed</code> forensic telemetry from <code>ai_generated</code> reasoning. LLMs can never mutate underlying evidence rows.</span></li>
+                        <li><i class="fa-solid fa-check-double text-purple"></i> <span><strong>Zero-Hallucination Fact Derivation:</strong> <code>ClaimKind.FACT</code> is forbidden from being emitted by models. All facts are engine-extracted directly from actual PostgreSQL rows prior to prompt injection.</span></li>
+                        <li><i class="fa-solid fa-lock text-cyan"></i> <span><strong>Fail-Closed Policy Gating:</strong> High-impact remediation defaults to <code>REQUIRES_APPROVAL</code>, requiring a cryptographically signed <code>{approval_id, policy_decision_id, action_type}</code> token.</span></li>
+                    </ul>
+                </div>
+
+                <!-- 6 Pillars Section -->
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-cubes text-purple"></i> 3. The 6 Production Engineering Pillars</h3>
+                    <div class="pillar-list">
+                        <div class="pillar-item">
+                            <strong>PILLAR 1: CORE PROCESSING ENGINE</strong>
+                            Python 3.12 running asynchronous FastAPI on an ASGI Uvicorn pool, driving a 5-agent state machine across 5 deterministic debate rounds with circuit breakers.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>PILLAR 2: STREAMING &amp; INGESTION</strong>
+                            Apache Kafka 3.9 in KRaft consensus mode with <code>security-events</code> and dead-letter queue (<code>DLQ</code>) topics, backed by workers with manual offset commits.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>PILLAR 3: DATA &amp; STORAGE LAYERS</strong>
+                            PostgreSQL 17 managed via SQLAlchemy 2.0 with 72 UTC timezone-aware columns, in-memory lateral movement graph projections, and Qdrant vector semantic search.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>PILLAR 4: SECURITY &amp; ACCESS CONTROL</strong>
+                            OAuth2 password bearer with PyJWT tokens, Argon2id password hashing with BCrypt fallback, granular RBAC (<code>analyst</code>, <code>ciso</code>, <code>admin</code>), and an append-only audit log.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>PILLAR 5: TESTING &amp; VERIFICATION RIG</strong>
+                            5,052+ verified passing tests executed in &lt; 46s via Pytest 9.1 (<code>anyio</code>) and Vitest 5.0, utilizing 100% synthetic attack payloads and hermetic provider mocks.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>PILLAR 6: DEPLOYMENT &amp; INFRASTRUCTURE</strong>
+                            Multi-stage production Docker containers, docker-compose prod/dev topologies, NGINX reverse gateway, and automated database migrations.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Verification Metrics -->
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-chart-line text-green"></i> 4. Hard Verification &amp; Production Metrics</h3>
+                    <div class="cs-metrics-row">
+                        <div class="cs-metric-badge"><i class="fa-solid fa-vial-circle-check"></i> 5,052+ Passing Tests in &lt; 46s (6,344 Total Pytest Suite)</div>
+                        <div class="cs-metric-badge"><i class="fa-solid fa-bolt"></i> &lt; 12ms Single-Event Ingestion (Kafka ➔ Sigma/YARA ➔ DB)</div>
+                        <div class="cs-metric-badge"><i class="fa-solid fa-stopwatch"></i> 20-Stage Full Attack Scenario in &lt; 8.5s</div>
+                        <div class="cs-metric-badge"><i class="fa-solid fa-certificate"></i> 53 Governed Rules (28 Sigma + 25 YARA) at 100% Pass Rate</div>
+                        <div class="cs-metric-badge"><i class="fa-solid fa-bullseye"></i> 0% Hallucinated MITRE ATT&amp;CK Mapping</div>
+                        <div class="cs-metric-badge"><i class="fa-solid fa-cloud"></i> VirusTotal, AbuseIPDB, AlienVault OTX Integrations</div>
+                        <div class="cs-metric-badge"><i class="fa-solid fa-brain"></i> Dual Google Gemini + Groq LLM Fallback Pipeline</div>
+                    </div>
+                </div>
+
+                <!-- Tech Stack Tags -->
+                <div class="cs-section" style="margin-bottom: 10px;">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-layer-group text-cyan"></i> 5. Complete Tech Stack &amp; Tools</h3>
+                    <div class="project-tech-tags" style="margin-top: 10px;">
+                        <span class="tech-tag">Python 3.12</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Pydantic v2</span>
+                        <span class="tech-tag">Apache Kafka 3.9 (KRaft)</span>
+                        <span class="tech-tag">PostgreSQL 17</span>
+                        <span class="tech-tag">SQLAlchemy 2.0</span>
+                        <span class="tech-tag">pySigma 1.5</span>
+                        <span class="tech-tag">YARA (yara-python)</span>
+                        <span class="tech-tag">Qdrant Vector DB</span>
+                        <span class="tech-tag">React 19</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Vite 8</span>
+                        <span class="tech-tag">Tailwind CSS v4</span>
+                        <span class="tech-tag">Argon2id</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Docker Compose</span>
+                        <span class="tech-tag">NGINX</span>
+                        <span class="tech-tag">Pytest 9.1</span>
+                        <span class="tech-tag">Vitest 5.0</span>
+                    </div>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="case-study-footer">
+                    <div class="case-study-actions">
+                        <a href="https://github.com/Ash052006/Sentinel-AI" target="_blank" class="project-btn primary-btn" style="box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);">
+                            <i class="fa-brands fa-github"></i> View GitHub Repository
+                        </a>
+                        <a href="#contact" onclick="closeSentinelModal()" class="project-btn primary-btn">
+                            <i class="fa-regular fa-paper-plane"></i> Discuss This Architecture
+                        </a>
+                    </div>
+                    <button type="button" class="btn-resume" onclick="closeSentinelModal()" style="padding: 8px 20px; font-size: 0.85rem;">
+                        Close Case Study
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -1061,17 +1307,41 @@
             }
         };
 
-        // Close on backdrop click and ESC key
+        // ── SentinelAI Case Study Modal Controls (Bulletproof & Immediate) ──
+        window.openSentinelModal = function(e) {
+            if (e && e.preventDefault) e.preventDefault();
+            var modal = document.getElementById('sentinelModal');
+            if (modal) {
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+            if (window.soundSystem) window.soundSystem.playClick();
+        };
+
+        window.closeSentinelModal = function() {
+            var modal = document.getElementById('sentinelModal');
+            if (modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        };
+
+        // Close on backdrop click and ESC key (All Modals)
         document.addEventListener('click', function(e) {
-            var modal = document.getElementById('sparkplanModal');
-            if (modal && e.target === modal) {
+            var spModal = document.getElementById('sparkplanModal');
+            if (spModal && e.target === spModal) {
                 window.closeSparkPlanModal();
+            }
+            var sModal = document.getElementById('sentinelModal');
+            if (sModal && e.target === sModal) {
+                window.closeSentinelModal();
             }
         });
 
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' || e.key === 'Esc') {
                 window.closeSparkPlanModal();
+                window.closeSentinelModal();
             }
         });
 
@@ -1095,7 +1365,7 @@
         };
     </script>
     <script src="3d_background.js"></script>
-    <script src="app.js?v=2.1"></script>
+    <script src="app.js?v=2.2"></script>
 </body>
 
 </html>

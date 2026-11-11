@@ -447,6 +447,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // ── SentinelAI Case Study Modal ──
+    const sentinelModal = document.getElementById('sentinelModal');
+    const openSentinelModalBtn = document.getElementById('openSentinelModalBtn');
+    const closeSentinelBtn = document.getElementById('closeSentinelBtn');
+
+    if (sentinelModal) {
+        if (openSentinelModalBtn) {
+            openSentinelModalBtn.addEventListener('click', (e) => {
+                if (window.openSentinelModal) window.openSentinelModal(e);
+            });
+        }
+        if (closeSentinelBtn) {
+            closeSentinelBtn.addEventListener('click', () => {
+                if (window.closeSentinelModal) window.closeSentinelModal();
+            });
+        }
+    }
+
     // ── Interactive Skill Filtering ──
     const filterBtns = document.querySelectorAll('.filter-btn');
     const skillCards = document.querySelectorAll('.skill-card[data-category]');
