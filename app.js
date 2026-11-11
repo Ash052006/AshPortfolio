@@ -414,14 +414,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (resumeModal && closeResumeBtn) {
         const openModal = (e) => {
+            const isMobile = window.innerWidth <= 768 || window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+            if (isMobile) {
+                // Mobile browsers block or fail to render multi-page PDFs inside iframes/modals.
+                // Directly open the clean PDF in a dedicated browser tab.
+                window.open('portfolio_assets/Aishwary_Saxena_Resume.pdf', '_blank', 'noopener,noreferrer');
+                if (e) e.preventDefault();
+                return;
+            }
             if (e) e.preventDefault();
             resumeModal.classList.add('show');
             document.body.style.overflow = 'hidden';
+            if (window.soundSystem) window.soundSystem.playClick();
         };
 
         const closeModal = () => {
             resumeModal.classList.remove('show');
             document.body.style.overflow = 'auto';
+            if (window.soundSystem) window.soundSystem.playClick();
         };
 
         if (openResumeBtn) openResumeBtn.addEventListener('click', openModal);

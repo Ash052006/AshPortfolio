@@ -2645,10 +2645,10 @@ body {
     position: relative;
     width: 90%;
     max-width: 1000px;
-    padding: 40px;
+    padding: 30px 35px 35px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     transform: scale(0.8);
     opacity: 0;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);

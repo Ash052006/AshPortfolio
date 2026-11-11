@@ -20,7 +20,7 @@
     <meta name="twitter:image" content="portfolio_assets/DevHQ_Favicon.jpg">
 
     <link rel="icon" href="portfolio_assets/DevHQ_Favicon.jpg" type="image/jpeg">
-    <link rel="stylesheet" href="style.css?v=2.9">
+    <link rel="stylesheet" href="style.css?v=3.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -130,7 +130,7 @@
             </div>
             <div class="hero-buttons">
                 <a href="https://www.linkedin.com/in/aishwary-saxena-2b0258322/" target="_blank" class="btn-resume">Let's Connect</a>
-                <a href="javascript:void(0)" id="openResumeBtn" class="btn-resume">View Resume</a>
+                <a href="portfolio_assets/Aishwary_Saxena_Resume.pdf" target="_blank" rel="noopener noreferrer" id="openResumeBtn" class="btn-resume">View Resume</a>
             </div>
         </div>
     </main>
@@ -309,36 +309,39 @@
                 </div>
             </div>
 
-            <!-- Project: Signal (MCP Monorepo) -->
-            <div class="experience-card" data-category="agents-mcp systems-security">
+            <!-- Project 2: SentinelAI -->
+            <div class="experience-card" data-category="systems-security agents-mcp">
                 <div class="card-meta-row">
-                    <div class="project-tag">Deterministic Agent Tooling</div>
-                    <div class="experience-date">DETERMINISTIC CI &amp; MCP PROTOCOL</div>
+                    <div class="project-tag">Multi-Agent SOC Platform</div>
+                    <div class="experience-date">AUTONOMOUS CYBER DEFENCE</div>
                 </div>
-                <h3>Signal (MCP)</h3>
-                <div class="project-tagline" style="font-size: 0.84rem;">// Deterministic MCP Tooling Isolating Flakes, Order-Dependence &amp; Test Tampering for Coding Agents</div>
+                <h3>SentinelAI</h3>
+                <div class="project-tagline" style="font-size: 0.84rem;">// Event-Driven Autonomous SOC &amp; 5-Agent Adversarial Debate Engine</div>
                 <p>
-                    Deterministic Model Context Protocol (MCP) tooling for autonomous coding agents (e.g. Alan). Automatically converts failed CI runs into actionable evidence by reproducing failures across isolated sandbox executions, isolating true software defects from flaky tests and suite execution order-dependence, detecting test tampering, and issuing a definitive merge verdict — with zero LLM hallucinations and zero external server network requests.
+                    Enterprise Autonomous SOC platform streaming security telemetry through an Apache Kafka event spine. Features dual-engine detection (Sigma &amp; YARA), an in-memory knowledge graph, a 5-agent LLM debate engine (Detection, Threat Intel, Behavioral, Devil's Advocate, Incident Commander), and strict Human-in-the-Loop (HITL) digital twin policy governance with zero unchecked mutations.
                 </p>
                 <div class="project-specs-bar">
-                    <div class="spec-item"><span class="spec-label">ARCHITECTURE</span><span class="spec-val">Monorepo MCP Server</span></div>
-                    <div class="spec-item"><span class="spec-label">VERDICT ENGINE</span><span class="spec-val">100% Deterministic (Zero LLM)</span></div>
-                    <div class="spec-item"><span class="spec-label">DETECTION</span><span class="spec-val">Flakes, Order-Dep &amp; Tampering</span></div>
-                    <div class="spec-item"><span class="spec-label">TEST SUITE</span><span class="spec-val">40 Vitest + 6 Seeded Flakes</span></div>
+                    <div class="spec-item"><span class="spec-label">ARCHITECTURE</span><span class="spec-val">Event-Driven Multi-Agent</span></div>
+                    <div class="spec-item"><span class="spec-label">INGESTION</span><span class="spec-val">Kafka KRaft + Async Worker</span></div>
+                    <div class="spec-item"><span class="spec-label">TEST SUITE</span><span class="spec-val">5,052+ Passing Tests</span></div>
+                    <div class="spec-item"><span class="spec-label">DETECTION</span><span class="spec-val">53 Rules (Sigma + YARA)</span></div>
                 </div>
                 <div class="project-tech-tags">
+                    <span class="tech-tag">Python 3.12</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">Apache Kafka (KRaft)</span>
+                    <span class="tech-tag">pySigma</span>
+                    <span class="tech-tag">YARA</span>
+                    <span class="tech-tag">PostgreSQL 17</span>
+                    <span class="tech-tag">Qdrant</span>
+                    <span class="tech-tag">React 19</span>
                     <span class="tech-tag">TypeScript</span>
-                    <span class="tech-tag">Node.js 20+</span>
-                    <span class="tech-tag">MCP Protocol</span>
-                    <span class="tech-tag">Vitest</span>
-                    <span class="tech-tag">Monorepo</span>
-                    <span class="tech-tag">Deterministic Testing</span>
-                    <span class="tech-tag">CI/CD Automation</span>
-                    <span class="tech-tag">JSON-RPC</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">Pytest 9.1</span>
                 </div>
                 <div class="project-links-wrapper">
-                    <a href="https://github.com/Ash052006" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
-                    <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openSignalModalBtn" onclick="openSignalModal()"><i class="fa-solid fa-microchip"></i> System Architecture &amp; Case Study</button>
+                    <a href="https://github.com/Ash052006/Sentinel-AI" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openSentinelModalBtn" onclick="openSentinelModal()"><i class="fa-solid fa-shield-halved"></i> System Architecture &amp; Case Study</button>
                     <a href="mailto:aishwarysaxena2006@gmail.com" class="project-btn primary-btn"><i class="fa-regular fa-envelope"></i> Discuss</a>
                 </div>
             </div>
@@ -381,74 +384,37 @@
                 </div>
             </div>
 
-            <!-- Project: SmartShop-AI -->
-            <div class="experience-card" data-category="fullstack-ai">
+            <!-- Project 4: LinkStream Engine -->
+            <div class="experience-card" data-category="systems-security">
                 <div class="card-meta-row">
-                    <div class="project-tag">Shopper Intent &amp; Recs</div>
-                    <div class="experience-date">FULL-STACK AI &amp; BEHAVIORAL ANALYTICS</div>
+                    <div class="project-tag">Zero-Browser Extraction API</div>
+                    <div class="experience-date">REVERSE ENGINEERING &amp; SDUI COMPILERS</div>
                 </div>
-                <h3>SmartShop-AI</h3>
-                <div class="project-tagline" style="font-size: 0.84rem;">// Event-Driven Shopper Intent Classification &amp; Real-Time Generative Recommendation Engine</div>
+                <h3>LinkStream Engine</h3>
+                <div class="project-tagline" style="font-size: 0.84rem;">// Headless-Free React Server Components (RSC) Deserializer &amp; SDUI Ingestion Microservice</div>
                 <p>
-                    Full-stack event-driven commerce intelligence platform that ingests real-time shopper telemetry streams (dwell velocity, micro-clicks, cart state mutations). Features a decoupled rule and confidence scoring engine coupled with Gemini generative models to classify shopper personas (Cart Abandoner, Discount Seeker, Comparer, Loyal Customer) and synthesize high-conversion personalized recommendations with an interactive in-browser simulation studio.
+                    Zero-browser, sub-second extraction microservice reverse-engineering LinkedIn's Server-Driven UI (SDUI) and React Server Component (RSC) wire protocols. Replaces resource-heavy headless browsers (Puppeteer/Playwright) with concurrent pure-HTTP stream parsing, cutting memory usage by 95% (30MB RAM footprint) and serving warm cached profiles in under 2ms.
                 </p>
                 <div class="project-specs-bar">
-                    <div class="spec-item"><span class="spec-label">ARCHITECTURE</span><span class="spec-val">FastAPI + React 18 + Vite</span></div>
-                    <div class="spec-item"><span class="spec-label">INFERENCE</span><span class="spec-val">Deterministic Rules + LLM</span></div>
-                    <div class="spec-item"><span class="spec-label">SIMULATOR</span><span class="spec-val">In-Browser Event Studio</span></div>
-                    <div class="spec-item"><span class="spec-label">STREAMING</span><span class="spec-val">Sub-100ms Event Evaluation</span></div>
+                    <div class="spec-item"><span class="spec-label">ARCHITECTURE</span><span class="spec-val">Zero-Browser / RSC Stream</span></div>
+                    <div class="spec-item"><span class="spec-label">INGESTION</span><span class="spec-val">Concurrent Async SDUI</span></div>
+                    <div class="spec-item"><span class="spec-label">FETCH LATENCY</span><span class="spec-val">&lt; 850ms (Cache: &lt;2ms)</span></div>
+                    <div class="spec-item"><span class="spec-label">FOOTPRINT</span><span class="spec-val">~30MB RAM (vs 800MB)</span></div>
                 </div>
                 <div class="project-tech-tags">
-                    <span class="tech-tag">FastAPI</span>
-                    <span class="tech-tag">Python 3.11</span>
-                    <span class="tech-tag">React 18</span>
-                    <span class="tech-tag">TypeScript</span>
-                    <span class="tech-tag">Tailwind CSS</span>
-                    <span class="tech-tag">Rule Engine</span>
-                    <span class="tech-tag">Confidence Scoring</span>
-                    <span class="tech-tag">Gemini API</span>
-                    <span class="tech-tag">Vite</span>
+                    <span class="tech-tag">Node.js v20</span>
+                    <span class="tech-tag">Reverse Engineering</span>
+                    <span class="tech-tag">React Server Components (RSC)</span>
+                    <span class="tech-tag">SDUI Protocol</span>
+                    <span class="tech-tag">Voyager REST-Li 2.0</span>
+                    <span class="tech-tag">HTTP/2 Streams</span>
+                    <span class="tech-tag">In-Memory TTL Cache</span>
+                    <span class="tech-tag">Docker (Alpine 35MB)</span>
+                    <span class="tech-tag">Render Cloud</span>
                 </div>
                 <div class="project-links-wrapper">
-                    <a href="https://github.com/Ash052006/SmartShop-AI" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
-                    <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openSmartShopModalBtn" onclick="openSmartShopModal()"><i class="fa-solid fa-cart-shopping"></i> System Architecture &amp; Case Study</button>
-                    <a href="mailto:aishwarysaxena2006@gmail.com" class="project-btn primary-btn"><i class="fa-regular fa-envelope"></i> Discuss</a>
-                </div>
-            </div>
-
-            <!-- Project 2: SentinelAI -->
-            <div class="experience-card" data-category="systems-security agents-mcp">
-                <div class="card-meta-row">
-                    <div class="project-tag">Multi-Agent SOC Platform</div>
-                    <div class="experience-date">AUTONOMOUS CYBER DEFENCE</div>
-                </div>
-                <h3>SentinelAI</h3>
-                <div class="project-tagline" style="font-size: 0.84rem;">// Event-Driven Autonomous SOC &amp; 5-Agent Adversarial Debate Engine</div>
-                <p>
-                    Enterprise Autonomous SOC platform streaming security telemetry through an Apache Kafka event spine. Features dual-engine detection (Sigma &amp; YARA), an in-memory knowledge graph, a 5-agent LLM debate engine (Detection, Threat Intel, Behavioral, Devil's Advocate, Incident Commander), and strict Human-in-the-Loop (HITL) digital twin policy governance with zero unchecked mutations.
-                </p>
-                <div class="project-specs-bar">
-                    <div class="spec-item"><span class="spec-label">ARCHITECTURE</span><span class="spec-val">Event-Driven Multi-Agent</span></div>
-                    <div class="spec-item"><span class="spec-label">INGESTION</span><span class="spec-val">Kafka KRaft + Async Worker</span></div>
-                    <div class="spec-item"><span class="spec-label">TEST SUITE</span><span class="spec-val">5,052+ Passing Tests</span></div>
-                    <div class="spec-item"><span class="spec-label">DETECTION</span><span class="spec-val">53 Rules (Sigma + YARA)</span></div>
-                </div>
-                <div class="project-tech-tags">
-                    <span class="tech-tag">Python 3.12</span>
-                    <span class="tech-tag">FastAPI</span>
-                    <span class="tech-tag">Apache Kafka (KRaft)</span>
-                    <span class="tech-tag">pySigma</span>
-                    <span class="tech-tag">YARA</span>
-                    <span class="tech-tag">PostgreSQL 17</span>
-                    <span class="tech-tag">Qdrant</span>
-                    <span class="tech-tag">React 19</span>
-                    <span class="tech-tag">TypeScript</span>
-                    <span class="tech-tag">Docker</span>
-                    <span class="tech-tag">Pytest 9.1</span>
-                </div>
-                <div class="project-links-wrapper">
-                    <a href="https://github.com/Ash052006/Sentinel-AI" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
-                    <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openSentinelModalBtn" onclick="openSentinelModal()"><i class="fa-solid fa-shield-halved"></i> System Architecture &amp; Case Study</button>
+                    <a href="https://github.com/Ash052006/LinkedIn-Scrapper" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openLinkStreamModalBtn" onclick="openLinkStreamModal()"><i class="fa-solid fa-bolt-lightning"></i> System Architecture &amp; Case Study</button>
                     <a href="mailto:aishwarysaxena2006@gmail.com" class="project-btn primary-btn"><i class="fa-regular fa-envelope"></i> Discuss</a>
                 </div>
             </div>
@@ -524,6 +490,75 @@
                 </div>
             </div>
 
+            <!-- Project: Signal (MCP Monorepo) -->
+            <div class="experience-card" data-category="agents-mcp systems-security">
+                <div class="card-meta-row">
+                    <div class="project-tag">Deterministic Agent Tooling</div>
+                    <div class="experience-date">DETERMINISTIC CI &amp; MCP PROTOCOL</div>
+                </div>
+                <h3>Signal (MCP)</h3>
+                <div class="project-tagline" style="font-size: 0.84rem;">// Deterministic MCP Tooling Isolating Flakes, Order-Dependence &amp; Test Tampering for Coding Agents</div>
+                <p>
+                    Deterministic Model Context Protocol (MCP) tooling for autonomous coding agents (e.g. Alan). Automatically converts failed CI runs into actionable evidence by reproducing failures across isolated sandbox executions, isolating true software defects from flaky tests and suite execution order-dependence, detecting test tampering, and issuing a definitive merge verdict — with zero LLM hallucinations and zero external server network requests.
+                </p>
+                <div class="project-specs-bar">
+                    <div class="spec-item"><span class="spec-label">ARCHITECTURE</span><span class="spec-val">Monorepo MCP Server</span></div>
+                    <div class="spec-item"><span class="spec-label">VERDICT ENGINE</span><span class="spec-val">100% Deterministic (Zero LLM)</span></div>
+                    <div class="spec-item"><span class="spec-label">DETECTION</span><span class="spec-val">Flakes, Order-Dep &amp; Tampering</span></div>
+                    <div class="spec-item"><span class="spec-label">TEST SUITE</span><span class="spec-val">40 Vitest + 6 Seeded Flakes</span></div>
+                </div>
+                <div class="project-tech-tags">
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Node.js 20+</span>
+                    <span class="tech-tag">MCP Protocol</span>
+                    <span class="tech-tag">Vitest</span>
+                    <span class="tech-tag">Monorepo</span>
+                    <span class="tech-tag">Deterministic Testing</span>
+                    <span class="tech-tag">CI/CD Automation</span>
+                    <span class="tech-tag">JSON-RPC</span>
+                </div>
+                <div class="project-links-wrapper">
+                    <a href="https://github.com/Ash052006" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openSignalModalBtn" onclick="openSignalModal()"><i class="fa-solid fa-microchip"></i> System Architecture &amp; Case Study</button>
+                    <a href="mailto:aishwarysaxena2006@gmail.com" class="project-btn primary-btn"><i class="fa-regular fa-envelope"></i> Discuss</a>
+                </div>
+            </div>
+
+            <!-- Project: SmartShop-AI -->
+            <div class="experience-card" data-category="fullstack-ai">
+                <div class="card-meta-row">
+                    <div class="project-tag">Shopper Intent &amp; Recs</div>
+                    <div class="experience-date">FULL-STACK AI &amp; BEHAVIORAL ANALYTICS</div>
+                </div>
+                <h3>SmartShop-AI</h3>
+                <div class="project-tagline" style="font-size: 0.84rem;">// Event-Driven Shopper Intent Classification &amp; Real-Time Generative Recommendation Engine</div>
+                <p>
+                    Full-stack event-driven commerce intelligence platform that ingests real-time shopper telemetry streams (dwell velocity, micro-clicks, cart state mutations). Features a decoupled rule and confidence scoring engine coupled with Gemini generative models to classify shopper personas (Cart Abandoner, Discount Seeker, Comparer, Loyal Customer) and synthesize high-conversion personalized recommendations with an interactive in-browser simulation studio.
+                </p>
+                <div class="project-specs-bar">
+                    <div class="spec-item"><span class="spec-label">ARCHITECTURE</span><span class="spec-val">FastAPI + React 18 + Vite</span></div>
+                    <div class="spec-item"><span class="spec-label">INFERENCE</span><span class="spec-val">Deterministic Rules + LLM</span></div>
+                    <div class="spec-item"><span class="spec-label">SIMULATOR</span><span class="spec-val">In-Browser Event Studio</span></div>
+                    <div class="spec-item"><span class="spec-label">STREAMING</span><span class="spec-val">Sub-100ms Event Evaluation</span></div>
+                </div>
+                <div class="project-tech-tags">
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">Python 3.11</span>
+                    <span class="tech-tag">React 18</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Tailwind CSS</span>
+                    <span class="tech-tag">Rule Engine</span>
+                    <span class="tech-tag">Confidence Scoring</span>
+                    <span class="tech-tag">Gemini API</span>
+                    <span class="tech-tag">Vite</span>
+                </div>
+                <div class="project-links-wrapper">
+                    <a href="https://github.com/Ash052006/SmartShop-AI" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openSmartShopModalBtn" onclick="openSmartShopModal()"><i class="fa-solid fa-cart-shopping"></i> System Architecture &amp; Case Study</button>
+                    <a href="mailto:aishwarysaxena2006@gmail.com" class="project-btn primary-btn"><i class="fa-regular fa-envelope"></i> Discuss</a>
+                </div>
+            </div>
+
             <!-- Project: Staff Training LMS -->
             <div class="experience-card" data-category="fullstack-ai systems-security">
                 <div class="card-meta-row">
@@ -554,41 +589,6 @@
                 <div class="project-links-wrapper">
                     <a href="https://github.com/Ash052006/LearningMangementSystem" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
                     <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openLmsModalBtn" onclick="openLmsModal()"><i class="fa-solid fa-graduation-cap"></i> System Architecture &amp; Case Study</button>
-                    <a href="mailto:aishwarysaxena2006@gmail.com" class="project-btn primary-btn"><i class="fa-regular fa-envelope"></i> Discuss</a>
-                </div>
-            </div>
-
-            <!-- Project 4: LinkStream Engine -->
-            <div class="experience-card" data-category="systems-security">
-                <div class="card-meta-row">
-                    <div class="project-tag">Zero-Browser Extraction API</div>
-                    <div class="experience-date">REVERSE ENGINEERING &amp; SDUI COMPILERS</div>
-                </div>
-                <h3>LinkStream Engine</h3>
-                <div class="project-tagline" style="font-size: 0.84rem;">// Headless-Free React Server Components (RSC) Deserializer &amp; SDUI Ingestion Microservice</div>
-                <p>
-                    Zero-browser, sub-second extraction microservice reverse-engineering LinkedIn's Server-Driven UI (SDUI) and React Server Component (RSC) wire protocols. Replaces resource-heavy headless browsers (Puppeteer/Playwright) with concurrent pure-HTTP stream parsing, cutting memory usage by 95% (30MB RAM footprint) and serving warm cached profiles in under 2ms.
-                </p>
-                <div class="project-specs-bar">
-                    <div class="spec-item"><span class="spec-label">ARCHITECTURE</span><span class="spec-val">Zero-Browser / RSC Stream</span></div>
-                    <div class="spec-item"><span class="spec-label">INGESTION</span><span class="spec-val">Concurrent Async SDUI</span></div>
-                    <div class="spec-item"><span class="spec-label">FETCH LATENCY</span><span class="spec-val">&lt; 850ms (Cache: &lt;2ms)</span></div>
-                    <div class="spec-item"><span class="spec-label">FOOTPRINT</span><span class="spec-val">~30MB RAM (vs 800MB)</span></div>
-                </div>
-                <div class="project-tech-tags">
-                    <span class="tech-tag">Node.js v20</span>
-                    <span class="tech-tag">Reverse Engineering</span>
-                    <span class="tech-tag">React Server Components (RSC)</span>
-                    <span class="tech-tag">SDUI Protocol</span>
-                    <span class="tech-tag">Voyager REST-Li 2.0</span>
-                    <span class="tech-tag">HTTP/2 Streams</span>
-                    <span class="tech-tag">In-Memory TTL Cache</span>
-                    <span class="tech-tag">Docker (Alpine 35MB)</span>
-                    <span class="tech-tag">Render Cloud</span>
-                </div>
-                <div class="project-links-wrapper">
-                    <a href="https://github.com/Ash052006/LinkedIn-Scrapper" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
-                    <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openLinkStreamModalBtn" onclick="openLinkStreamModal()"><i class="fa-solid fa-bolt-lightning"></i> System Architecture &amp; Case Study</button>
                     <a href="mailto:aishwarysaxena2006@gmail.com" class="project-btn primary-btn"><i class="fa-regular fa-envelope"></i> Discuss</a>
                 </div>
             </div>
@@ -908,18 +908,29 @@
 
     <div id="resumeModal" class="resume-modal">
         <div class="resume-modal-content glass-card">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                <h2 style="margin: 0;">My Resume - <span class="purple-text">Aishwary Saxena</span></h2>
-                <div style="display: flex; align-items: center; gap: 15px;">
-                    <a href="portfolio_assets/Aishwary_Saxena_Resume.pdf" download="Aishwary_Saxena_Resume.pdf" class="btn-resume" style="padding: 6px 16px; font-size: 0.85rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; width: 100%; flex-wrap: wrap; gap: 12px;">
+                <h2 style="margin: 0; font-size: 1.35rem;">My Resume - <span class="purple-text">Aishwary Saxena</span></h2>
+                <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                    <a href="portfolio_assets/Aishwary_Saxena_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-resume" style="padding: 6px 14px; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px;">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in New Tab
+                    </a>
+                    <a href="portfolio_assets/Aishwary_Saxena_Resume.pdf" download="Aishwary_Saxena_Resume.pdf" class="btn-resume" style="padding: 6px 14px; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px;">
                         <i class="fa-solid fa-download"></i> Download PDF
                     </a>
-                    <span class="close-modal" id="closeResumeBtn" style="position: static; font-size: 2rem;">&times;</span>
+                    <span class="close-modal" id="closeResumeBtn" style="position: static; font-size: 2rem; cursor: pointer; line-height: 1;">&times;</span>
                 </div>
             </div>
             <div class="resume-iframe-container">
-                <iframe src="portfolio_assets/Aishwary_Saxena_Resume.pdf" width="100%" height="100%"
-                    style="border: none;"></iframe>
+                <object data="portfolio_assets/Aishwary_Saxena_Resume.pdf#toolbar=1" type="application/pdf" width="100%" height="100%" style="border: none; border-radius: 8px;">
+                    <iframe src="portfolio_assets/Aishwary_Saxena_Resume.pdf" width="100%" height="100%" style="border: none;">
+                        <div style="padding: 50px 20px; text-align: center; color: var(--text-secondary);">
+                            <p style="font-size: 1.05rem; margin-bottom: 16px; color: var(--text-primary);">Unable to preview PDF directly in your browser.</p>
+                            <a href="portfolio_assets/Aishwary_Saxena_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-resume" style="display: inline-flex; align-items: center; gap: 8px;">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Resume in New Tab
+                            </a>
+                        </div>
+                    </iframe>
+                </object>
             </div>
         </div>
     </div>
@@ -2801,7 +2812,7 @@
         };
     </script>
     <script src="3d_background.js"></script>
-    <script src="app.js?v=2.8"></script>
+    <script src="app.js?v=2.9"></script>
 </body>
 
 </html>
