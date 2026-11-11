@@ -148,31 +148,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const cursorDot = document.querySelector('[data-cursor-dot]');
     const cursorOutline = document.querySelector('[data-cursor-outline]');
+    const isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
 
-    window.addEventListener('mousemove', function (e) {
-        const posX = e.clientX;
-        const posY = e.clientY;
+    if (!isTouch && cursorDot && cursorOutline) {
+        window.addEventListener('mousemove', function (e) {
+            const posX = e.clientX;
+            const posY = e.clientY;
 
-        cursorDot.style.left = `${posX}px`;
-        cursorDot.style.top = `${posY}px`;
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
 
-        cursorOutline.animate({
-            left: `${posX}px`,
-            top: `${posY}px`
-        }, { duration: 500, fill: "forwards" });
-    });
-
-    const interactables = document.querySelectorAll('a, button, .floating-metric, .bento-card, .skill-card, .cert-item');
-    interactables.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            cursorOutline.classList.add('hovered');
-            if (window.soundSystem) window.soundSystem.playHover();
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
         });
-        el.addEventListener('mouseleave', () => cursorOutline.classList.remove('hovered'));
-        el.addEventListener('click', () => {
-            if (window.soundSystem) window.soundSystem.playClick();
+
+        const interactables = document.querySelectorAll('a, button, .floating-metric, .bento-card, .skill-card, .cert-item');
+        interactables.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorOutline.classList.add('hovered');
+                if (window.soundSystem) window.soundSystem.playHover();
+            });
+            el.addEventListener('mouseleave', () => cursorOutline.classList.remove('hovered'));
+            el.addEventListener('click', () => {
+                if (window.soundSystem) window.soundSystem.playClick();
+            });
         });
-    });
+    } else {
+        // On touch screens, still trigger audio feedback on tap
+        const interactables = document.querySelectorAll('a, button, .bento-card, .skill-card, .cert-item');
+        interactables.forEach(el => {
+            el.addEventListener('click', () => {
+                if (window.soundSystem) window.soundSystem.playClick();
+            });
+        });
+    }
 
     // ── SFX Navbar Toggle ──
     const sfxToggleBtn = document.getElementById('sfxToggle');
