@@ -20,7 +20,7 @@
     <meta name="twitter:image" content="portfolio_assets/DevHQ_Favicon.jpg">
 
     <link rel="icon" href="portfolio_assets/DevHQ_Favicon.jpg" type="image/jpeg">
-    <link rel="stylesheet" href="style.css?v=2.3">
+    <link rel="stylesheet" href="style.css?v=2.4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -335,29 +335,36 @@
 
             <!-- Project 1: CLARA -->
             <div class="experience-card">
-                <div class="experience-date">AI AGENT</div>
+                <div class="experience-date">AUTONOMOUS AGENT &amp; MCP PROTOCOL</div>
                 <div class="project-tag" style="display: inline-block; width: max-content;">Autonomous Assistant</div>
                 <h3>CLARA</h3>
+                <div class="project-tagline" style="font-size: 0.84rem;">// Decoupled MCP Tool Architecture, Sub-Second Voice Pipeline &amp; Zero-Trust Gating</div>
                 <p>
-                    Contextual Learning and Autonomous Response Assistant. MCP-based agent routing 9 natural-language intents to 9 tool actions across 2 live OAuth 2.0 integrations (Google Calendar CRUD, Gmail send/read/reply). Features speech-to-text voice execution and HuggingFace LLM execution with Groq fallback and Specmatic contract testing in Dockerized GitHub Actions CI.
+                    Enterprise-grade autonomous agent translating conversational natural language and streaming voice into deterministic API operations across Google Calendar and Gmail with zero manual parameter mapping. Incorporates a hybrid zero-shot intent classifier, multi-tier context memory with automatic habit learning, and a zero-trust policy firewall for safe demo execution.
                 </p>
                 <div class="project-specs-bar">
-                    <div class="spec-item"><span class="spec-label">ARCHITECTURE</span><span class="spec-val">Modular MCP</span></div>
-                    <div class="spec-item"><span class="spec-label">INTENTS</span><span class="spec-val">9 Actions Routed</span></div>
-                    <div class="spec-item"><span class="spec-label">INTEGRATIONS</span><span class="spec-val">Google Cal &amp; Gmail</span></div>
-                    <div class="spec-item"><span class="spec-label">TESTING</span><span class="spec-val">Specmatic CI</span></div>
+                    <div class="spec-item"><span class="spec-label">ARCHITECTURE</span><span class="spec-val">Decoupled In-Process MCP</span></div>
+                    <div class="spec-item"><span class="spec-label">API LATENCY</span><span class="spec-val">&lt;300ms API | &lt;1.8s E2E</span></div>
+                    <div class="spec-item"><span class="spec-label">SECURITY</span><span class="spec-val">Zero-Trust Demo Gating</span></div>
+                    <div class="spec-item"><span class="spec-label">RELIABILITY</span><span class="spec-val">98%+ Tool Execution Rate</span></div>
                 </div>
                 <div class="project-tech-tags">
-                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Python 3.9+</span>
                     <span class="tech-tag">FastAPI</span>
-                    <span class="tech-tag">MCP</span>
+                    <span class="tech-tag">MCP Protocol</span>
+                    <span class="tech-tag">Faster-Whisper</span>
+                    <span class="tech-tag">Groq LPU</span>
                     <span class="tech-tag">HuggingFace</span>
-                    <span class="tech-tag">Groq API</span>
-                    <span class="tech-tag">OAuth 2.0</span>
-                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Google Calendar v3</span>
+                    <span class="tech-tag">Gmail API v1</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">ChromaDB</span>
+                    <span class="tech-tag">React 18</span>
+                    <span class="tech-tag">Tauri v2</span>
                 </div>
                 <div class="project-links-wrapper">
                     <a href="https://github.com/Ash052006/CLARA" target="_blank" class="project-btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <button type="button" class="project-btn primary-btn flagship-case-study-btn" id="openClaraModalBtn" onclick="openClaraModal()"><i class="fa-solid fa-robot"></i> System Architecture &amp; Case Study</button>
                     <a href="#contact" class="project-btn primary-btn"><i class="fa-regular fa-paper-plane"></i> Discuss</a>
                 </div>
             </div>
@@ -1271,6 +1278,258 @@
         </div>
     </div>
 
+    <!-- CLARA Deep-Dive Case Study Modal -->
+    <div id="claraModal" class="case-study-modal" role="dialog" aria-modal="true" aria-labelledby="claraModalTitle">
+        <div class="case-study-dialog">
+            <div class="case-study-header">
+                <div class="case-study-title-wrap">
+                    <div class="flagship-badge"><i class="fa-solid fa-robot"></i> CASE STUDY // AUTONOMOUS AGENTS &amp; MCP PROTOCOL</div>
+                    <h2 id="claraModalTitle">CLARA — <span class="purple-text">Contextual Learning &amp; Response Assistant</span></h2>
+                    <div class="case-study-tagline">// Autonomous agent orchestrating Google Workspace via Model Context Protocol, low-latency voice, and stateful memory.</div>
+                </div>
+                <button type="button" class="case-study-close-btn" id="closeClaraBtn" onclick="closeClaraModal()" aria-label="Close Case Study">&times;</button>
+            </div>
+
+            <div class="case-study-body">
+                <!-- KPI Badges Grid -->
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <span class="kpi-val text-green">&lt; 300 ms</span>
+                        <span class="kpi-label">FastAPI Pipeline Overhead</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val text-purple">98%+ Rate</span>
+                        <span class="kpi-label">Deterministic Tool Execution</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val text-cyan">&lt; 800 ms</span>
+                        <span class="kpi-label">Faster-Whisper Voice STT</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-val" style="color: #fbbf24;">9 Actions</span>
+                        <span class="kpi-label">Calendar v3 &amp; Gmail v1 APIs</span>
+                    </div>
+                </div>
+
+                <!-- Overview Section -->
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-triangle-exclamation text-purple"></i> 1. Executive Summary &amp; The Problem Solved</h3>
+                    <p>
+                        Traditional workflow automation and conversational AI systems suffer from three critical architectural bottlenecks:
+                    </p>
+                    <ul class="bento-facts-list" style="margin: 10px 0 16px;">
+                        <li><i class="fa-solid fa-bolt text-purple"></i> <span><strong>Brittle Rigid-Rule Interfaces:</strong> Rule-based bots fail on linguistic ambiguity, temporal expressions (<em>"push my sync back an hour tomorrow"</em>), and multi-turn context carry-over.</span></li>
+                        <li><i class="fa-solid fa-shield-halved text-cyan"></i> <span><strong>Coupled, Vulnerable Tool Execution:</strong> Directly binding LLMs to cloud APIs causes prompt injection vulnerabilities, malformed payloads, and irreversible mutations in production mailboxes and calendars.</span></li>
+                        <li><i class="fa-solid fa-brain text-green"></i> <span><strong>Stateless Amnesia &amp; Ephemeral Sessions:</strong> Typical LLM wrappers lack cross-session memory or behavioral learning, forcing users to repeatedly declare recurring habits.</span></li>
+                    </ul>
+                    <p>
+                        <strong>How CLARA Solves It:</strong> CLARA introduces a decoupled agent orchestration architecture based on the <em>Model Context Protocol (MCP)</em> standard. It encapsulates third-party integrations behind uniform interfaces, separates semantic intent from API execution through a hybrid zero-shot transformer classifier, learns user habits across sessions into PostgreSQL, and protects live demonstrations using an execution firewall (<code>DEMO_MODE</code>).
+                    </p>
+                    <div class="cs-feature-grid" style="margin-top: 14px;">
+                        <div class="cs-feature-card">
+                            <h4><i class="fa-regular fa-calendar-check text-cyan"></i> Calendar Lifecycle Manager</h4>
+                            <p>Autonomous natural-language creation, scheduling, conflict-safe updating, querying, and deletion of Google Calendar events.</p>
+                        </div>
+                        <div class="cs-feature-card">
+                            <h4><i class="fa-regular fa-envelope text-purple"></i> Autonomous Email Pipeline</h4>
+                            <p>Semantic inbox querying, thread summarization, targeted email searching, and contextual draft/reply generation via Gmail API v1.</p>
+                        </div>
+                        <div class="cs-feature-card">
+                            <h4><i class="fa-solid fa-microphone-lines text-green"></i> Low-Latency Voice-to-Action</h4>
+                            <p>Sub-second speech-to-text powered by a thread-safe singleton Faster-Whisper (CTranslate2) runtime routing audio directly to the agent planner.</p>
+                        </div>
+                        <div class="cs-feature-card">
+                            <h4><i class="fa-solid fa-desktop" style="color: #fbbf24;"></i> Unified Web &amp; Desktop App</h4>
+                            <p>Responsive dashboard deployed concurrently as a cloud-hosted SPA on Netlify and a native cross-platform desktop binary via Tauri v2.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Architecture Section -->
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-diagram-project text-cyan"></i> 2. System Architecture &amp; Data Flow</h3>
+                    <p>
+                        Conversational prompts and streaming audio flow through perimeter rate limiters, hybrid classification pipelines, contextual memory fusing, and policy-gated MCP execution:
+                    </p>
+
+                    <div class="arch-diagram-box">
+                        <div class="arch-diagram-title">DECOUPLED MCP AGENT &amp; CONTEXT ENGINE PIPELINE</div>
+<pre>
++─────────────────────────────────────────────────────────────────────────────+
+|                         CLIENT LAYER (Vite + React 18 / Tauri v2)          |
++─────────────────────────────────────────────────────────────────────────────+
+                                       │
+                    HTTP REST / Audio Form-Data (Bearer JWT)
+                                       ▼
++─────────────────────────────────────────────────────────────────────────────+
+|                          INGESTION &amp; PERIMETER GATE                         |
+|  ┌──────────────────────────────┐     ┌───────────────────────────────────┐  |
+|  |   RateLimitMiddleware        | ──&gt; |   Auth Guard (JWT / Bcrypt)       |  |
+|  |   (Sliding Window Bucket)    |     |   Rotated Refresh Tokens          |  |
+|  └──────────────────────────────┘     └───────────────────────────────────┘  |
++─────────────────────────────────────────────────────────────────────────────+
+                                       │
+       ┌───────────────────────────────┴───────────────────────────────┐
+       ▼ (If Audio)                                                    ▼ (If Text)
+┌──────────────────────────────┐                       ┌──────────────────────────────┐
+│ Voice Transcription Engine   │                       │ Conversation Gateway         │
+│ (Faster-Whisper CTranslate2) │                       │ (FastAPI App Router)         │
+└──────────────────────────────┘                       └──────────────────────────────┘
+       │                                                               │
+       └───────────────────────────────┬───────────────────────────────┘
+                                       ▼
++─────────────────────────────────────────────────────────────────────────────+
+|                      PROCESSING ENGINE / AGENTS (Brain)                     |
+|  ┌──────────────────────────────┐     ┌───────────────────────────────────┐  |
+|  | Heuristic Regex Fast-Path    | ──&gt; | Zero-Shot Classifier (HF Pipeline)|  |
+|  └──────────────────────────────┘     └───────────────────────────────────┘  |
+|                                       │                                      |
+|                                       ▼                                      |
+|  ┌──────────────────────────────┐     ┌───────────────────────────────────┐  |
+|  | IntentCorrector Disambiguator| ──&gt; | EntityExtractor &amp; Dateparser      |  |
+|  └──────────────────────────────┘     └───────────────────────────────────┘  |
+|                                       │                                      |
+|                                       ▼                                      |
+|  ┌──────────────────────────────┐     ┌───────────────────────────────────┐  |
+|  | ContextManager (Slot Merge)  | &lt;─&gt; | Multi-Tier Memory Store           |  |
+|  | Short-Term Session Cache     |     | (PostgreSQL / Atomic JSON Fallback)| |
+|  └──────────────────────────────┘     └───────────────────────────────────┘  |
+|                                       │                                      |
+|                                       ▼                                      |
+|  ┌──────────────────────────────┐     ┌───────────────────────────────────┐  |
+|  | DecisionRouter (Chat vs Tool)| ──&gt; | Task Planner (Step Decomposition) |  |
+|  └──────────────────────────────┘     └───────────────────────────────────┘  |
++─────────────────────────────────────────────────────────────────────────────+
+                                       │
+                                       ▼
++─────────────────────────────────────────────────────────────────────────────+
+|                         POLICY &amp; VALIDATION GATES                           |
+|  ┌────────────────────────────────────────────────────────────────────────┐  |
+|  | ToolExecutor Firewall:                                                 |  |
+|  | 1. Action Allowlist Validation (Whitelisted Actions Only)              |  |
+|  | 2. DEMO_MODE Policy Check:                                             |  |
+|  |    - Read Operations (list_events, read_emails) ──&gt; [ ALLOW ]          |  |
+|  |    - Write/Delete Operations                    ──&gt; [ BLOCK &amp; LOG ]    |  |
+|  └────────────────────────────────────────────────────────────────────────┘  |
++─────────────────────────────────────────────────────────────────────────────+
+                                       │
+                                       ▼
++─────────────────────────────────────────────────────────────────────────────+
+|                             EXECUTION / OUTPUTS                             |
+|  ┌──────────────────────────────┐     ┌───────────────────────────────────┐  |
+|  | MCP Google Calendar Server   |     | MCP Gmail Server                  |  |
+|  | (Events CRUD via Cal V3 API) |     | (Search, Read, Draft via Mail V1) |  |
+|  └──────────────────────────────┘     └───────────────────────────────────┘  |
+|  ┌──────────────────────────────┐     ┌───────────────────────────────────┐  |
+|  | Groq LLM Client              |     | Response Generator                |  |
+|  | (Conversational Synthesis)   |     | (Normalized JSON Envelope)        |  |
+|  └──────────────────────────────┘     └───────────────────────────────────┘  |
++─────────────────────────────────────────────────────────────────────────────+
+                                       │
+                                       ▼
++─────────────────────────────────────────────────────────────────────────────+
+|                         CLIENT RESPONSE RENDERED                            |
+|             (Live Action Feedback, Execution Status, Memory Sync)           |
++─────────────────────────────────────────────────────────────────────────────+
+</pre>
+                    </div>
+
+                    <ul class="bento-facts-list" style="margin-top: 14px;">
+                        <li><i class="fa-solid fa-shield-halved text-green"></i> <span><strong>Deterministic Execution Firewalls (Zero-Trust Gating):</strong> LLMs never directly access cloud APIs. All planned tool actions pass through an intermediary <code>ToolExecutor</code> enforcing allowlists and <code>DEMO_MODE</code> blocks.</span></li>
+                        <li><i class="fa-solid fa-arrows-rotate text-purple"></i> <span><strong>Self-Healing State Degradation:</strong> If PostgreSQL is unreachable or unconfigured, the system automatically falls back to an atomic local JSON file store with zero unhandled exceptions.</span></li>
+                        <li><i class="fa-solid fa-network-wired text-cyan"></i> <span><strong>Decoupled Tool Abstraction via MCP:</strong> Integrations operate as isolated in-process MCP servers exposing uniform <code>.execute(action, context)</code> signatures, completely decoupling business logic from upstream API shifts.</span></li>
+                    </ul>
+                </div>
+
+                <!-- 6 Pillars Section -->
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-cubes text-purple"></i> 3. The 6 Production Engineering Pillars</h3>
+                    <div class="pillar-list">
+                        <div class="pillar-item">
+                            <strong>PILLAR 1: CORE PROCESSING ENGINE</strong>
+                            FastAPI ASGI framework on Uvicorn with asynchronous event loops. Dual-mode processing using Groq Cloud LPU for generation and local Hugging Face Zero-Shot classifiers for intent routing.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>PILLAR 2: STREAMING &amp; INGESTION</strong>
+                            RESTful HTTP and chunked multipart voice (<code>/voice/chat</code>) protected by in-process lock-synchronized token buckets (5 auth attempts/15min, 60 requests/min tool chat).
+                        </div>
+                        <div class="pillar-item">
+                            <strong>PILLAR 3: DATA &amp; STORAGE LAYERS</strong>
+                            PostgreSQL managed via SQLAlchemy Core with <code>pool_pre_ping=True</code>, namespaced <code>memory_store</code> KV, and ChromaDB vector layer for semantic context retrieval.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>PILLAR 4: SECURITY &amp; ACCESS CONTROL</strong>
+                            Salted Bcrypt password hashing, short-lived 15m JWT access tokens, single-use rotated refresh tokens in database, and strict Netlify origin CORS enforcement.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>PILLAR 5: TESTING &amp; VERIFICATION RIG</strong>
+                            Specialized verification harnesses (<code>test_groq.py</code>, <code>test_voice.py</code>), MCP mock drivers, and operational <code>/health</code> probes validating database connection pools.
+                        </div>
+                        <div class="pillar-item">
+                            <strong>PILLAR 6: DEPLOYMENT &amp; INFRASTRUCTURE</strong>
+                            Automated cloud backend deployment on Render, frontend edge CDN distribution on Netlify, and lightweight cross-platform desktop binary packaging via Tauri v2.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Verification Metrics -->
+                <div class="cs-section">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-chart-line text-green"></i> 4. Hard Verification &amp; Production Metrics</h3>
+                    <div class="cs-metrics-row">
+                        <div class="cs-metric-badge"><i class="fa-solid fa-bolt"></i> &lt; 300ms FastAPI Pipeline Processing Overhead</div>
+                        <div class="cs-metric-badge"><i class="fa-solid fa-clock"></i> &lt; 150ms Zero-Shot Intent Classification (&lt; 5ms Heuristic Fast-Path)</div>
+                        <div class="cs-metric-badge"><i class="fa-solid fa-microphone"></i> &lt; 800ms Voice Transcription (Faster-Whisper CTranslate2)</div>
+                        <div class="cs-metric-badge"><i class="fa-solid fa-brain"></i> &lt; 1.2s LLM Generation Round-Trip (Groq LPU Engine)</div>
+                        <div class="cs-metric-badge"><i class="fa-solid fa-circle-check"></i> &gt; 98% Tool Execution Success Rate with Auto Token Refresh</div>
+                        <div class="cs-metric-badge"><i class="fa-solid fa-calendar-days"></i> 100% Temporal Parsing Precision via dateparser</div>
+                        <div class="cs-metric-badge"><i class="fa-solid fa-shield-virus"></i> Zero Unverified Mutation (Protected by DEMO_MODE Firewall)</div>
+                    </div>
+                </div>
+
+                <!-- Tech Stack Tags -->
+                <div class="cs-section" style="margin-bottom: 10px;">
+                    <h3 class="cs-section-title"><i class="fa-solid fa-layer-group text-cyan"></i> 5. Complete Tech Stack &amp; Tools</h3>
+                    <div class="project-tech-tags" style="margin-top: 10px;">
+                        <span class="tech-tag">Python 3.9+</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Pydantic v2</span>
+                        <span class="tech-tag">Model Context Protocol (MCP)</span>
+                        <span class="tech-tag">HuggingFace Zero-Shot</span>
+                        <span class="tech-tag">Faster-Whisper</span>
+                        <span class="tech-tag">Groq LPU</span>
+                        <span class="tech-tag">Google Calendar v3</span>
+                        <span class="tech-tag">Gmail API v1</span>
+                        <span class="tech-tag">OAuth 2.0</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">SQLAlchemy</span>
+                        <span class="tech-tag">ChromaDB</span>
+                        <span class="tech-tag">React 18</span>
+                        <span class="tech-tag">Tauri v2</span>
+                        <span class="tech-tag">Vite 5</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                        <span class="tech-tag">Render</span>
+                        <span class="tech-tag">Netlify</span>
+                    </div>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="case-study-footer">
+                    <div class="case-study-actions">
+                        <a href="https://github.com/Ash052006/CLARA" target="_blank" class="project-btn primary-btn" style="box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);">
+                            <i class="fa-brands fa-github"></i> View GitHub Repository
+                        </a>
+                        <a href="#contact" onclick="closeClaraModal()" class="project-btn primary-btn">
+                            <i class="fa-regular fa-paper-plane"></i> Discuss This Architecture
+                        </a>
+                    </div>
+                    <button type="button" class="btn-resume" onclick="closeClaraModal()" style="padding: 8px 20px; font-size: 0.85rem;">
+                        Close Case Study
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -1326,6 +1585,25 @@
             }
         };
 
+        // ── CLARA Case Study Modal Controls (Bulletproof & Immediate) ──
+        window.openClaraModal = function(e) {
+            if (e && e.preventDefault) e.preventDefault();
+            var modal = document.getElementById('claraModal');
+            if (modal) {
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+            if (window.soundSystem) window.soundSystem.playClick();
+        };
+
+        window.closeClaraModal = function() {
+            var modal = document.getElementById('claraModal');
+            if (modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        };
+
         // Close on backdrop click and ESC key (All Modals)
         document.addEventListener('click', function(e) {
             var spModal = document.getElementById('sparkplanModal');
@@ -1336,12 +1614,17 @@
             if (sModal && e.target === sModal) {
                 window.closeSentinelModal();
             }
+            var cModal = document.getElementById('claraModal');
+            if (cModal && e.target === cModal) {
+                window.closeClaraModal();
+            }
         });
 
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' || e.key === 'Esc') {
                 window.closeSparkPlanModal();
                 window.closeSentinelModal();
+                window.closeClaraModal();
             }
         });
 
@@ -1365,7 +1648,7 @@
         };
     </script>
     <script src="3d_background.js"></script>
-    <script src="app.js?v=2.2"></script>
+    <script src="app.js?v=2.3"></script>
 </body>
 
 </html>

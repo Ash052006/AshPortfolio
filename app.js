@@ -465,6 +465,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // ── CLARA Case Study Modal ──
+    const claraModal = document.getElementById('claraModal');
+    const openClaraModalBtn = document.getElementById('openClaraModalBtn');
+    const closeClaraBtn = document.getElementById('closeClaraBtn');
+
+    if (claraModal) {
+        if (openClaraModalBtn) {
+            openClaraModalBtn.addEventListener('click', (e) => {
+                if (window.openClaraModal) window.openClaraModal(e);
+            });
+        }
+        if (closeClaraBtn) {
+            closeClaraBtn.addEventListener('click', () => {
+                if (window.closeClaraModal) window.closeClaraModal();
+            });
+        }
+    }
+
     // ── Interactive Skill Filtering ──
     const filterBtns = document.querySelectorAll('.filter-btn');
     const skillCards = document.querySelectorAll('.skill-card[data-category]');
